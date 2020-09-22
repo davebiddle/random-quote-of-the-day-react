@@ -1,7 +1,14 @@
 import React from "react";
+import TodaysRandomQuote from "components/TodaysRandomQuote";
+import PreviousQuotesBlock from "components/PreviousQuotesBlock";
 
 function Home(props) {
-  return <div>Home</div>;
+  return (
+    <div>
+      <TodaysRandomQuote />
+      <PreviousQuotesBlock />
+    </div>
+  );
 }
 
 export default Home;
