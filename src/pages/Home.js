@@ -1,6 +1,6 @@
 import React from "react";
-import TodaysRandomQuote from "components/TodaysRandomQuote";
-import PreviousQuotesBlock from "components/PreviousQuotesBlock";
+import TodaysRandomQuote from "components/home/TodaysRandomQuote";
+import PreviousQuotesBlock from "components/home/PreviousQuotesBlock";
 
 function Home(props) {
   return (

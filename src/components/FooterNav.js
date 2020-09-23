@@ -10,7 +10,7 @@ function FooterNav() {
             <a href="/">Today's Quote</a>
           </li>
           <li>
-            <a href="/">Previous Quotes</a>
+            <a href="/previous-quotes">Previous Quotes</a>
           </li>
           <li>
             <a href="/about">About Random QOTD</a>
