@@ -12,7 +12,7 @@ function TodaysRandomQuote() {
           the solar rays."
         </blockquote>
         <div>
-          - Leonardo da Vinci
+          <cite>Leonardo da Vinci</cite>
           <hr />
           <ul>
             <li>
