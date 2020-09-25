@@ -1,21 +1,49 @@
-import React from "react";
+import React, { useState } from "react";
 import logo from "assets/img/logo-header-117x72.png";
+import mob_nav_hamburger_icon from "assets/img/menu-mobile-hamburger.svg";
+import mob_nav_close_icon from "assets/img/menu-mobile-close.svg";
+import MobileNavDropdown from "components/MobileNavDropdown";
 
 function MainNav() {
+  // Create isOpen state prop using useState hook
+  const [isOpen, setIsOpen] = useState(false);
+
+  // Click handler for toggling mobile nav dropdown
+  const toggleMobileNavMenu = () => setIsOpen(!isOpen);
+
   return (
-    <div className="w-full h-24 pl-24 pr-8 flex justify-between items-center bg-genoa font-serif">
-      <a href="/">
-        <img src={logo} alt="Logo main" />
-      </a>
-      <ul className="flex main-nav text-white">
-        <li>
-          <a href="/">Today's Quote</a>
-        </li>
-        <li>|</li>
-        <li>
-          <a href="/previous-quotes">Previous Quotes</a>
-        </li>
-      </ul>
+    <div className="relative">
+      <div className="relative z-10 w-full h-24 pl-4 sm:pl-24 pr-8 flex justify-between items-center bg-genoa font-serif text-white">
+        <a href="/">
+          <img src={logo} alt="Logo" />
+        </a>
+        <div className="hidden sm:block">
+          <nav className="flex main-nav">
+            <li>
+              <a href="/">Today's Quote</a>
+            </li>
+            <li>|</li>
+            <li>
+              <a href="/previous-quotes">Previous Quotes</a>
+            </li>
+          </nav>
+        </div>
+        <button className="sm:hidden">
+          <img
+            src={mob_nav_hamburger_icon}
+            alt="Open mobile navigation menu"
+            className={isOpen ? "hidden" : "block"}
+            onClick={toggleMobileNavMenu}
+          />
+          <img
+            src={mob_nav_close_icon}
+            alt="Close mobile navigation menu"
+            className={isOpen ? "block" : "hidden"}
+            onClick={toggleMobileNavMenu}
+          />
+        </button>
+      </div>
+      {isOpen ? <MobileNavDropdown onClose={toggleMobileNavMenu} /> : null}
     </div>
   );
 }
