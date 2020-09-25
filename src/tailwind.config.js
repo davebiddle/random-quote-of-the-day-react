@@ -15,6 +15,16 @@ module.exports = {
         mako: "#414a4f",
         white: "#ffffff",
       },
+      fontFamily: {
+        serif: [
+          "ChunkFiveRegular",
+          "Georgia",
+          "Cambria",
+          '"Times New Roman"',
+          "Times",
+          "serif",
+        ],
+      },
     },
   },
   variants: {},

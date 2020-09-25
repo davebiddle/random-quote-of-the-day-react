@@ -4,7 +4,7 @@ import PreviousQuotesBlock from "components/home/PreviousQuotesBlock";
 
 function Home(props) {
   return (
-    <div>
+    <div className="font-serif">
       <TodaysRandomQuote />
       <PreviousQuotesBlock />
     </div>

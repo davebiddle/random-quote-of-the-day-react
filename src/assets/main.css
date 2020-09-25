@@ -577,6 +577,22 @@ video {
   height: auto;
 }
 
+h1 {
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: 1.875rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+h4 {
+  font-size: 1.25rem;
+}
+
 .container {
   width: 100%;
 }
@@ -605,8 +621,49 @@ video {
   }
 }
 
+/**
+ * Main site font.
+ */
+
+@font-face {
+  font-family: "ChunkFiveRegular";
+
+  /*src: local("ChunkFiveRegular"), url(./fonts/chunkfive-regular-webfont.woff2) format('woff2'),*/
+
+  src: url("./fonts/chunkfive-regular-webfont.woff2") format("woff2"),
+    url("./fonts/chunkfive-regular-webfont.woff") format("woff");
+
+  font-weight: normal;
+
+  font-style: normal;
+}
+
 .main-nav li {
   margin-right: 0.25rem;
+}
+
+.flourish-grad-bg {
+  background-image: linear-gradient(
+      to right,
+      rgba(70, 133, 125, 0.76),
+      rgba(70, 133, 125, 1),
+      rgba(70, 133, 125, 0.76)
+    ),
+    url(./img/flourish-jade.svg);
+  background-repeat: no-repeat, no-repeat;
+  background-position: right, left bottom;
+  background-color: #fd9230;
+}
+
+[class^="icon"] {
+  position: relative;
+}
+
+.icon-calendar {
+  width: 27px;
+  height: 29px;
+  top: 30px;
+  left: -39px;
 }
 
 .space-y-0 > :not(template) ~ :not(template) {
@@ -9928,7 +9985,7 @@ video {
 }
 
 .font-serif {
-  font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+  font-family: ChunkFiveRegular, Georgia, Cambria, "Times New Roman", Times, serif;
 }
 
 .font-mono {
@@ -18461,6 +18518,35 @@ video {
 .animate-bounce {
   animation: bounce 1s infinite;
 }
+
+.heading-flourish.heading-flourish-both:before {
+  content: url(./img/flourish-heading-left.svg);
+  margin-right: 11px;
+}
+
+.heading-flourish.heading-flourish-both:after,
+    .heading-flourish.heading-flourish-after:after {
+  content: url(./img/flourish-heading-right.svg);
+  margin-left: 11px;
+}
+
+.heading-flourish:before,
+    .heading-flourish:after {
+  width: 70px;
+  height: 33px;
+}
+
+/**
+ * Base layer (preflight) customisations
+ */
+
+/* Default heading font sizes */
+
+/**
+ * Custom Utilities
+ */
+
+/* Text heading flourish decorations */
 
 @media (min-width: 640px) {
   .sm\:container {
@@ -27810,7 +27896,7 @@ video {
   }
 
   .sm\:font-serif {
-    font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+    font-family: ChunkFiveRegular, Georgia, Cambria, "Times New Roman", Times, serif;
   }
 
   .sm\:font-mono {
@@ -36311,6 +36397,23 @@ video {
 
   .sm\:animate-bounce {
     animation: bounce 1s infinite;
+  }
+
+  .heading-flourish.sm\:heading-flourish-both:before {
+    content: url(./img/flourish-heading-left.svg);
+    margin-right: 11px;
+  }
+
+  .heading-flourish.sm\:heading-flourish-both:after,
+    .heading-flourish.sm\:heading-flourish-after:after {
+    content: url(./img/flourish-heading-right.svg);
+    margin-left: 11px;
+  }
+
+  .sm\:heading-flourish:before,
+    .sm\:heading-flourish:after {
+    width: 70px;
+    height: 33px;
   }
 }
 
@@ -45662,7 +45765,7 @@ video {
   }
 
   .md\:font-serif {
-    font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+    font-family: ChunkFiveRegular, Georgia, Cambria, "Times New Roman", Times, serif;
   }
 
   .md\:font-mono {
@@ -54163,6 +54266,23 @@ video {
 
   .md\:animate-bounce {
     animation: bounce 1s infinite;
+  }
+
+  .heading-flourish.md\:heading-flourish-both:before {
+    content: url(./img/flourish-heading-left.svg);
+    margin-right: 11px;
+  }
+
+  .heading-flourish.md\:heading-flourish-both:after,
+    .heading-flourish.md\:heading-flourish-after:after {
+    content: url(./img/flourish-heading-right.svg);
+    margin-left: 11px;
+  }
+
+  .md\:heading-flourish:before,
+    .md\:heading-flourish:after {
+    width: 70px;
+    height: 33px;
   }
 }
 
@@ -63514,7 +63634,7 @@ video {
   }
 
   .lg\:font-serif {
-    font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+    font-family: ChunkFiveRegular, Georgia, Cambria, "Times New Roman", Times, serif;
   }
 
   .lg\:font-mono {
@@ -72015,6 +72135,23 @@ video {
 
   .lg\:animate-bounce {
     animation: bounce 1s infinite;
+  }
+
+  .heading-flourish.lg\:heading-flourish-both:before {
+    content: url(./img/flourish-heading-left.svg);
+    margin-right: 11px;
+  }
+
+  .heading-flourish.lg\:heading-flourish-both:after,
+    .heading-flourish.lg\:heading-flourish-after:after {
+    content: url(./img/flourish-heading-right.svg);
+    margin-left: 11px;
+  }
+
+  .lg\:heading-flourish:before,
+    .lg\:heading-flourish:after {
+    width: 70px;
+    height: 33px;
   }
 }
 
@@ -81366,7 +81503,7 @@ video {
   }
 
   .xl\:font-serif {
-    font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+    font-family: ChunkFiveRegular, Georgia, Cambria, "Times New Roman", Times, serif;
   }
 
   .xl\:font-mono {
@@ -89867,5 +90004,22 @@ video {
 
   .xl\:animate-bounce {
     animation: bounce 1s infinite;
+  }
+
+  .heading-flourish.xl\:heading-flourish-both:before {
+    content: url(./img/flourish-heading-left.svg);
+    margin-right: 11px;
+  }
+
+  .heading-flourish.xl\:heading-flourish-both:after,
+    .heading-flourish.xl\:heading-flourish-after:after {
+    content: url(./img/flourish-heading-right.svg);
+    margin-left: 11px;
+  }
+
+  .xl\:heading-flourish:before,
+    .xl\:heading-flourish:after {
+    width: 70px;
+    height: 33px;
   }
 }

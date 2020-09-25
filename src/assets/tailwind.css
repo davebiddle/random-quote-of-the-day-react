@@ -2,8 +2,93 @@
 
 @tailwind components;
 
+/**
+ * Main site font.
+ */
+@font-face {
+  font-family: "ChunkFiveRegular";
+  /*src: local("ChunkFiveRegular"), url(./fonts/chunkfive-regular-webfont.woff2) format('woff2'),*/
+  src: url("./fonts/chunkfive-regular-webfont.woff2") format("woff2"),
+    url("./fonts/chunkfive-regular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
 .main-nav li {
   @apply mr-1;
 }
 
+.flourish-grad-bg {
+  background-image: linear-gradient(
+      to right,
+      rgba(70, 133, 125, 0.76),
+      rgba(70, 133, 125, 1),
+      rgba(70, 133, 125, 0.76)
+    ),
+    url(./img/flourish-jade.svg);
+  background-repeat: no-repeat, no-repeat;
+  background-position: right, left bottom;
+  background-color: #fd9230;
+}
+
+[class^="icon"] {
+  position: relative;
+}
+
+.icon-calendar {
+  width: 27px;
+  height: 29px;
+  top: 30px;
+  left: -39px;
+}
+
 @tailwind utilities;
+
+/**
+ * Base layer (preflight) customisations
+ */
+
+/* Default heading font sizes */
+@layer base {
+  h1 {
+    @apply text-5xl;
+  }
+
+  h2 {
+    @apply text-3xl;
+  }
+
+  h3 {
+    @apply text-2xl;
+  }
+
+  h4 {
+    @apply text-xl;
+  }
+}
+
+/**
+ * Custom Utilities
+ */
+
+/* Text heading flourish decorations */
+@layer utilities {
+  @responsive {
+    .heading-flourish.heading-flourish-both:before {
+      content: url(./img/flourish-heading-left.svg);
+      margin-right: 11px;
+    }
+
+    .heading-flourish.heading-flourish-both:after,
+    .heading-flourish.heading-flourish-after:after {
+      content: url(./img/flourish-heading-right.svg);
+      margin-left: 11px;
+    }
+
+    .heading-flourish:before,
+    .heading-flourish:after {
+      width: 70px;
+      height: 33px;
+    }
+  }
+}

@@ -1,5 +1,5 @@
 import React from "react";
-import logo_footer from "img/logo-footer-140x86.png";
+import logo_footer from "assets/img/logo-footer-140x86.png";
 
 function FooterNav() {
   return (
