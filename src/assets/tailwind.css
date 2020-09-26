@@ -27,8 +27,14 @@
     ),
     url(./img/flourish-jade.svg);
   background-repeat: no-repeat, no-repeat;
-  background-position: right, left bottom;
+  background-position: right, left bottom -50px;
   background-color: #fd9230;
+}
+
+@screen sm {
+  .flourish-grad-bg {
+    background-position: right, left bottom;
+  }
 }
 
 [class^="icon"] {
@@ -38,8 +44,15 @@
 .icon-calendar {
   width: 27px;
   height: 29px;
-  top: 30px;
+  top: 43px;
   left: -39px;
+}
+
+@screen sm {
+  .icon-calendar {
+    top: 30px;
+    left: -39px;
+  }
 }
 
 @tailwind utilities;

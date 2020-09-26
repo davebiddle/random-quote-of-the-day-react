@@ -5,15 +5,17 @@ import mob_nav_close_icon from "assets/img/menu-mobile-close.svg";
 import MobileNavDropdown from "components/MobileNavDropdown";
 
 function MainNav() {
-  // Create isOpen state prop using useState hook
+  // Create isOpen state prop using useState hook,
+  // setting default value to `false`.
   const [isOpen, setIsOpen] = useState(false);
 
-  // Click handler for toggling mobile nav dropdown
+  // Click handler for toggling mobile nav dropdown.
+  // Sets `isOpen` state prop to inverse of current value.
   const toggleMobileNavMenu = () => setIsOpen(!isOpen);
 
   return (
     <div className="relative">
-      <div className="relative z-10 w-full h-24 pl-4 sm:pl-24 pr-8 flex justify-between items-center bg-genoa font-serif text-white">
+      <div className="relative z-20 w-full h-24 pl-4 sm:pl-24 pr-8 flex justify-between items-center bg-genoa font-serif text-white">
         <a href="/">
           <img src={logo} alt="Logo" />
         </a>
@@ -43,7 +45,11 @@ function MainNav() {
           />
         </button>
       </div>
-      {isOpen ? <MobileNavDropdown onClose={toggleMobileNavMenu} /> : null}
+      {
+        // Render MobileNavDropdown component conditionally, based on isOpen
+        // state prop value
+        isOpen ? <MobileNavDropdown onClose={toggleMobileNavMenu} /> : null
+      }
     </div>
   );
 }

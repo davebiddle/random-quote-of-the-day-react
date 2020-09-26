@@ -4,12 +4,12 @@ import icon_calendar from "assets/img/icon-calendar.svg";
 function TodaysRandomQuote() {
   return (
     <div>
-      <div className="flourish-grad-bg text-white text-center pb-32">
-        <h3 className="inline-block mx-auto mb-10 text-2xl">
+      <div className="flourish-grad-bg text-white sm:text-center pb-10 sm:pb-32">
+        <h3 className="inline-block mx-auto pl-24 sm:pl-0 mb-8 text-1.5xl leading-7 max-w-xxs sm:max-w-none">
           <img className="icon-calendar" src={icon_calendar} />
           Thursday 17th September 2020
         </h3>
-        <h1 className="heading-flourish heading-flourish-after sm:heading-flourish-both">
+        <h1 className="heading-flourish heading-flourish-after sm:heading-flourish-both text-4xl pl-6 max-w-xxs sm:max-w-none sm:pl-0">
           Today's Random Quote:
         </h1>
       </div>

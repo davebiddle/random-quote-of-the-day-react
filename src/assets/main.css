@@ -651,8 +651,14 @@ h4 {
     ),
     url(./img/flourish-jade.svg);
   background-repeat: no-repeat, no-repeat;
-  background-position: right, left bottom;
+  background-position: right, left bottom -50px;
   background-color: #fd9230;
+}
+
+@media (min-width: 640px) {
+  .flourish-grad-bg {
+    background-position: right, left bottom;
+  }
 }
 
 [class^="icon"] {
@@ -662,8 +668,15 @@ h4 {
 .icon-calendar {
   width: 27px;
   height: 29px;
-  top: 30px;
+  top: 43px;
   left: -39px;
+}
+
+@media (min-width: 640px) {
+  .icon-calendar {
+    top: 30px;
+    left: -39px;
+  }
 }
 
 .space-y-0 > :not(template) ~ :not(template) {
@@ -10218,6 +10231,7 @@ h4 {
 
 .text-4xl {
   font-size: 2.25rem;
+  line-height: 47px;
 }
 
 .text-5xl {
@@ -10226,6 +10240,10 @@ h4 {
 
 .text-6xl {
   font-size: 4rem;
+}
+
+.text-1\.5xl {
+  font-size: 1.3rem;
 }
 
 .leading-3 {
@@ -11514,6 +11532,10 @@ h4 {
 
 .max-w-screen-xl {
   max-width: 1280px;
+}
+
+.max-w-xxs {
+  max-width: 18rem;
 }
 
 .min-h-0 {
@@ -28129,6 +28151,7 @@ h4 {
 
   .sm\:text-4xl {
     font-size: 2.25rem;
+    line-height: 47px;
   }
 
   .sm\:text-5xl {
@@ -28137,6 +28160,10 @@ h4 {
 
   .sm\:text-6xl {
     font-size: 4rem;
+  }
+
+  .sm\:text-1\.5xl {
+    font-size: 1.3rem;
   }
 
   .sm\:leading-3 {
@@ -29425,6 +29452,10 @@ h4 {
 
   .sm\:max-w-screen-xl {
     max-width: 1280px;
+  }
+
+  .sm\:max-w-xxs {
+    max-width: 18rem;
   }
 
   .sm\:min-h-0 {
@@ -45998,6 +46029,7 @@ h4 {
 
   .md\:text-4xl {
     font-size: 2.25rem;
+    line-height: 47px;
   }
 
   .md\:text-5xl {
@@ -46006,6 +46038,10 @@ h4 {
 
   .md\:text-6xl {
     font-size: 4rem;
+  }
+
+  .md\:text-1\.5xl {
+    font-size: 1.3rem;
   }
 
   .md\:leading-3 {
@@ -47294,6 +47330,10 @@ h4 {
 
   .md\:max-w-screen-xl {
     max-width: 1280px;
+  }
+
+  .md\:max-w-xxs {
+    max-width: 18rem;
   }
 
   .md\:min-h-0 {
@@ -63867,6 +63907,7 @@ h4 {
 
   .lg\:text-4xl {
     font-size: 2.25rem;
+    line-height: 47px;
   }
 
   .lg\:text-5xl {
@@ -63875,6 +63916,10 @@ h4 {
 
   .lg\:text-6xl {
     font-size: 4rem;
+  }
+
+  .lg\:text-1\.5xl {
+    font-size: 1.3rem;
   }
 
   .lg\:leading-3 {
@@ -65163,6 +65208,10 @@ h4 {
 
   .lg\:max-w-screen-xl {
     max-width: 1280px;
+  }
+
+  .lg\:max-w-xxs {
+    max-width: 18rem;
   }
 
   .lg\:min-h-0 {
@@ -81736,6 +81785,7 @@ h4 {
 
   .xl\:text-4xl {
     font-size: 2.25rem;
+    line-height: 47px;
   }
 
   .xl\:text-5xl {
@@ -81744,6 +81794,10 @@ h4 {
 
   .xl\:text-6xl {
     font-size: 4rem;
+  }
+
+  .xl\:text-1\.5xl {
+    font-size: 1.3rem;
   }
 
   .xl\:leading-3 {
@@ -83032,6 +83086,10 @@ h4 {
 
   .xl\:max-w-screen-xl {
     max-width: 1280px;
+  }
+
+  .xl\:max-w-xxs {
+    max-width: 18rem;
   }
 
   .xl\:min-h-0 {

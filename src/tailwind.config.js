@@ -25,6 +25,13 @@ module.exports = {
           "serif",
         ],
       },
+      fontSize: {
+        "1.5xl": "1.3rem",
+        "4xl": ["2.25rem", "47px"],
+      },
+      maxWidth: {
+        xxs: "18rem",
+      },
     },
   },
   variants: {},
