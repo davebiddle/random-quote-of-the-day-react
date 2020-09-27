@@ -13,8 +13,11 @@ function TodaysRandomQuote() {
           Today's Random Quote:
         </h1>
       </div>
-      <div>
-        <blockquote cite="https://quotepark.com/quotes/1830729-leonardo-da-vinci-the-variety-of-colour-in-objects-cannot-be-discern/">
+      <div className="w-full bg-white">
+        <blockquote
+          class="bg-quote-texture"
+          cite="https://quotepark.com/quotes/1830729-leonardo-da-vinci-the-variety-of-colour-in-objects-cannot-be-discern/"
+        >
           <p>
             The variety of colour in objects cannot be discerned at a great
             distance, excepting in those parts which are directly lighted up by

@@ -32,6 +32,9 @@ module.exports = {
       maxWidth: {
         xxs: "18rem",
       },
+      backgroundImage: (theme) => ({
+        "quote-texture": "url('img/old-paper-texture.png')",
+      }),
     },
   },
   variants: {},

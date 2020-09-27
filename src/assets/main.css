@@ -3523,6 +3523,10 @@ h4 {
   background-image: linear-gradient(to top left, var(--gradient-color-stops));
 }
 
+.bg-quote-texture {
+  background-image: url('img/old-paper-texture.png');
+}
+
 .from-transparent {
   --gradient-from-color: transparent;
   --gradient-color-stops: var(--gradient-from-color), var(--gradient-to-color, rgba(0, 0, 0, 0));
@@ -18541,21 +18545,24 @@ h4 {
   animation: bounce 1s infinite;
 }
 
+.heading-flourish:before,
+    .heading-flourish:after {
+  position: relative;
+  width: 70px;
+  height: 33px;
+}
+
 .heading-flourish.heading-flourish-both:before {
   content: url(./img/flourish-heading-left.svg);
-  margin-right: 11px;
+  right: 7px;
+  top: 5px;
 }
 
 .heading-flourish.heading-flourish-both:after,
     .heading-flourish.heading-flourish-after:after {
   content: url(./img/flourish-heading-right.svg);
-  margin-left: 11px;
-}
-
-.heading-flourish:before,
-    .heading-flourish:after {
-  width: 70px;
-  height: 33px;
+  left: 7px;
+  top: 5px;
 }
 
 /**
@@ -21441,6 +21448,10 @@ h4 {
 
   .sm\:bg-gradient-to-tl {
     background-image: linear-gradient(to top left, var(--gradient-color-stops));
+  }
+
+  .sm\:bg-quote-texture {
+    background-image: url('img/old-paper-texture.png');
   }
 
   .sm\:from-transparent {
@@ -36430,21 +36441,24 @@ h4 {
     animation: bounce 1s infinite;
   }
 
+  .sm\:heading-flourish:before,
+    .sm\:heading-flourish:after {
+    position: relative;
+    width: 70px;
+    height: 33px;
+  }
+
   .heading-flourish.sm\:heading-flourish-both:before {
     content: url(./img/flourish-heading-left.svg);
-    margin-right: 11px;
+    right: 7px;
+    top: 5px;
   }
 
   .heading-flourish.sm\:heading-flourish-both:after,
     .heading-flourish.sm\:heading-flourish-after:after {
     content: url(./img/flourish-heading-right.svg);
-    margin-left: 11px;
-  }
-
-  .sm\:heading-flourish:before,
-    .sm\:heading-flourish:after {
-    width: 70px;
-    height: 33px;
+    left: 7px;
+    top: 5px;
   }
 }
 
@@ -39319,6 +39333,10 @@ h4 {
 
   .md\:bg-gradient-to-tl {
     background-image: linear-gradient(to top left, var(--gradient-color-stops));
+  }
+
+  .md\:bg-quote-texture {
+    background-image: url('img/old-paper-texture.png');
   }
 
   .md\:from-transparent {
@@ -54308,21 +54326,24 @@ h4 {
     animation: bounce 1s infinite;
   }
 
+  .md\:heading-flourish:before,
+    .md\:heading-flourish:after {
+    position: relative;
+    width: 70px;
+    height: 33px;
+  }
+
   .heading-flourish.md\:heading-flourish-both:before {
     content: url(./img/flourish-heading-left.svg);
-    margin-right: 11px;
+    right: 7px;
+    top: 5px;
   }
 
   .heading-flourish.md\:heading-flourish-both:after,
     .heading-flourish.md\:heading-flourish-after:after {
     content: url(./img/flourish-heading-right.svg);
-    margin-left: 11px;
-  }
-
-  .md\:heading-flourish:before,
-    .md\:heading-flourish:after {
-    width: 70px;
-    height: 33px;
+    left: 7px;
+    top: 5px;
   }
 }
 
@@ -57197,6 +57218,10 @@ h4 {
 
   .lg\:bg-gradient-to-tl {
     background-image: linear-gradient(to top left, var(--gradient-color-stops));
+  }
+
+  .lg\:bg-quote-texture {
+    background-image: url('img/old-paper-texture.png');
   }
 
   .lg\:from-transparent {
@@ -72186,21 +72211,24 @@ h4 {
     animation: bounce 1s infinite;
   }
 
+  .lg\:heading-flourish:before,
+    .lg\:heading-flourish:after {
+    position: relative;
+    width: 70px;
+    height: 33px;
+  }
+
   .heading-flourish.lg\:heading-flourish-both:before {
     content: url(./img/flourish-heading-left.svg);
-    margin-right: 11px;
+    right: 7px;
+    top: 5px;
   }
 
   .heading-flourish.lg\:heading-flourish-both:after,
     .heading-flourish.lg\:heading-flourish-after:after {
     content: url(./img/flourish-heading-right.svg);
-    margin-left: 11px;
-  }
-
-  .lg\:heading-flourish:before,
-    .lg\:heading-flourish:after {
-    width: 70px;
-    height: 33px;
+    left: 7px;
+    top: 5px;
   }
 }
 
@@ -75075,6 +75103,10 @@ h4 {
 
   .xl\:bg-gradient-to-tl {
     background-image: linear-gradient(to top left, var(--gradient-color-stops));
+  }
+
+  .xl\:bg-quote-texture {
+    background-image: url('img/old-paper-texture.png');
   }
 
   .xl\:from-transparent {
@@ -90064,20 +90096,23 @@ h4 {
     animation: bounce 1s infinite;
   }
 
+  .xl\:heading-flourish:before,
+    .xl\:heading-flourish:after {
+    position: relative;
+    width: 70px;
+    height: 33px;
+  }
+
   .heading-flourish.xl\:heading-flourish-both:before {
     content: url(./img/flourish-heading-left.svg);
-    margin-right: 11px;
+    right: 7px;
+    top: 5px;
   }
 
   .heading-flourish.xl\:heading-flourish-both:after,
     .heading-flourish.xl\:heading-flourish-after:after {
     content: url(./img/flourish-heading-right.svg);
-    margin-left: 11px;
-  }
-
-  .xl\:heading-flourish:before,
-    .xl\:heading-flourish:after {
-    width: 70px;
-    height: 33px;
+    left: 7px;
+    top: 5px;
   }
 }

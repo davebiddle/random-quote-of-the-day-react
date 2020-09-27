@@ -20,7 +20,7 @@ function MainNav() {
           <img src={logo} alt="Logo" />
         </a>
         <div className="hidden sm:block">
-          <nav className="flex main-nav">
+          <nav className="flex main-nav list-none">
             <li>
               <a href="/">Today's Quote</a>
             </li>

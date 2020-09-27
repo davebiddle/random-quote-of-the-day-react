@@ -87,21 +87,24 @@
 /* Text heading flourish decorations */
 @layer utilities {
   @responsive {
+    .heading-flourish:before,
+    .heading-flourish:after {
+      position: relative;
+      width: 70px;
+      height: 33px;
+    }
+
     .heading-flourish.heading-flourish-both:before {
       content: url(./img/flourish-heading-left.svg);
-      margin-right: 11px;
+      right: 7px;
+      top: 5px;
     }
 
     .heading-flourish.heading-flourish-both:after,
     .heading-flourish.heading-flourish-after:after {
       content: url(./img/flourish-heading-right.svg);
-      margin-left: 11px;
-    }
-
-    .heading-flourish:before,
-    .heading-flourish:after {
-      width: 70px;
-      height: 33px;
+      left: 7px;
+      top: 5px;
     }
   }
 }
