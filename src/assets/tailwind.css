@@ -7,15 +7,34 @@
  */
 @font-face {
   font-family: "ChunkFiveRegular";
-  /*src: local("ChunkFiveRegular"), url(./fonts/chunkfive-regular-webfont.woff2) format('woff2'),*/
   src: url("./fonts/chunkfive-regular-webfont.woff2") format("woff2"),
     url("./fonts/chunkfive-regular-webfont.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
 
+@font-face {
+  font-family: "ChunkFivePrint";
+  src: url("./fonts/chunk_five_print-webfont.woff2") format("woff2"),
+    url("./fonts/chunk_five_print-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
 .main-nav li {
   @apply mr-1;
+}
+
+.blockquote-footer-li {
+  @apply h-7 flex justify-end items-center;
+}
+
+.blockquote-footer-li:hover {
+  @apply text-orange;
+}
+
+.blockquote-footer-li img {
+  @apply ml-2;
 }
 
 .flourish-grad-bg {
@@ -37,6 +56,7 @@
   }
 }
 
+/* Todo :: Refactor icons to us flex instead of positioning */
 [class^="icon"] {
   position: relative;
 }
@@ -48,10 +68,36 @@
   left: -39px;
 }
 
+.icon-blockquote {
+  width: 37px;
+  height: 29px;
+  top: 2rem;
+  left: 2.75rem;
+}
+
+.ext-link-icon {
+  cursor: pointer;
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  background-image: url(./img/icon-ext-link.svg);
+  background-position: left top;
+  @apply ml-2;
+}
+
+.blockquote-footer-li:hover .ext-link-icon {
+  background-image: url(./img/icon-ext-link-hover.svg);
+}
+
 @screen sm {
   .icon-calendar {
     top: 30px;
     left: -39px;
+  }
+
+  .icon-blockquote {
+    width: 87px;
+    height: 69px;
   }
 }
 
@@ -84,9 +130,9 @@
  * Custom Utilities
  */
 
-/* Text heading flourish decorations */
 @layer utilities {
   @responsive {
+    /* Text heading flourish decorations */
     .heading-flourish:before,
     .heading-flourish:after {
       position: relative;
@@ -105,6 +151,14 @@
       content: url(./img/flourish-heading-right.svg);
       left: 7px;
       top: 5px;
+    }
+
+    /* Text indent */
+    .text-indent-0 {
+      text-indent: none;
+    }
+    .text-indent-4 {
+      text-indent: 4rem;
     }
   }
 }

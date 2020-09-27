@@ -24,10 +24,19 @@ module.exports = {
           "Times",
           "serif",
         ],
+        blockquote: "ChunkFivePrint",
       },
       fontSize: {
+        m: "0.9rem",
         "1.5xl": "1.3rem",
+        "3.5xl": ["2rem", "42px"],
         "4xl": ["2.25rem", "47px"],
+      },
+      height: {
+        7: "1.7rem",
+      },
+      padding: {
+        14: "3.5rem",
       },
       maxWidth: {
         xxs: "18rem",

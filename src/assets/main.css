@@ -628,8 +628,6 @@ h4 {
 @font-face {
   font-family: "ChunkFiveRegular";
 
-  /*src: local("ChunkFiveRegular"), url(./fonts/chunkfive-regular-webfont.woff2) format('woff2'),*/
-
   src: url("./fonts/chunkfive-regular-webfont.woff2") format("woff2"),
     url("./fonts/chunkfive-regular-webfont.woff") format("woff");
 
@@ -638,8 +636,36 @@ h4 {
   font-style: normal;
 }
 
+@font-face {
+  font-family: "ChunkFivePrint";
+
+  src: url("./fonts/chunk_five_print-webfont.woff2") format("woff2"),
+    url("./fonts/chunk_five_print-webfont.woff") format("woff");
+
+  font-weight: normal;
+
+  font-style: normal;
+}
+
 .main-nav li {
   margin-right: 0.25rem;
+}
+
+.blockquote-footer-li {
+  height: 1.7rem;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.blockquote-footer-li:hover {
+  --text-opacity: 1;
+  color: #fe6625;
+  color: rgba(254, 102, 37, var(--text-opacity));
+}
+
+.blockquote-footer-li img {
+  margin-left: 0.5rem;
 }
 
 .flourish-grad-bg {
@@ -661,6 +687,8 @@ h4 {
   }
 }
 
+/* Todo :: Refactor icons to us flex instead of positioning */
+
 [class^="icon"] {
   position: relative;
 }
@@ -672,10 +700,36 @@ h4 {
   left: -39px;
 }
 
+.icon-blockquote {
+  width: 37px;
+  height: 29px;
+  top: 2rem;
+  left: 2.75rem;
+}
+
+.ext-link-icon {
+  cursor: pointer;
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  background-image: url(./img/icon-ext-link.svg);
+  background-position: left top;
+  margin-left: 0.5rem;
+}
+
+.blockquote-footer-li:hover .ext-link-icon {
+  background-image: url(./img/icon-ext-link-hover.svg);
+}
+
 @media (min-width: 640px) {
   .icon-calendar {
     top: 30px;
     left: -39px;
+  }
+
+  .icon-blockquote {
+    width: 87px;
+    height: 69px;
   }
 }
 
@@ -10009,6 +10063,10 @@ h4 {
   font-family: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
+.font-blockquote {
+  font-family: ChunkFivePrint;
+}
+
 .font-hairline {
   font-weight: 100;
 }
@@ -10145,6 +10203,10 @@ h4 {
   height: 1.5rem;
 }
 
+.h-7 {
+  height: 1.7rem;
+}
+
 .h-8 {
   height: 2rem;
 }
@@ -10246,8 +10308,17 @@ h4 {
   font-size: 4rem;
 }
 
+.text-m {
+  font-size: 0.9rem;
+}
+
 .text-1\.5xl {
   font-size: 1.3rem;
+}
+
+.text-3\.5xl {
+  font-size: 2rem;
+  line-height: 42px;
 }
 
 .leading-3 {
@@ -11818,6 +11889,10 @@ h4 {
   padding: 3rem;
 }
 
+.p-14 {
+  padding: 3.5rem;
+}
+
 .p-16 {
   padding: 4rem;
 }
@@ -11952,6 +12027,16 @@ h4 {
 .px-12 {
   padding-left: 3rem;
   padding-right: 3rem;
+}
+
+.py-14 {
+  padding-top: 3.5rem;
+  padding-bottom: 3.5rem;
+}
+
+.px-14 {
+  padding-left: 3.5rem;
+  padding-right: 3.5rem;
 }
 
 .py-16 {
@@ -12202,6 +12287,22 @@ h4 {
 
 .pl-12 {
   padding-left: 3rem;
+}
+
+.pt-14 {
+  padding-top: 3.5rem;
+}
+
+.pr-14 {
+  padding-right: 3.5rem;
+}
+
+.pb-14 {
+  padding-bottom: 3.5rem;
+}
+
+.pl-14 {
+  padding-left: 3.5rem;
 }
 
 .pt-16 {
@@ -18545,6 +18646,8 @@ h4 {
   animation: bounce 1s infinite;
 }
 
+/* Text heading flourish decorations */
+
 .heading-flourish:before,
     .heading-flourish:after {
   position: relative;
@@ -18565,6 +18668,16 @@ h4 {
   top: 5px;
 }
 
+/* Text indent */
+
+.text-indent-0 {
+  text-indent: none;
+}
+
+.text-indent-4 {
+  text-indent: 4rem;
+}
+
 /**
  * Base layer (preflight) customisations
  */
@@ -18574,8 +18687,6 @@ h4 {
 /**
  * Custom Utilities
  */
-
-/* Text heading flourish decorations */
 
 @media (min-width: 640px) {
   .sm\:container {
@@ -27936,6 +28047,10 @@ h4 {
     font-family: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   }
 
+  .sm\:font-blockquote {
+    font-family: ChunkFivePrint;
+  }
+
   .sm\:font-hairline {
     font-weight: 100;
   }
@@ -28072,6 +28187,10 @@ h4 {
     height: 1.5rem;
   }
 
+  .sm\:h-7 {
+    height: 1.7rem;
+  }
+
   .sm\:h-8 {
     height: 2rem;
   }
@@ -28173,8 +28292,17 @@ h4 {
     font-size: 4rem;
   }
 
+  .sm\:text-m {
+    font-size: 0.9rem;
+  }
+
   .sm\:text-1\.5xl {
     font-size: 1.3rem;
+  }
+
+  .sm\:text-3\.5xl {
+    font-size: 2rem;
+    line-height: 42px;
   }
 
   .sm\:leading-3 {
@@ -29745,6 +29873,10 @@ h4 {
     padding: 3rem;
   }
 
+  .sm\:p-14 {
+    padding: 3.5rem;
+  }
+
   .sm\:p-16 {
     padding: 4rem;
   }
@@ -29879,6 +30011,16 @@ h4 {
   .sm\:px-12 {
     padding-left: 3rem;
     padding-right: 3rem;
+  }
+
+  .sm\:py-14 {
+    padding-top: 3.5rem;
+    padding-bottom: 3.5rem;
+  }
+
+  .sm\:px-14 {
+    padding-left: 3.5rem;
+    padding-right: 3.5rem;
   }
 
   .sm\:py-16 {
@@ -30129,6 +30271,22 @@ h4 {
 
   .sm\:pl-12 {
     padding-left: 3rem;
+  }
+
+  .sm\:pt-14 {
+    padding-top: 3.5rem;
+  }
+
+  .sm\:pr-14 {
+    padding-right: 3.5rem;
+  }
+
+  .sm\:pb-14 {
+    padding-bottom: 3.5rem;
+  }
+
+  .sm\:pl-14 {
+    padding-left: 3.5rem;
   }
 
   .sm\:pt-16 {
@@ -36441,6 +36599,8 @@ h4 {
     animation: bounce 1s infinite;
   }
 
+  /* Text heading flourish decorations */
+
   .sm\:heading-flourish:before,
     .sm\:heading-flourish:after {
     position: relative;
@@ -36459,6 +36619,16 @@ h4 {
     content: url(./img/flourish-heading-right.svg);
     left: 7px;
     top: 5px;
+  }
+
+  /* Text indent */
+
+  .sm\:text-indent-0 {
+    text-indent: none;
+  }
+
+  .sm\:text-indent-4 {
+    text-indent: 4rem;
   }
 }
 
@@ -45821,6 +45991,10 @@ h4 {
     font-family: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   }
 
+  .md\:font-blockquote {
+    font-family: ChunkFivePrint;
+  }
+
   .md\:font-hairline {
     font-weight: 100;
   }
@@ -45957,6 +46131,10 @@ h4 {
     height: 1.5rem;
   }
 
+  .md\:h-7 {
+    height: 1.7rem;
+  }
+
   .md\:h-8 {
     height: 2rem;
   }
@@ -46058,8 +46236,17 @@ h4 {
     font-size: 4rem;
   }
 
+  .md\:text-m {
+    font-size: 0.9rem;
+  }
+
   .md\:text-1\.5xl {
     font-size: 1.3rem;
+  }
+
+  .md\:text-3\.5xl {
+    font-size: 2rem;
+    line-height: 42px;
   }
 
   .md\:leading-3 {
@@ -47630,6 +47817,10 @@ h4 {
     padding: 3rem;
   }
 
+  .md\:p-14 {
+    padding: 3.5rem;
+  }
+
   .md\:p-16 {
     padding: 4rem;
   }
@@ -47764,6 +47955,16 @@ h4 {
   .md\:px-12 {
     padding-left: 3rem;
     padding-right: 3rem;
+  }
+
+  .md\:py-14 {
+    padding-top: 3.5rem;
+    padding-bottom: 3.5rem;
+  }
+
+  .md\:px-14 {
+    padding-left: 3.5rem;
+    padding-right: 3.5rem;
   }
 
   .md\:py-16 {
@@ -48014,6 +48215,22 @@ h4 {
 
   .md\:pl-12 {
     padding-left: 3rem;
+  }
+
+  .md\:pt-14 {
+    padding-top: 3.5rem;
+  }
+
+  .md\:pr-14 {
+    padding-right: 3.5rem;
+  }
+
+  .md\:pb-14 {
+    padding-bottom: 3.5rem;
+  }
+
+  .md\:pl-14 {
+    padding-left: 3.5rem;
   }
 
   .md\:pt-16 {
@@ -54326,6 +54543,8 @@ h4 {
     animation: bounce 1s infinite;
   }
 
+  /* Text heading flourish decorations */
+
   .md\:heading-flourish:before,
     .md\:heading-flourish:after {
     position: relative;
@@ -54344,6 +54563,16 @@ h4 {
     content: url(./img/flourish-heading-right.svg);
     left: 7px;
     top: 5px;
+  }
+
+  /* Text indent */
+
+  .md\:text-indent-0 {
+    text-indent: none;
+  }
+
+  .md\:text-indent-4 {
+    text-indent: 4rem;
   }
 }
 
@@ -63706,6 +63935,10 @@ h4 {
     font-family: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   }
 
+  .lg\:font-blockquote {
+    font-family: ChunkFivePrint;
+  }
+
   .lg\:font-hairline {
     font-weight: 100;
   }
@@ -63842,6 +64075,10 @@ h4 {
     height: 1.5rem;
   }
 
+  .lg\:h-7 {
+    height: 1.7rem;
+  }
+
   .lg\:h-8 {
     height: 2rem;
   }
@@ -63943,8 +64180,17 @@ h4 {
     font-size: 4rem;
   }
 
+  .lg\:text-m {
+    font-size: 0.9rem;
+  }
+
   .lg\:text-1\.5xl {
     font-size: 1.3rem;
+  }
+
+  .lg\:text-3\.5xl {
+    font-size: 2rem;
+    line-height: 42px;
   }
 
   .lg\:leading-3 {
@@ -65515,6 +65761,10 @@ h4 {
     padding: 3rem;
   }
 
+  .lg\:p-14 {
+    padding: 3.5rem;
+  }
+
   .lg\:p-16 {
     padding: 4rem;
   }
@@ -65649,6 +65899,16 @@ h4 {
   .lg\:px-12 {
     padding-left: 3rem;
     padding-right: 3rem;
+  }
+
+  .lg\:py-14 {
+    padding-top: 3.5rem;
+    padding-bottom: 3.5rem;
+  }
+
+  .lg\:px-14 {
+    padding-left: 3.5rem;
+    padding-right: 3.5rem;
   }
 
   .lg\:py-16 {
@@ -65899,6 +66159,22 @@ h4 {
 
   .lg\:pl-12 {
     padding-left: 3rem;
+  }
+
+  .lg\:pt-14 {
+    padding-top: 3.5rem;
+  }
+
+  .lg\:pr-14 {
+    padding-right: 3.5rem;
+  }
+
+  .lg\:pb-14 {
+    padding-bottom: 3.5rem;
+  }
+
+  .lg\:pl-14 {
+    padding-left: 3.5rem;
   }
 
   .lg\:pt-16 {
@@ -72211,6 +72487,8 @@ h4 {
     animation: bounce 1s infinite;
   }
 
+  /* Text heading flourish decorations */
+
   .lg\:heading-flourish:before,
     .lg\:heading-flourish:after {
     position: relative;
@@ -72229,6 +72507,16 @@ h4 {
     content: url(./img/flourish-heading-right.svg);
     left: 7px;
     top: 5px;
+  }
+
+  /* Text indent */
+
+  .lg\:text-indent-0 {
+    text-indent: none;
+  }
+
+  .lg\:text-indent-4 {
+    text-indent: 4rem;
   }
 }
 
@@ -81591,6 +81879,10 @@ h4 {
     font-family: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   }
 
+  .xl\:font-blockquote {
+    font-family: ChunkFivePrint;
+  }
+
   .xl\:font-hairline {
     font-weight: 100;
   }
@@ -81727,6 +82019,10 @@ h4 {
     height: 1.5rem;
   }
 
+  .xl\:h-7 {
+    height: 1.7rem;
+  }
+
   .xl\:h-8 {
     height: 2rem;
   }
@@ -81828,8 +82124,17 @@ h4 {
     font-size: 4rem;
   }
 
+  .xl\:text-m {
+    font-size: 0.9rem;
+  }
+
   .xl\:text-1\.5xl {
     font-size: 1.3rem;
+  }
+
+  .xl\:text-3\.5xl {
+    font-size: 2rem;
+    line-height: 42px;
   }
 
   .xl\:leading-3 {
@@ -83400,6 +83705,10 @@ h4 {
     padding: 3rem;
   }
 
+  .xl\:p-14 {
+    padding: 3.5rem;
+  }
+
   .xl\:p-16 {
     padding: 4rem;
   }
@@ -83534,6 +83843,16 @@ h4 {
   .xl\:px-12 {
     padding-left: 3rem;
     padding-right: 3rem;
+  }
+
+  .xl\:py-14 {
+    padding-top: 3.5rem;
+    padding-bottom: 3.5rem;
+  }
+
+  .xl\:px-14 {
+    padding-left: 3.5rem;
+    padding-right: 3.5rem;
   }
 
   .xl\:py-16 {
@@ -83784,6 +84103,22 @@ h4 {
 
   .xl\:pl-12 {
     padding-left: 3rem;
+  }
+
+  .xl\:pt-14 {
+    padding-top: 3.5rem;
+  }
+
+  .xl\:pr-14 {
+    padding-right: 3.5rem;
+  }
+
+  .xl\:pb-14 {
+    padding-bottom: 3.5rem;
+  }
+
+  .xl\:pl-14 {
+    padding-left: 3.5rem;
   }
 
   .xl\:pt-16 {
@@ -90096,6 +90431,8 @@ h4 {
     animation: bounce 1s infinite;
   }
 
+  /* Text heading flourish decorations */
+
   .xl\:heading-flourish:before,
     .xl\:heading-flourish:after {
     position: relative;
@@ -90114,5 +90451,15 @@ h4 {
     content: url(./img/flourish-heading-right.svg);
     left: 7px;
     top: 5px;
+  }
+
+  /* Text indent */
+
+  .xl\:text-indent-0 {
+    text-indent: none;
+  }
+
+  .xl\:text-indent-4 {
+    text-indent: 4rem;
   }
 }

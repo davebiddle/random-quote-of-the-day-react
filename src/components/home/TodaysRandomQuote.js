@@ -1,5 +1,6 @@
 import React from "react";
 import icon_calendar from "assets/img/icon-calendar.svg";
+import icon_blockquote from "assets/img/quotes-icon.png";
 
 function TodaysRandomQuote() {
   return (
@@ -15,32 +16,35 @@ function TodaysRandomQuote() {
       </div>
       <div className="w-full bg-white">
         <blockquote
-          class="bg-quote-texture"
+          class="relative bg-quote-texture font-blockquote text-astronaut-blue text-opacity-75 text-3.5xl px-8 pt-8 pb-14"
           cite="https://quotepark.com/quotes/1830729-leonardo-da-vinci-the-variety-of-colour-in-objects-cannot-be-discern/"
         >
-          <p>
+          <img className="absolute icon-blockquote" src={icon_blockquote} />
+          <p className="text-indent-4">
             The variety of colour in objects cannot be discerned at a great
             distance, excepting in those parts which are directly lighted up by
             the solar rays."
           </p>
-          <footer>
-            Leonardo da Vinci
-            <hr />
-            <ul>
-              <li>
+          <footer className="mt-8 font-serif text-2xl text-astronaut-blue text-opacity-1 text-right">
+            <p className="h-10">- Leonardo da Vinci</p>
+            <ul className="border-solid border-t-2 border-astronaut-blue border-opacity-25 pt-2 text-m">
+              <li className="blockquote-footer-li">
                 <a href="https://quotepark.com/quotes/1830729-leonardo-da-vinci-the-variety-of-colour-in-objects-cannot-be-discern/">
                   View this quote on quotepark.com
                 </a>
+                <span className="ext-link-icon"></span>
               </li>
-              <li>
+              <li className="blockquote-footer-li">
                 <a href="https://quotepark.com/authors/leonardo-da-vinci/">
                   More quotes from Leonardo da Vinci
                 </a>
+                <span className="ext-link-icon"></span>
               </li>
-              <li>
+              <li className="blockquote-footer-li">
                 <a href="https://en.wikiquote.org/w/index.php?search=Leonardo%20da%20Vinci">
                   Find Leonardo da Vinci on Wikiquote
                 </a>
+                <span className="ext-link-icon"></span>
               </li>
             </ul>
           </footer>
