@@ -5,7 +5,7 @@ import icon_blockquote from "assets/img/quotes-icon.png";
 function TodaysRandomQuote() {
   return (
     <div>
-      <div className="flourish-grad-bg text-white sm:text-center pb-10 sm:pb-32">
+      <header className="flourish-grad-bg text-white sm:text-center pb-10 sm:pb-32">
         <h3 className="inline-block mx-auto pl-24 sm:pl-0 mb-8 text-1.5xl leading-7 max-w-xxs sm:max-w-none">
           <img className="icon-calendar" src={icon_calendar} />
           Thursday 17th September 2020
@@ -13,7 +13,7 @@ function TodaysRandomQuote() {
         <h1 className="heading-flourish heading-flourish-after sm:heading-flourish-both text-4xl pl-6 max-w-xxs sm:max-w-none sm:pl-0">
           Today's Random Quote:
         </h1>
-      </div>
+      </header>
       <div className="w-full bg-white">
         <blockquote
           class="relative bg-quote-texture font-blockquote text-astronaut-blue text-opacity-75 text-3.5xl px-8 pt-8 pb-14"

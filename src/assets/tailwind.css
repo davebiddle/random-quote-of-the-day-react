@@ -56,6 +56,30 @@
   }
 }
 
+h1.heading-fourish:before,
+h1.heading-flourish:after {
+  width: 70px;
+  height: 33px;
+  margin-bottom: -0.4rem;
+}
+
+h3.heading-fourish:before,
+h3.heading-flourish:after {
+  width: 44px;
+  height: 21px;
+  margin-bottom: -0.2rem;
+}
+
+h1.heading-fourish:before,
+h3.heading-fourish:before {
+  margin-right: 0.4rem;
+}
+
+h1.heading-flourish:after,
+h3.heading-flourish:after {
+  margin-left: 0.4rem;
+}
+
 /* Todo :: Refactor icons to us flex instead of positioning */
 [class^="icon"] {
   position: relative;
@@ -135,22 +159,20 @@
     /* Text heading flourish decorations */
     .heading-flourish:before,
     .heading-flourish:after {
-      position: relative;
-      width: 70px;
-      height: 33px;
+      display: inline-block;
+      content: "";
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: left top;
     }
 
     .heading-flourish.heading-flourish-both:before {
-      content: url(./img/flourish-heading-left.svg);
-      right: 7px;
-      top: 5px;
+      background-image: url(./img/flourish-heading-left.svg);
     }
 
     .heading-flourish.heading-flourish-both:after,
     .heading-flourish.heading-flourish-after:after {
-      content: url(./img/flourish-heading-right.svg);
-      left: 7px;
-      top: 5px;
+      background-image: url(./img/flourish-heading-right.svg);
     }
 
     /* Text indent */

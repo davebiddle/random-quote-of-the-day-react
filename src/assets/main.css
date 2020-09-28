@@ -687,6 +687,30 @@ h4 {
   }
 }
 
+h1.heading-fourish:before,
+h1.heading-flourish:after {
+  width: 70px;
+  height: 33px;
+  margin-bottom: -0.4rem;
+}
+
+h3.heading-fourish:before,
+h3.heading-flourish:after {
+  width: 44px;
+  height: 21px;
+  margin-bottom: -0.2rem;
+}
+
+h1.heading-fourish:before,
+h3.heading-fourish:before {
+  margin-right: 0.4rem;
+}
+
+h1.heading-flourish:after,
+h3.heading-flourish:after {
+  margin-left: 0.4rem;
+}
+
 /* Todo :: Refactor icons to us flex instead of positioning */
 
 [class^="icon"] {
@@ -18650,22 +18674,20 @@ h4 {
 
 .heading-flourish:before,
     .heading-flourish:after {
-  position: relative;
-  width: 70px;
-  height: 33px;
+  display: inline-block;
+  content: "";
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: left top;
 }
 
 .heading-flourish.heading-flourish-both:before {
-  content: url(./img/flourish-heading-left.svg);
-  right: 7px;
-  top: 5px;
+  background-image: url(./img/flourish-heading-left.svg);
 }
 
 .heading-flourish.heading-flourish-both:after,
     .heading-flourish.heading-flourish-after:after {
-  content: url(./img/flourish-heading-right.svg);
-  left: 7px;
-  top: 5px;
+  background-image: url(./img/flourish-heading-right.svg);
 }
 
 /* Text indent */
@@ -36603,22 +36625,20 @@ h4 {
 
   .sm\:heading-flourish:before,
     .sm\:heading-flourish:after {
-    position: relative;
-    width: 70px;
-    height: 33px;
+    display: inline-block;
+    content: "";
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: left top;
   }
 
   .heading-flourish.sm\:heading-flourish-both:before {
-    content: url(./img/flourish-heading-left.svg);
-    right: 7px;
-    top: 5px;
+    background-image: url(./img/flourish-heading-left.svg);
   }
 
   .heading-flourish.sm\:heading-flourish-both:after,
     .heading-flourish.sm\:heading-flourish-after:after {
-    content: url(./img/flourish-heading-right.svg);
-    left: 7px;
-    top: 5px;
+    background-image: url(./img/flourish-heading-right.svg);
   }
 
   /* Text indent */
@@ -54547,22 +54567,20 @@ h4 {
 
   .md\:heading-flourish:before,
     .md\:heading-flourish:after {
-    position: relative;
-    width: 70px;
-    height: 33px;
+    display: inline-block;
+    content: "";
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: left top;
   }
 
   .heading-flourish.md\:heading-flourish-both:before {
-    content: url(./img/flourish-heading-left.svg);
-    right: 7px;
-    top: 5px;
+    background-image: url(./img/flourish-heading-left.svg);
   }
 
   .heading-flourish.md\:heading-flourish-both:after,
     .heading-flourish.md\:heading-flourish-after:after {
-    content: url(./img/flourish-heading-right.svg);
-    left: 7px;
-    top: 5px;
+    background-image: url(./img/flourish-heading-right.svg);
   }
 
   /* Text indent */
@@ -72491,22 +72509,20 @@ h4 {
 
   .lg\:heading-flourish:before,
     .lg\:heading-flourish:after {
-    position: relative;
-    width: 70px;
-    height: 33px;
+    display: inline-block;
+    content: "";
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: left top;
   }
 
   .heading-flourish.lg\:heading-flourish-both:before {
-    content: url(./img/flourish-heading-left.svg);
-    right: 7px;
-    top: 5px;
+    background-image: url(./img/flourish-heading-left.svg);
   }
 
   .heading-flourish.lg\:heading-flourish-both:after,
     .heading-flourish.lg\:heading-flourish-after:after {
-    content: url(./img/flourish-heading-right.svg);
-    left: 7px;
-    top: 5px;
+    background-image: url(./img/flourish-heading-right.svg);
   }
 
   /* Text indent */
@@ -90435,22 +90451,20 @@ h4 {
 
   .xl\:heading-flourish:before,
     .xl\:heading-flourish:after {
-    position: relative;
-    width: 70px;
-    height: 33px;
+    display: inline-block;
+    content: "";
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: left top;
   }
 
   .heading-flourish.xl\:heading-flourish-both:before {
-    content: url(./img/flourish-heading-left.svg);
-    right: 7px;
-    top: 5px;
+    background-image: url(./img/flourish-heading-left.svg);
   }
 
   .heading-flourish.xl\:heading-flourish-both:after,
     .heading-flourish.xl\:heading-flourish-after:after {
-    content: url(./img/flourish-heading-right.svg);
-    left: 7px;
-    top: 5px;
+    background-image: url(./img/flourish-heading-right.svg);
   }
 
   /* Text indent */
