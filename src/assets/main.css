@@ -593,6 +593,18 @@ h4 {
   font-size: 1.25rem;
 }
 
+h5 {
+  font-size: 1.125rem;
+}
+
+h6 {
+  font-size: 1rem;
+}
+
+h7 {
+  font-size: 0.875rem;
+}
+
 .container {
   width: 100%;
 }
@@ -10241,6 +10253,10 @@ h3.heading-flourish:after {
 
 .h-12 {
   height: 3rem;
+}
+
+.h-13 {
+  height: 3.25rem;
 }
 
 .h-16 {
@@ -28225,6 +28241,10 @@ h3.heading-flourish:after {
     height: 3rem;
   }
 
+  .sm\:h-13 {
+    height: 3.25rem;
+  }
+
   .sm\:h-16 {
     height: 4rem;
   }
@@ -46165,6 +46185,10 @@ h3.heading-flourish:after {
 
   .md\:h-12 {
     height: 3rem;
+  }
+
+  .md\:h-13 {
+    height: 3.25rem;
   }
 
   .md\:h-16 {
@@ -64109,6 +64133,10 @@ h3.heading-flourish:after {
     height: 3rem;
   }
 
+  .lg\:h-13 {
+    height: 3.25rem;
+  }
+
   .lg\:h-16 {
     height: 4rem;
   }
@@ -82049,6 +82077,10 @@ h3.heading-flourish:after {
 
   .xl\:h-12 {
     height: 3rem;
+  }
+
+  .xl\:h-13 {
+    height: 3.25rem;
   }
 
   .xl\:h-16 {

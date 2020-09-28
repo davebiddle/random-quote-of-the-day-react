@@ -148,6 +148,18 @@ h3.heading-flourish:after {
   h4 {
     @apply text-xl;
   }
+
+  h5 {
+    @apply text-lg;
+  }
+
+  h6 {
+    @apply text-base;
+  }
+
+  h7 {
+    @apply text-sm;
+  }
 }
 
 /**
