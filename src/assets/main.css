@@ -728,22 +728,26 @@ h7 {
   }
 }
 
-h1.heading-fourish:before,
+/**
+ * Header flourish text decorations
+ */
+
+h1.heading-flourish:before,
 h1.heading-flourish:after {
   width: 70px;
   height: 33px;
   margin-bottom: -0.4rem;
 }
 
-h3.heading-fourish:before,
+h3.heading-flourish:before,
 h3.heading-flourish:after {
   width: 44px;
   height: 21px;
   margin-bottom: -0.2rem;
 }
 
-h1.heading-fourish:before,
-h3.heading-fourish:before {
+h1.heading-flourish:before,
+h3.heading-flourish:before {
   margin-right: 0.4rem;
 }
 
@@ -18824,19 +18828,15 @@ h3.heading-flourish:after {
 .heading-flourish:before,
     .heading-flourish:after {
   display: inline-block;
-  content: "";
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: left top;
 }
 
 .heading-flourish.heading-flourish-both:before {
-  background-image: url(./img/flourish-heading-left.svg);
+  content: url(./img/flourish-heading-left.svg);
 }
 
 .heading-flourish.heading-flourish-both:after,
     .heading-flourish.heading-flourish-after:after {
-  background-image: url(./img/flourish-heading-right.svg);
+  content: url(./img/flourish-heading-right.svg);
 }
 
 /* Text indent */
@@ -36869,19 +36869,15 @@ h3.heading-flourish:after {
   .sm\:heading-flourish:before,
     .sm\:heading-flourish:after {
     display: inline-block;
-    content: "";
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: left top;
   }
 
   .heading-flourish.sm\:heading-flourish-both:before {
-    background-image: url(./img/flourish-heading-left.svg);
+    content: url(./img/flourish-heading-left.svg);
   }
 
   .heading-flourish.sm\:heading-flourish-both:after,
     .heading-flourish.sm\:heading-flourish-after:after {
-    background-image: url(./img/flourish-heading-right.svg);
+    content: url(./img/flourish-heading-right.svg);
   }
 
   /* Text indent */
@@ -54905,19 +54901,15 @@ h3.heading-flourish:after {
   .md\:heading-flourish:before,
     .md\:heading-flourish:after {
     display: inline-block;
-    content: "";
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: left top;
   }
 
   .heading-flourish.md\:heading-flourish-both:before {
-    background-image: url(./img/flourish-heading-left.svg);
+    content: url(./img/flourish-heading-left.svg);
   }
 
   .heading-flourish.md\:heading-flourish-both:after,
     .heading-flourish.md\:heading-flourish-after:after {
-    background-image: url(./img/flourish-heading-right.svg);
+    content: url(./img/flourish-heading-right.svg);
   }
 
   /* Text indent */
@@ -72941,19 +72933,15 @@ h3.heading-flourish:after {
   .lg\:heading-flourish:before,
     .lg\:heading-flourish:after {
     display: inline-block;
-    content: "";
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: left top;
   }
 
   .heading-flourish.lg\:heading-flourish-both:before {
-    background-image: url(./img/flourish-heading-left.svg);
+    content: url(./img/flourish-heading-left.svg);
   }
 
   .heading-flourish.lg\:heading-flourish-both:after,
     .heading-flourish.lg\:heading-flourish-after:after {
-    background-image: url(./img/flourish-heading-right.svg);
+    content: url(./img/flourish-heading-right.svg);
   }
 
   /* Text indent */
@@ -90977,19 +90965,15 @@ h3.heading-flourish:after {
   .xl\:heading-flourish:before,
     .xl\:heading-flourish:after {
     display: inline-block;
-    content: "";
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: left top;
   }
 
   .heading-flourish.xl\:heading-flourish-both:before {
-    background-image: url(./img/flourish-heading-left.svg);
+    content: url(./img/flourish-heading-left.svg);
   }
 
   .heading-flourish.xl\:heading-flourish-both:after,
     .heading-flourish.xl\:heading-flourish-after:after {
-    background-image: url(./img/flourish-heading-right.svg);
+    content: url(./img/flourish-heading-right.svg);
   }
 
   /* Text indent */
