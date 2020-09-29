@@ -786,6 +786,12 @@ h3.heading-flourish:after {
   }
 }
 
+.credits-copyright a {
+  --text-opacity: 1;
+  color: #fd9230;
+  color: rgba(253, 146, 48, var(--text-opacity));
+}
+
 .space-y-0 > :not(template) ~ :not(template) {
   --space-y-reverse: 0;
   margin-top: calc(0px * calc(1 - var(--space-y-reverse)));

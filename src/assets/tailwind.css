@@ -139,6 +139,10 @@ h3.heading-flourish:after {
   }
 }
 
+.credits-copyright a {
+  @apply text-neon-carrot;
+}
+
 @tailwind utilities;
 
 /**
