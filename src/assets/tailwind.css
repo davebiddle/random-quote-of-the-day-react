@@ -209,15 +209,19 @@ h3.heading-flourish:after {
     .heading-flourish:before,
     .heading-flourish:after {
       display: inline-block;
+      content: "";
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: left top;
     }
 
     .heading-flourish.heading-flourish-both:before {
-      content: url(./img/flourish-heading-left.svg);
+      background-image: url(./img/flourish-heading-left.svg);
     }
 
     .heading-flourish.heading-flourish-both:after,
     .heading-flourish.heading-flourish-after:after {
-      content: url(./img/flourish-heading-right.svg);
+      background-image: url(./img/flourish-heading-right.svg);
     }
 
     /* Text indent */
