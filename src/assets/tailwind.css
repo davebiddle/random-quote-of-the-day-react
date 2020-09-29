@@ -80,22 +80,25 @@
   }
 }
 
-h1.heading-fourish:before,
+/**
+ * Header flourish text decorations
+ */
+h1.heading-flourish:before,
 h1.heading-flourish:after {
   width: 70px;
   height: 33px;
   margin-bottom: -0.4rem;
 }
 
-h3.heading-fourish:before,
+h3.heading-flourish:before,
 h3.heading-flourish:after {
   width: 44px;
   height: 21px;
   margin-bottom: -0.2rem;
 }
 
-h1.heading-fourish:before,
-h3.heading-fourish:before {
+h1.heading-flourish:before,
+h3.heading-flourish:before {
   margin-right: 0.4rem;
 }
 
@@ -206,19 +209,15 @@ h3.heading-flourish:after {
     .heading-flourish:before,
     .heading-flourish:after {
       display: inline-block;
-      content: "";
-      background-repeat: no-repeat;
-      background-size: contain;
-      background-position: left top;
     }
 
     .heading-flourish.heading-flourish-both:before {
-      background-image: url(./img/flourish-heading-left.svg);
+      content: url(./img/flourish-heading-left.svg);
     }
 
     .heading-flourish.heading-flourish-both:after,
     .heading-flourish.heading-flourish-after:after {
-      background-image: url(./img/flourish-heading-right.svg);
+      content: url(./img/flourish-heading-right.svg);
     }
 
     /* Text indent */
