@@ -4,7 +4,7 @@ import icon_calendar_blue from "assets/img/icon-calendar-blue.svg";
 function PreviousQuotesBlock() {
   return (
     <div>
-      <section className="bg-faded-jade px-5 pt-4 pb-20">
+      <section className="flourish-footer-bg px-5 pt-4 pb-16">
         <h3 className="heading-flourish heading-flourish-after sm:heading-flourish-both text-white">
           Previous Quotes
         </h3>
@@ -55,8 +55,13 @@ function PreviousQuotesBlock() {
           </li>
         </ul>
       </section>
-      <section className="bg-genoa">
-        <a href="/previous-quotes">See all previous quotes</a>
+      <section className="bg-genoa h-48 flex justify-center items-center">
+        <a
+          className="text-astronaut-blue px-8 py-4 bg-neon-carrot-lighter rounded"
+          href="/previous-quotes"
+        >
+          See all previous quotes
+        </a>
       </section>
     </div>
   );

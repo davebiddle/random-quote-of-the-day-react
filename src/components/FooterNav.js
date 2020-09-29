@@ -1,10 +1,10 @@
 import React from "react";
-import logo_footer from "assets/img/logo-footer-140x86.png";
+import logo_footer from "assets/img/logo-footer.svg";
 
 function FooterNav() {
   return (
-    <div>
-      <nav>
+    <div className="flex flex-col-reverse sm:flex-row px-16 pt-5 pb-6 space-y-3 space-y-reverse bg-astronaut-blue font-serif text-white text-xl">
+      <nav className="footer-nav">
         <ul>
           <li>
             <a href="/">Today's Quote</a>

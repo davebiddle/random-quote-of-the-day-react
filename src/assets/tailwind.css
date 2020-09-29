@@ -21,8 +21,15 @@
   font-style: normal;
 }
 
+/**
+ * Navigation
+ */
 .main-nav li {
   @apply mr-1;
+}
+
+.footer-nav li:hover {
+  @apply text-orange;
 }
 
 .blockquote-footer-li {
@@ -48,6 +55,13 @@
   background-repeat: no-repeat, no-repeat;
   background-position: right, left bottom -50px;
   background-color: #fd9230;
+}
+
+.flourish-footer-bg {
+  background-image: url(./img/flourish-genoa.svg);
+  background-repeat: no-repeat, no-repeat;
+  background-position: left -22px bottom -22px;
+  background-color: #46857d;
 }
 
 @screen sm {
