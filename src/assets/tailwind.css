@@ -28,18 +28,28 @@
   @apply mr-1;
 }
 
-.footer-nav li:hover {
-  @apply text-orange;
+@screen sm {
+  .footer-nav li:hover {
+    @apply text-orange;
+  }
 }
 
+/**
+ * Today's Random Quote blockquote
+ */
 .blockquote-footer-li {
   @apply h-7 flex justify-end items-center;
 }
 
-.blockquote-footer-li:hover {
-  @apply text-orange;
+@screen sm {
+  .blockquote-footer-li:hover {
+    @apply text-orange;
+  }
 }
 
+/**
+ * Header flourish bg
+ */
 .blockquote-footer-li img {
   @apply ml-2;
 }
@@ -141,6 +151,12 @@ h3.heading-flourish:after {
 
 .credits-copyright a {
   @apply text-neon-carrot;
+}
+
+@screen sm {
+  .credits-copyright a:hover {
+    @apply text-faded-jade;
+  }
 }
 
 @tailwind utilities;

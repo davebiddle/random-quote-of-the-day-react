@@ -667,11 +667,17 @@ h7 {
   margin-right: 0.25rem;
 }
 
-.footer-nav li:hover {
-  --text-opacity: 1;
-  color: #fe6625;
-  color: rgba(254, 102, 37, var(--text-opacity));
+@media (min-width: 640px) {
+  .footer-nav li:hover {
+    --text-opacity: 1;
+    color: #fe6625;
+    color: rgba(254, 102, 37, var(--text-opacity));
+  }
 }
+
+/**
+ * Today's Random Quote blockquote
+ */
 
 .blockquote-footer-li {
   height: 1.7rem;
@@ -680,11 +686,17 @@ h7 {
   align-items: center;
 }
 
-.blockquote-footer-li:hover {
-  --text-opacity: 1;
-  color: #fe6625;
-  color: rgba(254, 102, 37, var(--text-opacity));
+@media (min-width: 640px) {
+  .blockquote-footer-li:hover {
+    --text-opacity: 1;
+    color: #fe6625;
+    color: rgba(254, 102, 37, var(--text-opacity));
+  }
 }
+
+/**
+ * Header flourish bg
+ */
 
 .blockquote-footer-li img {
   margin-left: 0.5rem;
@@ -790,6 +802,14 @@ h3.heading-flourish:after {
   --text-opacity: 1;
   color: #fd9230;
   color: rgba(253, 146, 48, var(--text-opacity));
+}
+
+@media (min-width: 640px) {
+  .credits-copyright a:hover {
+    --text-opacity: 1;
+    color: #46857d;
+    color: rgba(70, 133, 125, var(--text-opacity));
+  }
 }
 
 .space-y-0 > :not(template) ~ :not(template) {
