@@ -40,6 +40,9 @@ module.exports = {
       padding: {
         14: "3.5rem",
       },
+      margin: {
+        18: "4.5rem",
+      },
       maxWidth: {
         xxs: "18rem",
       },

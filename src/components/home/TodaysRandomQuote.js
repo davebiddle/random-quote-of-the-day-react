@@ -5,18 +5,18 @@ import icon_blockquote from "assets/img/quotes-icon.png";
 function TodaysRandomQuote() {
   return (
     <div>
-      <header className="flourish-grad-bg text-white sm:text-center pb-10 sm:pb-32">
-        <h3 className="inline-block mx-auto pl-24 sm:pl-0 mb-8 text-1.5xl leading-7 max-w-xxs sm:max-w-none">
-          <img className="icon-calendar" src={icon_calendar} />
-          Thursday 17th September 2020
+      <header className="flourish-grad-bg text-white sm:text-center pb-10 sm:pt-12 sm:pb-32">
+        <h3 className="flex justify-center items-center space-x-3 inline-block mx-auto pl-24 sm:pl-0 mb-8 sm:mb-18 text-1.5xl sm:text-2xl leading-7 max-w-xxs sm:max-w-none">
+          <img src={icon_calendar} />
+          <span>Thursday 17th September 2020</span>
         </h3>
-        <h1 className="heading-flourish heading-flourish-after sm:heading-flourish-both text-4xl pl-6 max-w-xxs sm:max-w-none sm:pl-0">
+        <h1 className="heading-flourish heading-flourish-after sm:heading-flourish-both text-4xl sm:text-5xl pl-6 max-w-xxs sm:max-w-none sm:pl-0">
           Today's Random Quote:
         </h1>
       </header>
       <div className="w-full bg-white">
         <blockquote
-          class="relative bg-quote-texture font-blockquote text-astronaut-blue text-opacity-75 text-3.5xl px-8 pt-8 pb-14"
+          class="relative bg-quote-texture font-blockquote text-astronaut-blue text-opacity-75 text-3.5xl px-8 pt-8 pb-14 sm:w-3/4 sm:mx-auto"
           cite="https://quotepark.com/quotes/1830729-leonardo-da-vinci-the-variety-of-colour-in-objects-cannot-be-discern/"
         >
           <img className="absolute icon-blockquote" src={icon_blockquote} />

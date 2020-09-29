@@ -87,7 +87,14 @@ h1.heading-flourish:before,
 h1.heading-flourish:after {
   width: 70px;
   height: 33px;
-  margin-bottom: -0.4rem;
+  margin-bottom: -0.3rem;
+}
+
+@screen sm {
+  h1.heading-flourish:before,
+  h1.heading-flourish:after {
+    margin-bottom: -0.1rem;
+  }
 }
 
 h3.heading-flourish:before,
@@ -110,13 +117,6 @@ h3.heading-flourish:after {
 /* Todo :: Refactor icons to us flex instead of positioning */
 [class^="icon"] {
   position: relative;
-}
-
-.icon-calendar {
-  width: 27px;
-  height: 29px;
-  top: 43px;
-  left: -39px;
 }
 
 .icon-blockquote {
