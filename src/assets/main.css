@@ -763,17 +763,20 @@ h3.heading-flourish:after {
   margin-left: 0.4rem;
 }
 
-/* Todo :: Refactor icons to us flex instead of positioning */
-
-[class^="icon"] {
-  position: relative;
-}
-
 .icon-blockquote {
   width: 37px;
   height: 29px;
   top: 2rem;
   left: 2.75rem;
+}
+
+@media (min-width: 640px) {
+  .icon-blockquote {
+    width: 87px;
+    height: 69px;
+    top: 4rem;
+    left: 5rem;
+  }
 }
 
 .ext-link-icon {
@@ -788,18 +791,6 @@ h3.heading-flourish:after {
 
 .blockquote-footer-li:hover .ext-link-icon {
   background-image: url(./img/icon-ext-link-hover.svg);
-}
-
-@media (min-width: 640px) {
-  .icon-calendar {
-    top: 30px;
-    left: -39px;
-  }
-
-  .icon-blockquote {
-    width: 87px;
-    height: 69px;
-  }
 }
 
 .credits-copyright a {
@@ -10510,6 +10501,10 @@ h3.heading-flourish:after {
   line-height: 2.5rem;
 }
 
+.leading-18 {
+  line-height: 3.75rem;
+}
+
 .leading-none {
   line-height: 1;
 }
@@ -13810,6 +13805,13 @@ h3.heading-flourish:after {
   left: auto;
 }
 
+.-inset-18 {
+  top: -4.5rem;
+  right: -4.5rem;
+  bottom: -4.5rem;
+  left: -4.5rem;
+}
+
 .inset-y-0 {
   top: 0;
   bottom: 0;
@@ -13828,6 +13830,16 @@ h3.heading-flourish:after {
 .inset-x-auto {
   right: auto;
   left: auto;
+}
+
+.-inset-y-18 {
+  top: -4.5rem;
+  bottom: -4.5rem;
+}
+
+.-inset-x-18 {
+  right: -4.5rem;
+  left: -4.5rem;
 }
 
 .top-0 {
@@ -13860,6 +13872,22 @@ h3.heading-flourish:after {
 
 .left-auto {
   left: auto;
+}
+
+.-top-18 {
+  top: -4.5rem;
+}
+
+.-right-18 {
+  right: -4.5rem;
+}
+
+.-bottom-18 {
+  bottom: -4.5rem;
+}
+
+.-left-18 {
+  left: -4.5rem;
 }
 
 .resize-none {
@@ -13918,6 +13946,10 @@ h3.heading-flourish:after {
   box-shadow: none;
 }
 
+.shadow-blockquote {
+  box-shadow: 8px 8px 16px -1px rgba(0, 0, 0, 0.5);
+}
+
 .hover\:shadow-xs:hover {
   box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.05);
 }
@@ -13958,6 +13990,10 @@ h3.heading-flourish:after {
   box-shadow: none;
 }
 
+.hover\:shadow-blockquote:hover {
+  box-shadow: 8px 8px 16px -1px rgba(0, 0, 0, 0.5);
+}
+
 .focus\:shadow-xs:focus {
   box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.05);
 }
@@ -13996,6 +14032,10 @@ h3.heading-flourish:after {
 
 .focus\:shadow-none:focus {
   box-shadow: none;
+}
+
+.focus\:shadow-blockquote:focus {
+  box-shadow: 8px 8px 16px -1px rgba(0, 0, 0, 0.5);
 }
 
 .fill-current {
@@ -18881,6 +18921,10 @@ h3.heading-flourish:after {
 
 .text-indent-4 {
   text-indent: 4rem;
+}
+
+.text-indent-7 {
+  text-indent: 7.75rem;
 }
 
 /**
@@ -28616,6 +28660,10 @@ h3.heading-flourish:after {
     line-height: 2.5rem;
   }
 
+  .sm\:leading-18 {
+    line-height: 3.75rem;
+  }
+
   .sm\:leading-none {
     line-height: 1;
   }
@@ -31916,6 +31964,13 @@ h3.heading-flourish:after {
     left: auto;
   }
 
+  .sm\:-inset-18 {
+    top: -4.5rem;
+    right: -4.5rem;
+    bottom: -4.5rem;
+    left: -4.5rem;
+  }
+
   .sm\:inset-y-0 {
     top: 0;
     bottom: 0;
@@ -31934,6 +31989,16 @@ h3.heading-flourish:after {
   .sm\:inset-x-auto {
     right: auto;
     left: auto;
+  }
+
+  .sm\:-inset-y-18 {
+    top: -4.5rem;
+    bottom: -4.5rem;
+  }
+
+  .sm\:-inset-x-18 {
+    right: -4.5rem;
+    left: -4.5rem;
   }
 
   .sm\:top-0 {
@@ -31966,6 +32031,22 @@ h3.heading-flourish:after {
 
   .sm\:left-auto {
     left: auto;
+  }
+
+  .sm\:-top-18 {
+    top: -4.5rem;
+  }
+
+  .sm\:-right-18 {
+    right: -4.5rem;
+  }
+
+  .sm\:-bottom-18 {
+    bottom: -4.5rem;
+  }
+
+  .sm\:-left-18 {
+    left: -4.5rem;
   }
 
   .sm\:resize-none {
@@ -32024,6 +32105,10 @@ h3.heading-flourish:after {
     box-shadow: none;
   }
 
+  .sm\:shadow-blockquote {
+    box-shadow: 8px 8px 16px -1px rgba(0, 0, 0, 0.5);
+  }
+
   .sm\:hover\:shadow-xs:hover {
     box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.05);
   }
@@ -32064,6 +32149,10 @@ h3.heading-flourish:after {
     box-shadow: none;
   }
 
+  .sm\:hover\:shadow-blockquote:hover {
+    box-shadow: 8px 8px 16px -1px rgba(0, 0, 0, 0.5);
+  }
+
   .sm\:focus\:shadow-xs:focus {
     box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.05);
   }
@@ -32102,6 +32191,10 @@ h3.heading-flourish:after {
 
   .sm\:focus\:shadow-none:focus {
     box-shadow: none;
+  }
+
+  .sm\:focus\:shadow-blockquote:focus {
+    box-shadow: 8px 8px 16px -1px rgba(0, 0, 0, 0.5);
   }
 
   .sm\:fill-current {
@@ -36956,6 +37049,10 @@ h3.heading-flourish:after {
 
   .sm\:text-indent-4 {
     text-indent: 4rem;
+  }
+
+  .sm\:text-indent-7 {
+    text-indent: 7.75rem;
   }
 }
 
@@ -46682,6 +46779,10 @@ h3.heading-flourish:after {
     line-height: 2.5rem;
   }
 
+  .md\:leading-18 {
+    line-height: 3.75rem;
+  }
+
   .md\:leading-none {
     line-height: 1;
   }
@@ -49982,6 +50083,13 @@ h3.heading-flourish:after {
     left: auto;
   }
 
+  .md\:-inset-18 {
+    top: -4.5rem;
+    right: -4.5rem;
+    bottom: -4.5rem;
+    left: -4.5rem;
+  }
+
   .md\:inset-y-0 {
     top: 0;
     bottom: 0;
@@ -50000,6 +50108,16 @@ h3.heading-flourish:after {
   .md\:inset-x-auto {
     right: auto;
     left: auto;
+  }
+
+  .md\:-inset-y-18 {
+    top: -4.5rem;
+    bottom: -4.5rem;
+  }
+
+  .md\:-inset-x-18 {
+    right: -4.5rem;
+    left: -4.5rem;
   }
 
   .md\:top-0 {
@@ -50032,6 +50150,22 @@ h3.heading-flourish:after {
 
   .md\:left-auto {
     left: auto;
+  }
+
+  .md\:-top-18 {
+    top: -4.5rem;
+  }
+
+  .md\:-right-18 {
+    right: -4.5rem;
+  }
+
+  .md\:-bottom-18 {
+    bottom: -4.5rem;
+  }
+
+  .md\:-left-18 {
+    left: -4.5rem;
   }
 
   .md\:resize-none {
@@ -50090,6 +50224,10 @@ h3.heading-flourish:after {
     box-shadow: none;
   }
 
+  .md\:shadow-blockquote {
+    box-shadow: 8px 8px 16px -1px rgba(0, 0, 0, 0.5);
+  }
+
   .md\:hover\:shadow-xs:hover {
     box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.05);
   }
@@ -50130,6 +50268,10 @@ h3.heading-flourish:after {
     box-shadow: none;
   }
 
+  .md\:hover\:shadow-blockquote:hover {
+    box-shadow: 8px 8px 16px -1px rgba(0, 0, 0, 0.5);
+  }
+
   .md\:focus\:shadow-xs:focus {
     box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.05);
   }
@@ -50168,6 +50310,10 @@ h3.heading-flourish:after {
 
   .md\:focus\:shadow-none:focus {
     box-shadow: none;
+  }
+
+  .md\:focus\:shadow-blockquote:focus {
+    box-shadow: 8px 8px 16px -1px rgba(0, 0, 0, 0.5);
   }
 
   .md\:fill-current {
@@ -55022,6 +55168,10 @@ h3.heading-flourish:after {
 
   .md\:text-indent-4 {
     text-indent: 4rem;
+  }
+
+  .md\:text-indent-7 {
+    text-indent: 7.75rem;
   }
 }
 
@@ -64748,6 +64898,10 @@ h3.heading-flourish:after {
     line-height: 2.5rem;
   }
 
+  .lg\:leading-18 {
+    line-height: 3.75rem;
+  }
+
   .lg\:leading-none {
     line-height: 1;
   }
@@ -68048,6 +68202,13 @@ h3.heading-flourish:after {
     left: auto;
   }
 
+  .lg\:-inset-18 {
+    top: -4.5rem;
+    right: -4.5rem;
+    bottom: -4.5rem;
+    left: -4.5rem;
+  }
+
   .lg\:inset-y-0 {
     top: 0;
     bottom: 0;
@@ -68066,6 +68227,16 @@ h3.heading-flourish:after {
   .lg\:inset-x-auto {
     right: auto;
     left: auto;
+  }
+
+  .lg\:-inset-y-18 {
+    top: -4.5rem;
+    bottom: -4.5rem;
+  }
+
+  .lg\:-inset-x-18 {
+    right: -4.5rem;
+    left: -4.5rem;
   }
 
   .lg\:top-0 {
@@ -68098,6 +68269,22 @@ h3.heading-flourish:after {
 
   .lg\:left-auto {
     left: auto;
+  }
+
+  .lg\:-top-18 {
+    top: -4.5rem;
+  }
+
+  .lg\:-right-18 {
+    right: -4.5rem;
+  }
+
+  .lg\:-bottom-18 {
+    bottom: -4.5rem;
+  }
+
+  .lg\:-left-18 {
+    left: -4.5rem;
   }
 
   .lg\:resize-none {
@@ -68156,6 +68343,10 @@ h3.heading-flourish:after {
     box-shadow: none;
   }
 
+  .lg\:shadow-blockquote {
+    box-shadow: 8px 8px 16px -1px rgba(0, 0, 0, 0.5);
+  }
+
   .lg\:hover\:shadow-xs:hover {
     box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.05);
   }
@@ -68196,6 +68387,10 @@ h3.heading-flourish:after {
     box-shadow: none;
   }
 
+  .lg\:hover\:shadow-blockquote:hover {
+    box-shadow: 8px 8px 16px -1px rgba(0, 0, 0, 0.5);
+  }
+
   .lg\:focus\:shadow-xs:focus {
     box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.05);
   }
@@ -68234,6 +68429,10 @@ h3.heading-flourish:after {
 
   .lg\:focus\:shadow-none:focus {
     box-shadow: none;
+  }
+
+  .lg\:focus\:shadow-blockquote:focus {
+    box-shadow: 8px 8px 16px -1px rgba(0, 0, 0, 0.5);
   }
 
   .lg\:fill-current {
@@ -73088,6 +73287,10 @@ h3.heading-flourish:after {
 
   .lg\:text-indent-4 {
     text-indent: 4rem;
+  }
+
+  .lg\:text-indent-7 {
+    text-indent: 7.75rem;
   }
 }
 
@@ -82814,6 +83017,10 @@ h3.heading-flourish:after {
     line-height: 2.5rem;
   }
 
+  .xl\:leading-18 {
+    line-height: 3.75rem;
+  }
+
   .xl\:leading-none {
     line-height: 1;
   }
@@ -86114,6 +86321,13 @@ h3.heading-flourish:after {
     left: auto;
   }
 
+  .xl\:-inset-18 {
+    top: -4.5rem;
+    right: -4.5rem;
+    bottom: -4.5rem;
+    left: -4.5rem;
+  }
+
   .xl\:inset-y-0 {
     top: 0;
     bottom: 0;
@@ -86132,6 +86346,16 @@ h3.heading-flourish:after {
   .xl\:inset-x-auto {
     right: auto;
     left: auto;
+  }
+
+  .xl\:-inset-y-18 {
+    top: -4.5rem;
+    bottom: -4.5rem;
+  }
+
+  .xl\:-inset-x-18 {
+    right: -4.5rem;
+    left: -4.5rem;
   }
 
   .xl\:top-0 {
@@ -86164,6 +86388,22 @@ h3.heading-flourish:after {
 
   .xl\:left-auto {
     left: auto;
+  }
+
+  .xl\:-top-18 {
+    top: -4.5rem;
+  }
+
+  .xl\:-right-18 {
+    right: -4.5rem;
+  }
+
+  .xl\:-bottom-18 {
+    bottom: -4.5rem;
+  }
+
+  .xl\:-left-18 {
+    left: -4.5rem;
   }
 
   .xl\:resize-none {
@@ -86222,6 +86462,10 @@ h3.heading-flourish:after {
     box-shadow: none;
   }
 
+  .xl\:shadow-blockquote {
+    box-shadow: 8px 8px 16px -1px rgba(0, 0, 0, 0.5);
+  }
+
   .xl\:hover\:shadow-xs:hover {
     box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.05);
   }
@@ -86262,6 +86506,10 @@ h3.heading-flourish:after {
     box-shadow: none;
   }
 
+  .xl\:hover\:shadow-blockquote:hover {
+    box-shadow: 8px 8px 16px -1px rgba(0, 0, 0, 0.5);
+  }
+
   .xl\:focus\:shadow-xs:focus {
     box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.05);
   }
@@ -86300,6 +86548,10 @@ h3.heading-flourish:after {
 
   .xl\:focus\:shadow-none:focus {
     box-shadow: none;
+  }
+
+  .xl\:focus\:shadow-blockquote:focus {
+    box-shadow: 8px 8px 16px -1px rgba(0, 0, 0, 0.5);
   }
 
   .xl\:fill-current {
@@ -91154,5 +91406,9 @@ h3.heading-flourish:after {
 
   .xl\:text-indent-4 {
     text-indent: 4rem;
+  }
+
+  .xl\:text-indent-7 {
+    text-indent: 7.75rem;
   }
 }

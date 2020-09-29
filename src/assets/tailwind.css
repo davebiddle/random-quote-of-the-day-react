@@ -114,16 +114,20 @@ h3.heading-flourish:after {
   margin-left: 0.4rem;
 }
 
-/* Todo :: Refactor icons to us flex instead of positioning */
-[class^="icon"] {
-  position: relative;
-}
-
 .icon-blockquote {
   width: 37px;
   height: 29px;
   top: 2rem;
   left: 2.75rem;
+}
+
+@screen sm {
+  .icon-blockquote {
+    width: 87px;
+    height: 69px;
+    top: 4rem;
+    left: 5rem;
+  }
 }
 
 .ext-link-icon {
@@ -138,18 +142,6 @@ h3.heading-flourish:after {
 
 .blockquote-footer-li:hover .ext-link-icon {
   background-image: url(./img/icon-ext-link-hover.svg);
-}
-
-@screen sm {
-  .icon-calendar {
-    top: 30px;
-    left: -39px;
-  }
-
-  .icon-blockquote {
-    width: 87px;
-    height: 69px;
-  }
 }
 
 .credits-copyright a {
@@ -230,6 +222,9 @@ h3.heading-flourish:after {
     }
     .text-indent-4 {
       text-indent: 4rem;
+    }
+    .text-indent-7 {
+      text-indent: 7.75rem;
     }
   }
 }

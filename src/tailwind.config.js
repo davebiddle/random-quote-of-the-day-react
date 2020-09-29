@@ -33,6 +33,9 @@ module.exports = {
         "3.5xl": ["2rem", "42px"],
         "4xl": ["2.25rem", "47px"],
       },
+      lineHeight: {
+        18: "3.75rem",
+      },
       height: {
         7: "1.7rem",
         13: "3.25rem",
@@ -46,9 +49,15 @@ module.exports = {
       maxWidth: {
         xxs: "18rem",
       },
+      inset: {
+        "-18": "-4.5rem",
+      },
       backgroundImage: (theme) => ({
         "quote-texture": "url('img/old-paper-texture.png')",
       }),
+      boxShadow: {
+        blockquote: "8px 8px 16px -1px rgba(0, 0, 0, 0.5)",
+      },
     },
   },
   variants: {},

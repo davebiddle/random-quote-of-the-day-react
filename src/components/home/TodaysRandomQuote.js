@@ -16,18 +16,20 @@ function TodaysRandomQuote() {
       </header>
       <div className="w-full bg-white">
         <blockquote
-          class="relative bg-quote-texture font-blockquote text-astronaut-blue text-opacity-75 text-3.5xl px-8 pt-8 pb-14 sm:w-3/4 sm:mx-auto"
+          class="relative bg-quote-texture font-blockquote text-astronaut-blue text-opacity-75 text-3.5xl sm:text-5xl sm:leading-18 px-8 sm:px-20 pt-8 sm:pt-20 pb-14 sm:w-3/4 sm:mx-auto sm:-top-18 sm:shadow-blockquote"
           cite="https://quotepark.com/quotes/1830729-leonardo-da-vinci-the-variety-of-colour-in-objects-cannot-be-discern/"
         >
           <img className="absolute icon-blockquote" src={icon_blockquote} />
-          <p className="text-indent-4">
+          <p className="text-indent-4 sm:text-indent-7">
             The variety of colour in objects cannot be discerned at a great
             distance, excepting in those parts which are directly lighted up by
             the solar rays."
           </p>
-          <footer className="mt-8 font-serif text-2xl text-astronaut-blue text-opacity-1 text-right">
-            <p className="h-10">- Leonardo da Vinci</p>
-            <ul className="border-solid border-t-2 border-astronaut-blue border-opacity-25 pt-2 text-m">
+          <footer className="mt-8 font-serif text-astronaut-blue text-opacity-1 text-right">
+            <p className="h-10 text-2xl sm:mb-1 sm:text-3.5xl">
+              - Leonardo da Vinci
+            </p>
+            <ul className="border-solid border-t-2 border-astronaut-blue border-opacity-25 pt-2 text-m sm:text-base">
               <li className="blockquote-footer-li">
                 <a href="https://quotepark.com/quotes/1830729-leonardo-da-vinci-the-variety-of-colour-in-objects-cannot-be-discern/">
                   View this quote on quotepark.com
