@@ -2,8 +2,8 @@ import React from "react";
 
 function CreditsAndCopyright() {
   return (
-    <div className="credits-copyright bg-mako px-5 py-4 leading-7">
-      <p>
+    <div className="credits-copyright bg-mako px-5 py-4 leading-7 sm:pt-8">
+      <p className="w-full sm:text-center">
         Random QOTD is powered by{" "}
         <a
           target="_blank;"
@@ -21,7 +21,7 @@ function CreditsAndCopyright() {
         </a>
         .
       </p>
-      <p>&copy; 2020 Dave Biddle</p>
+      <p className="w-full sm:text-center">&copy; 2020 Dave Biddle</p>
     </div>
   );
 }
