@@ -4,7 +4,7 @@ import icon_calendar_blue from "assets/img/icon-calendar-blue.svg";
 function PreviousQuotesBlock() {
   return (
     <div>
-      <section className="flourish-footer-bg px-5 pt-4 pb-16 sm:px-14 sm:pt-10">
+      <section className="flourish-genoa-bg px-5 pt-4 pb-16 sm:px-14 sm:pt-10">
         <h3 className="heading-flourish heading-flourish-after sm:heading-flourish-both text-white sm:text-4xl sm:text-center sm:mb-10">
           Previous Quotes
         </h3>

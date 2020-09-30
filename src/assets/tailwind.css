@@ -29,6 +29,10 @@
 }
 
 @screen sm {
+  .footer-nav {
+    @apply text-right;
+  }
+
   .footer-nav li:hover {
     @apply text-orange;
   }
@@ -67,11 +71,17 @@
   background-color: #fd9230;
 }
 
-.flourish-footer-bg {
+.flourish-genoa-bg {
   background-image: url(./img/flourish-genoa.svg);
   background-repeat: no-repeat;
   background-position: left -22px bottom -22px;
   background-color: #46857d;
+}
+
+.flourish-astro-bg {
+  background-image: url(./img/flourish-astronaut-blue.svg);
+  background-repeat: no-repeat;
+  background-position: left bottom;
 }
 
 @screen sm {

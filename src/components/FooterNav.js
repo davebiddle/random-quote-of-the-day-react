@@ -3,7 +3,7 @@ import logo_footer from "assets/img/logo-footer.svg";
 
 function FooterNav() {
   return (
-    <div className="flex flex-col-reverse sm:flex-row px-16 pt-5 pb-6 space-y-3 space-y-reverse bg-astronaut-blue text-xl">
+    <div className="flourish-astro-bg flex flex-col-reverse sm:flex-row sm:justify-center px-16 sm:pl-48 pt-5 sm:pt-14 pb-6 sm:pb-18 space-y-3 space-y-reverse sm:space-y-0 sm:space-x-8 bg-astronaut-blue text-xl">
       <nav className="footer-nav">
         <ul>
           <li>

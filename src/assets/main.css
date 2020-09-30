@@ -668,6 +668,10 @@ h7 {
 }
 
 @media (min-width: 640px) {
+  .footer-nav {
+    text-align: right;
+  }
+
   .footer-nav li:hover {
     --text-opacity: 1;
     color: #fe6625;
@@ -715,11 +719,17 @@ h7 {
   background-color: #fd9230;
 }
 
-.flourish-footer-bg {
+.flourish-genoa-bg {
   background-image: url(./img/flourish-genoa.svg);
   background-repeat: no-repeat;
   background-position: left -22px bottom -22px;
   background-color: #46857d;
+}
+
+.flourish-astro-bg {
+  background-image: url(./img/flourish-astronaut-blue.svg);
+  background-repeat: no-repeat;
+  background-position: left bottom;
 }
 
 @media (min-width: 640px) {
@@ -12163,6 +12173,10 @@ h3.heading-flourish:after {
   padding: 4rem;
 }
 
+.p-18 {
+  padding: 4.5rem;
+}
+
 .p-20 {
   padding: 5rem;
 }
@@ -12313,6 +12327,16 @@ h3.heading-flourish:after {
 .px-16 {
   padding-left: 4rem;
   padding-right: 4rem;
+}
+
+.py-18 {
+  padding-top: 4.5rem;
+  padding-bottom: 4.5rem;
+}
+
+.px-18 {
+  padding-left: 4.5rem;
+  padding-right: 4.5rem;
 }
 
 .py-20 {
@@ -12585,6 +12609,22 @@ h3.heading-flourish:after {
 
 .pl-16 {
   padding-left: 4rem;
+}
+
+.pt-18 {
+  padding-top: 4.5rem;
+}
+
+.pr-18 {
+  padding-right: 4.5rem;
+}
+
+.pb-18 {
+  padding-bottom: 4.5rem;
+}
+
+.pl-18 {
+  padding-left: 4.5rem;
 }
 
 .pt-20 {
@@ -30326,6 +30366,10 @@ h3.heading-flourish:after {
     padding: 4rem;
   }
 
+  .sm\:p-18 {
+    padding: 4.5rem;
+  }
+
   .sm\:p-20 {
     padding: 5rem;
   }
@@ -30476,6 +30520,16 @@ h3.heading-flourish:after {
   .sm\:px-16 {
     padding-left: 4rem;
     padding-right: 4rem;
+  }
+
+  .sm\:py-18 {
+    padding-top: 4.5rem;
+    padding-bottom: 4.5rem;
+  }
+
+  .sm\:px-18 {
+    padding-left: 4.5rem;
+    padding-right: 4.5rem;
   }
 
   .sm\:py-20 {
@@ -30748,6 +30802,22 @@ h3.heading-flourish:after {
 
   .sm\:pl-16 {
     padding-left: 4rem;
+  }
+
+  .sm\:pt-18 {
+    padding-top: 4.5rem;
+  }
+
+  .sm\:pr-18 {
+    padding-right: 4.5rem;
+  }
+
+  .sm\:pb-18 {
+    padding-bottom: 4.5rem;
+  }
+
+  .sm\:pl-18 {
+    padding-left: 4.5rem;
   }
 
   .sm\:pt-20 {
@@ -48449,6 +48519,10 @@ h3.heading-flourish:after {
     padding: 4rem;
   }
 
+  .md\:p-18 {
+    padding: 4.5rem;
+  }
+
   .md\:p-20 {
     padding: 5rem;
   }
@@ -48599,6 +48673,16 @@ h3.heading-flourish:after {
   .md\:px-16 {
     padding-left: 4rem;
     padding-right: 4rem;
+  }
+
+  .md\:py-18 {
+    padding-top: 4.5rem;
+    padding-bottom: 4.5rem;
+  }
+
+  .md\:px-18 {
+    padding-left: 4.5rem;
+    padding-right: 4.5rem;
   }
 
   .md\:py-20 {
@@ -48871,6 +48955,22 @@ h3.heading-flourish:after {
 
   .md\:pl-16 {
     padding-left: 4rem;
+  }
+
+  .md\:pt-18 {
+    padding-top: 4.5rem;
+  }
+
+  .md\:pr-18 {
+    padding-right: 4.5rem;
+  }
+
+  .md\:pb-18 {
+    padding-bottom: 4.5rem;
+  }
+
+  .md\:pl-18 {
+    padding-left: 4.5rem;
   }
 
   .md\:pt-20 {
@@ -66572,6 +66672,10 @@ h3.heading-flourish:after {
     padding: 4rem;
   }
 
+  .lg\:p-18 {
+    padding: 4.5rem;
+  }
+
   .lg\:p-20 {
     padding: 5rem;
   }
@@ -66722,6 +66826,16 @@ h3.heading-flourish:after {
   .lg\:px-16 {
     padding-left: 4rem;
     padding-right: 4rem;
+  }
+
+  .lg\:py-18 {
+    padding-top: 4.5rem;
+    padding-bottom: 4.5rem;
+  }
+
+  .lg\:px-18 {
+    padding-left: 4.5rem;
+    padding-right: 4.5rem;
   }
 
   .lg\:py-20 {
@@ -66994,6 +67108,22 @@ h3.heading-flourish:after {
 
   .lg\:pl-16 {
     padding-left: 4rem;
+  }
+
+  .lg\:pt-18 {
+    padding-top: 4.5rem;
+  }
+
+  .lg\:pr-18 {
+    padding-right: 4.5rem;
+  }
+
+  .lg\:pb-18 {
+    padding-bottom: 4.5rem;
+  }
+
+  .lg\:pl-18 {
+    padding-left: 4.5rem;
   }
 
   .lg\:pt-20 {
@@ -84695,6 +84825,10 @@ h3.heading-flourish:after {
     padding: 4rem;
   }
 
+  .xl\:p-18 {
+    padding: 4.5rem;
+  }
+
   .xl\:p-20 {
     padding: 5rem;
   }
@@ -84845,6 +84979,16 @@ h3.heading-flourish:after {
   .xl\:px-16 {
     padding-left: 4rem;
     padding-right: 4rem;
+  }
+
+  .xl\:py-18 {
+    padding-top: 4.5rem;
+    padding-bottom: 4.5rem;
+  }
+
+  .xl\:px-18 {
+    padding-left: 4.5rem;
+    padding-right: 4.5rem;
   }
 
   .xl\:py-20 {
@@ -85117,6 +85261,22 @@ h3.heading-flourish:after {
 
   .xl\:pl-16 {
     padding-left: 4rem;
+  }
+
+  .xl\:pt-18 {
+    padding-top: 4.5rem;
+  }
+
+  .xl\:pr-18 {
+    padding-right: 4.5rem;
+  }
+
+  .xl\:pb-18 {
+    padding-bottom: 4.5rem;
+  }
+
+  .xl\:pl-18 {
+    padding-left: 4.5rem;
   }
 
   .xl\:pt-20 {
