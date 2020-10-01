@@ -49,6 +49,7 @@ module.exports = {
         18: "4.5rem",
       },
       maxWidth: {
+        xxxs: "11rem",
         xxs: "18rem",
       },
       inset: {

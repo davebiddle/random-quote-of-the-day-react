@@ -7,22 +7,24 @@ import icon_ext_link_orange from "assets/img/icon-ext-link-orange.svg";
 function TodaysRandomQuote() {
   return (
     <div>
-      <header className="flourish-grad-bg text-white sm:text-center pb-10 sm:pt-12 sm:pb-32">
-        <h3 className="flex justify-center items-center space-x-3 inline-block mx-auto pl-24 sm:pl-0 mb-8 sm:mb-18 text-1.5xl sm:text-2xl leading-7 max-w-xxs sm:max-w-none">
+      <header className="flourish-grad-bg text-white text-left md:text-center pt-4 pb-10 sm:pt-12 sm:pb-24 md:pb-32">
+        <h3 className="flex justify-center items-center space-x-3 inline-block mx-auto mb-8 xl:mb-18 text-1.5xl sm:text-2xl leading-7">
           <img src={icon_calendar} />
-          <span>Thursday 17th September 2020</span>
+          <span className="max-w-xxxs sm:max-w-none">
+            Thursday 17th September 2020
+          </span>
         </h3>
-        <h1 className="heading-flourish heading-flourish-after sm:heading-flourish-both text-4xl sm:text-5xl pl-6 max-w-xxs sm:max-w-none sm:pl-0">
+        <h1 className="heading-flourish heading-flourish-after md:heading-flourish-both text-4xl sm:text-5xl sm:leading-18 pl-6 sm:pl-20 w-2/3 md:w-full md:pl-0">
           Today's Random Quote:
         </h1>
       </header>
       <div className="w-full bg-white">
         <blockquote
-          class="relative bg-quote-texture font-blockquote text-astronaut-blue text-opacity-75 text-3.5xl sm:text-5xl sm:leading-18 px-8 sm:px-20 pt-8 sm:pt-20 pb-14 sm:w-3/4 sm:mx-auto sm:-top-18 sm:shadow-blockquote"
+          class="relative bg-quote-texture font-blockquote text-astronaut-blue text-opacity-75 text-3.5xl lg:text-5xl lg:leading-18 px-8 lg:px-20 pt-8 lg:pt-12 xl:pt-20 pb-14 sm:w-4/5 lg:w-3/4 sm:mx-auto sm:-top-18 sm:shadow-blockquote"
           cite="https://quotepark.com/quotes/1830729-leonardo-da-vinci-the-variety-of-colour-in-objects-cannot-be-discern/"
         >
           <img className="absolute icon-blockquote" src={icon_blockquote} />
-          <p className="text-indent-4 sm:text-indent-7">
+          <p className="text-indent-4 lg:text-indent-7">
             The variety of colour in objects cannot be discerned at a great
             distance, excepting in those parts which are directly lighted up by
             the solar rays."

@@ -6,10 +6,10 @@ function PreviousQuotesBlock() {
   return (
     <div>
       <section className="flourish-genoa-bg px-5 pt-4 pb-16 sm:px-14 sm:pt-10">
-        <h3 className="heading-flourish heading-flourish-after sm:heading-flourish-both text-white sm:text-4xl sm:text-center sm:mb-10">
+        <h3 className="heading-flourish heading-flourish-after sm:heading-flourish-both text-white sm:text-3xl md:text-4xl sm:text-center sm:mb-10">
           Previous Quotes
         </h3>
-        <ul className="previous-quotes-block-panel mt-3 text-astronaut-blue sm:flex sm:justify-between sm:space-x-8">
+        <ul className="previous-quotes-block-panel mt-3 text-astronaut-blue lg:flex lg:justify-between lg:space-x-8">
           <li>
             <a href="#">
               <h7>
@@ -69,7 +69,7 @@ function PreviousQuotesBlock() {
           </li>
         </ul>
       </section>
-      <section className="bg-genoa h-48 flex justify-center sm:justify-end items-center sm:pr-24">
+      <section className="bg-genoa h-48 flex justify-center lg:justify-end items-center lg:pr-24">
         <a
           className="text-astronaut-blue hover:text-genoa px-8 py-4 bg-neon-carrot-lighter hover:bg-white rounded sm:text-lg"
           href="/previous-quotes"

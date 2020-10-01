@@ -683,10 +683,6 @@ h7 {
  * Header flourish bg
  */
 
-.blockquote-footer-li img {
-  margin-left: 0.5rem;
-}
-
 .flourish-grad-bg {
   background-image: linear-gradient(
       to right,
@@ -728,17 +724,17 @@ h7 {
  */
 
 h1.heading-flourish:before,
+h3.heading-flourish:before {
+  display: none;
+}
+
 h1.heading-flourish:after {
   width: 70px;
   height: 33px;
+  display: inline-block;
   margin-bottom: -0.3rem;
-}
-
-@media (min-width: 640px) {
-  h1.heading-flourish:before,
-  h1.heading-flourish:after {
-    margin-bottom: -0.1rem;
-  }
+  margin-right: -70px;
+  padding-right: 70px;
 }
 
 h3.heading-flourish:before,
@@ -746,15 +742,6 @@ h3.heading-flourish:after {
   width: 44px;
   height: 21px;
   margin-bottom: -0.2rem;
-}
-
-@media (min-width: 640px) {
-  h3.heading-flourish:before,
-  h3.heading-flourish:after {
-    width: 70px;
-    height: 33px;
-    margin-bottom: -0.3rem;
-  }
 }
 
 h1.heading-flourish:before,
@@ -767,19 +754,31 @@ h3.heading-flourish:after {
   margin-left: 0.4rem;
 }
 
-.icon-blockquote {
-  width: 37px;
-  height: 29px;
-  top: 2rem;
-  left: 2.75rem;
+@media (min-width: 640px) {
+  h3.heading-flourish:before {
+    display: inline-block;
+  }
 }
 
-@media (min-width: 640px) {
-  .icon-blockquote {
-    width: 87px;
-    height: 69px;
-    top: 4rem;
-    left: 5rem;
+@media (min-width: 768px) {
+  h1.heading-flourish:before {
+    display: inline-block;
+    width: 70px;
+    height: 33px;
+    margin-left: -70px;
+    padding-left: 70px;
+  }
+
+  h1.heading-flourish:before,
+  h1.heading-flourish:after {
+    margin-bottom: -0.1rem;
+  }
+
+  h3.heading-flourish:before,
+  h3.heading-flourish:after {
+    width: 70px;
+    height: 33px;
+    margin-bottom: -0.3rem;
   }
 }
 
@@ -801,11 +800,36 @@ h3.heading-flourish:after {
  * Today's Random Quote blockquote
  */
 
+.icon-blockquote {
+  width: 37px;
+  height: 29px;
+  top: 2rem;
+  left: 2.75rem;
+}
+
+@media (min-width: 1024px) {
+  .icon-blockquote {
+    width: 87px;
+    height: 69px;
+    left: 5rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .icon-blockquote {
+    top: 4rem;
+  }
+}
+
 .blockquote-footer-li {
   height: 1.7rem;
   display: flex;
   justify-content: flex-end;
   align-items: center;
+}
+
+.blockquote-footer-li img {
+  margin-left: 0.5rem;
 }
 
 .icon-ext-link-blue,
@@ -882,6 +906,7 @@ h3.heading-flourish:after {
   background-image: url(./img/flourish-trans-bg.svg);
   background-repeat: no-repeat;
   background-position: center center;
+  background-size: cover;
 }
 
 .previous-quotes-block-panel .icon-calendar-blue,
@@ -897,33 +922,41 @@ h3.heading-flourish:after {
   display: block;
 }
 
-@media (min-width: 640px) {
+@media (min-width: 768px) {
+  .previous-quotes-block-panel h7 {
+    justify-content: flex-start;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    height: 5rem;
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 1024px) {
   .previous-quotes-block-panel li {
     display: inline-block;
     width: 33.333333%;
     box-shadow: 8px 8px 16px -1px rgba(0, 0, 0, 0.5);
   }
 
-  .previous-quotes-block-panel h7 {
-    justify-content: flex-start;
-    padding-left: 1.5rem;
-    height: 5rem;
-    font-size: 1rem;
-  }
-
   .previous-quotes-block-panel blockquote {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-left: 4rem;
-    padding-right: 4rem;
     height: 11.25rem;
-    font-size: 1.125rem;
   }
 
   .previous-quotes-block-panel footer {
     padding-right: 2.5rem;
     height: 4rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .previous-quotes-block-panel blockquote {
+    padding-left: 4rem;
+    padding-right: 4rem;
+    font-size: 1.125rem;
   }
 }
 
@@ -11913,6 +11946,10 @@ h3.heading-flourish:after {
 
 .max-w-screen-xl {
   max-width: 1280px;
+}
+
+.max-w-xxxs {
+  max-width: 11rem;
 }
 
 .max-w-xxs {
@@ -30108,6 +30145,10 @@ h3.heading-flourish:after {
     max-width: 1280px;
   }
 
+  .sm\:max-w-xxxs {
+    max-width: 11rem;
+  }
+
   .sm\:max-w-xxs {
     max-width: 18rem;
   }
@@ -48259,6 +48300,10 @@ h3.heading-flourish:after {
 
   .md\:max-w-screen-xl {
     max-width: 1280px;
+  }
+
+  .md\:max-w-xxxs {
+    max-width: 11rem;
   }
 
   .md\:max-w-xxs {
@@ -66414,6 +66459,10 @@ h3.heading-flourish:after {
     max-width: 1280px;
   }
 
+  .lg\:max-w-xxxs {
+    max-width: 11rem;
+  }
+
   .lg\:max-w-xxs {
     max-width: 18rem;
   }
@@ -84565,6 +84614,10 @@ h3.heading-flourish:after {
 
   .xl\:max-w-screen-xl {
     max-width: 1280px;
+  }
+
+  .xl\:max-w-xxxs {
+    max-width: 11rem;
   }
 
   .xl\:max-w-xxs {
