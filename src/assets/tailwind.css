@@ -185,7 +185,11 @@ h3.heading-flourish:after {
 }
 
 .previous-quotes-block-panel h7 {
-  @apply flex justify-center items-center h-13;
+  @apply flex justify-center items-center h-13 bg-white;
+}
+
+.previous-quotes-block-panel li:hover h7 {
+  @apply bg-mako text-neon-carrot;
 }
 
 .previous-quotes-block-panel blockquote {
@@ -196,17 +200,36 @@ h3.heading-flourish:after {
   @apply flex justify-end items-center pr-5 h-13;
 }
 
+.previous-quotes-block-panel li:hover {
+  background-image: url(./img/flourish-trans-bg.svg);
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
 @screen sm {
   .previous-quotes-block-panel li {
     @apply inline-block w-1/3 shadow-blockquote;
   }
 
+  .previous-quotes-block-panel .icon-calendar-blue,
+  .previous-quotes-block-panel .icon-calendar-orange {
+    @apply mr-3;
+  }
+
+  .previous-quotes-block-panel li:hover .icon-calendar-blue {
+    @apply hidden;
+  }
+
+  .previous-quotes-block-panel li:hover .icon-calendar-orange {
+    @apply block;
+  }
+
   .previous-quotes-block-panel h7 {
-    @apply justify-start pl-6 h-20;
+    @apply justify-start pl-6 h-20 text-base;
   }
 
   .previous-quotes-block-panel blockquote {
-    @apply flex justify-center items-center px-16 h-42;
+    @apply flex justify-center items-center px-16 h-42 text-lg;
   }
 
   .previous-quotes-block-panel footer {

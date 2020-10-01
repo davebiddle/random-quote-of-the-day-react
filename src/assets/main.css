@@ -846,6 +846,18 @@ h3.heading-flourish:after {
   justify-content: center;
   align-items: center;
   height: 3.25rem;
+  --bg-opacity: 1;
+  background-color: #ffffff;
+  background-color: rgba(255, 255, 255, var(--bg-opacity));
+}
+
+.previous-quotes-block-panel li:hover h7 {
+  --bg-opacity: 1;
+  background-color: #414a4f;
+  background-color: rgba(65, 74, 79, var(--bg-opacity));
+  --text-opacity: 1;
+  color: #fd9230;
+  color: rgba(253, 146, 48, var(--text-opacity));
 }
 
 .previous-quotes-block-panel blockquote {
@@ -869,6 +881,12 @@ h3.heading-flourish:after {
   height: 3.25rem;
 }
 
+.previous-quotes-block-panel li:hover {
+  background-image: url(./img/flourish-trans-bg.svg);
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
 @media (min-width: 640px) {
   .previous-quotes-block-panel li {
     display: inline-block;
@@ -876,10 +894,24 @@ h3.heading-flourish:after {
     box-shadow: 8px 8px 16px -1px rgba(0, 0, 0, 0.5);
   }
 
+  .previous-quotes-block-panel .icon-calendar-blue,
+  .previous-quotes-block-panel .icon-calendar-orange {
+    margin-right: 0.75rem;
+  }
+
+  .previous-quotes-block-panel li:hover .icon-calendar-blue {
+    display: none;
+  }
+
+  .previous-quotes-block-panel li:hover .icon-calendar-orange {
+    display: block;
+  }
+
   .previous-quotes-block-panel h7 {
     justify-content: flex-start;
     padding-left: 1.5rem;
     height: 5rem;
+    font-size: 1rem;
   }
 
   .previous-quotes-block-panel blockquote {
@@ -889,6 +921,7 @@ h3.heading-flourish:after {
     padding-left: 4rem;
     padding-right: 4rem;
     height: 11.25rem;
+    font-size: 1.125rem;
   }
 
   .previous-quotes-block-panel footer {

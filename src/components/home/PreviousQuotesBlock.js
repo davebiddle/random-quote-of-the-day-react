@@ -1,5 +1,6 @@
 import React from "react";
 import icon_calendar_blue from "assets/img/icon-calendar-blue.svg";
+import icon_calendar_orange from "assets/img/icon-calendar-orange.svg";
 
 function PreviousQuotesBlock() {
   return (
@@ -12,7 +13,12 @@ function PreviousQuotesBlock() {
           <li>
             <a href="#">
               <h7>
-                <img className="mr-3" src={icon_calendar_blue} />
+                <span className="icon-calendar-blue">
+                  <img src={icon_calendar_blue} />
+                </span>
+                <span className="hidden icon-calendar-orange">
+                  <img src={icon_calendar_orange} />
+                </span>
                 Wednesday 17th September 2020
               </h7>
               <blockquote>
@@ -27,7 +33,12 @@ function PreviousQuotesBlock() {
           <li>
             <a href="#">
               <h7>
-                <img className="mr-3" src={icon_calendar_blue} />
+                <span className="icon-calendar-blue">
+                  <img src={icon_calendar_blue} />
+                </span>
+                <span className="hidden icon-calendar-orange">
+                  <img src={icon_calendar_orange} />
+                </span>
                 Friday 1st May 2020
               </h7>
               <blockquote>
@@ -42,7 +53,12 @@ function PreviousQuotesBlock() {
           <li>
             <a href="#">
               <h7>
-                <img className="mr-3" src={icon_calendar_blue} />
+                <span className="icon-calendar-blue">
+                  <img src={icon_calendar_blue} />
+                </span>
+                <span className="hidden icon-calendar-orange">
+                  <img src={icon_calendar_orange} />
+                </span>
                 Tuesday 9th July 2020
               </h7>
               <blockquote>
@@ -55,7 +71,7 @@ function PreviousQuotesBlock() {
       </section>
       <section className="bg-genoa h-48 flex justify-center sm:justify-end items-center sm:pr-24">
         <a
-          className="text-astronaut-blue px-8 py-4 bg-neon-carrot-lighter rounded sm:text-lg"
+          className="text-astronaut-blue hover:text-genoa px-8 py-4 bg-neon-carrot-lighter hover:bg-white rounded sm:text-lg"
           href="/previous-quotes"
         >
           See all previous quotes

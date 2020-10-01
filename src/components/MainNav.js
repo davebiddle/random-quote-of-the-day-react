@@ -21,11 +21,11 @@ function MainNav() {
         </a>
         <div className="hidden sm:block">
           <nav className="flex main-nav list-none">
-            <li>
+            <li className="hover:text-neon-carrot">
               <a href="/">Today's Quote</a>
             </li>
             <li>|</li>
-            <li>
+            <li className="hover:text-neon-carrot">
               <a href="/previous-quotes">Previous Quotes</a>
             </li>
           </nav>
