@@ -680,25 +680,6 @@ h7 {
 }
 
 /**
- * Today's Random Quote blockquote
- */
-
-.blockquote-footer-li {
-  height: 1.7rem;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-}
-
-@media (min-width: 640px) {
-  .blockquote-footer-li:hover {
-    --text-opacity: 1;
-    color: #fe6625;
-    color: rgba(254, 102, 37, var(--text-opacity));
-  }
-}
-
-/**
  * Header flourish bg
  */
 
@@ -802,20 +783,6 @@ h3.heading-flourish:after {
   }
 }
 
-.ext-link-icon {
-  cursor: pointer;
-  display: inline-block;
-  width: 18px;
-  height: 18px;
-  background-image: url(./img/icon-ext-link.svg);
-  background-position: left top;
-  margin-left: 0.5rem;
-}
-
-.blockquote-footer-li:hover .ext-link-icon {
-  background-image: url(./img/icon-ext-link-hover.svg);
-}
-
 .credits-copyright a {
   --text-opacity: 1;
   color: #fd9230;
@@ -828,6 +795,36 @@ h3.heading-flourish:after {
     color: #46857d;
     color: rgba(70, 133, 125, var(--text-opacity));
   }
+}
+
+/**
+ * Today's Random Quote blockquote
+ */
+
+.blockquote-footer-li {
+  height: 1.7rem;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.icon-ext-link-blue,
+.icon-ext-link-orange {
+  margin-left: 0.5rem;
+}
+
+.blockquote-footer-li:hover {
+  --text-opacity: 1;
+  color: #fe6625;
+  color: rgba(254, 102, 37, var(--text-opacity));
+}
+
+.blockquote-footer-li:hover .icon-ext-link-blue {
+  display: none;
+}
+
+.blockquote-footer-li:hover .icon-ext-link-orange {
+  display: block;
 }
 
 /**
@@ -887,24 +884,24 @@ h3.heading-flourish:after {
   background-position: center center;
 }
 
+.previous-quotes-block-panel .icon-calendar-blue,
+.previous-quotes-block-panel .icon-calendar-orange {
+  margin-right: 0.75rem;
+}
+
+.previous-quotes-block-panel li:hover .icon-calendar-blue {
+  display: none;
+}
+
+.previous-quotes-block-panel li:hover .icon-calendar-orange {
+  display: block;
+}
+
 @media (min-width: 640px) {
   .previous-quotes-block-panel li {
     display: inline-block;
     width: 33.333333%;
     box-shadow: 8px 8px 16px -1px rgba(0, 0, 0, 0.5);
-  }
-
-  .previous-quotes-block-panel .icon-calendar-blue,
-  .previous-quotes-block-panel .icon-calendar-orange {
-    margin-right: 0.75rem;
-  }
-
-  .previous-quotes-block-panel li:hover .icon-calendar-blue {
-    display: none;
-  }
-
-  .previous-quotes-block-panel li:hover .icon-calendar-orange {
-    display: block;
   }
 
   .previous-quotes-block-panel h7 {

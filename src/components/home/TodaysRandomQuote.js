@@ -1,6 +1,8 @@
 import React from "react";
 import icon_calendar from "assets/img/icon-calendar.svg";
 import icon_blockquote from "assets/img/quotes-icon.png";
+import icon_ext_link_blue from "assets/img/icon-ext-link-blue.svg";
+import icon_ext_link_orange from "assets/img/icon-ext-link-orange.svg";
 
 function TodaysRandomQuote() {
   return (
@@ -34,19 +36,34 @@ function TodaysRandomQuote() {
                 <a href="https://quotepark.com/quotes/1830729-leonardo-da-vinci-the-variety-of-colour-in-objects-cannot-be-discern/">
                   View this quote on quotepark.com
                 </a>
-                <span className="ext-link-icon"></span>
+                <span className="icon-ext-link-blue">
+                  <img src={icon_ext_link_blue} />
+                </span>
+                <span className="hidden icon-ext-link-orange">
+                  <img src={icon_ext_link_orange} />
+                </span>
               </li>
               <li className="blockquote-footer-li">
                 <a href="https://quotepark.com/authors/leonardo-da-vinci/">
                   More quotes from Leonardo da Vinci
                 </a>
-                <span className="ext-link-icon"></span>
+                <span className="icon-ext-link-blue">
+                  <img src={icon_ext_link_blue} />
+                </span>
+                <span className="hidden icon-ext-link-orange">
+                  <img src={icon_ext_link_orange} />
+                </span>
               </li>
               <li className="blockquote-footer-li">
                 <a href="https://en.wikiquote.org/w/index.php?search=Leonardo%20da%20Vinci">
                   Find Leonardo da Vinci on Wikiquote
                 </a>
-                <span className="ext-link-icon"></span>
+                <span className="icon-ext-link-blue">
+                  <img src={icon_ext_link_blue} />
+                </span>
+                <span className="hidden icon-ext-link-orange">
+                  <img src={icon_ext_link_orange} />
+                </span>
               </li>
             </ul>
           </footer>
