@@ -4,8 +4,10 @@ import PreviousQuotesListing from "components/previous-quotes/PreviousQuotesList
 function PreviousQuotes(props) {
   return (
     <div>
-      <div>
-        <h3>Previous Quotes</h3>
+      <div className="bg-faded-jade font-serif px-5 py-4 sm:px-14 sm:pt-10">
+        <h3 className="heading-flourish heading-flourish-after sm:heading-flourish-both text-white sm:text-3xl md:text-4xl sm:text-center sm:mb-10">
+          Previous Quotes
+        </h3>
       </div>
       <PreviousQuotesListing />
     </div>
