@@ -14,7 +14,6 @@ module.exports = {
         "neon-carrot-lighter": "#fff1e5ff",
         "astronaut-blue": "#003d59",
         mako: "#414a4f",
-        white: "#ffffff",
       },
       fontFamily: {
         serif: [
