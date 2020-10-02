@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="37.041664mm"
+   height="22.856457mm"
+   viewBox="0 0 37.041664 22.856457"
+   version="1.1"
+   id="svg7062"
+   inkscape:version="1.0.1 (1.0.1+r73)"
+   sodipodi:docname="logo-footer.svg">
+  <defs
+     id="defs7056">
+    <rect
+       x="0"
+       y="0"
+       width="79.375"
+       height="26.458332"
+       id="rect32-5" />
+    <rect
+       x="0"
+       y="0"
+       width="79.375"
+       height="26.458332"
+       id="rect7033" />
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath1762-6">
+      <rect
+         style="fill:#ff3434;fill-opacity:0.437403;stroke:none;stroke-width:0.122478;stroke-opacity:0.529014"
+         id="rect1764-2"
+         width="109.20767"
+         height="5.7691832"
+         x="72.805107"
+         y="38.461216" />
+    </clipPath>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.4"
+     inkscape:cx="121.43753"
+     inkscape:cy="59.292307"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     inkscape:document-rotation="0"
+     showgrid="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:window-width="1439"
+     inkscape:window-height="958"
+     inkscape:window-x="2610"
+     inkscape:window-y="27"
+     inkscape:window-maximized="0" />
+  <metadata
+     id="metadata7059">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-73.705358,-134.47058)">
+    <g
+       id="g1524"
+       transform="matrix(0.38888887,0,0,0.38888887,73.705358,134.47058)"
+       inkscape:export-filename="/home/dave/Documents/Personal/Projects/Quote of the Day/Design/Exports/logo-footer-140x86.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96">
+      <g
+         id="layer2-1"
+         inkscape:label="bg"
+         transform="translate(-44.979172)">
+        <rect
+           id="rect63-2"
+           width="95.25"
+           height="52.916664"
+           x="44.979172"
+           y="0"
+           style="fill:#184f69;fill-opacity:1;stroke-width:0.289837" />
+      </g>
+      <g
+         inkscape:label="Random text"
+         id="layer1-7"
+         transform="translate(-44.979172)">
+        <text
+           xml:space="preserve"
+           id="text30-0"
+           style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect32-5);fill:#000000;fill-opacity:1;stroke:none;" />
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-weight:normal;font-size:17.0588px;line-height:1.25;font-family:sans-serif;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.426473"
+           x="60.921768"
+           y="15.888885"
+           id="text38-9"
+           transform="scale(0.96621261,1.0349689)"><tspan
+             sodipodi:role="line"
+             id="tspan36-3"
+             x="60.921768"
+             y="15.888885"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'ChunkFive Print';-inkscape-font-specification:'ChunkFive Print';fill:#ffffff;fill-opacity:1;stroke-width:0.426473">Random</tspan></text>
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-weight:normal;font-size:37.7254px;line-height:1.25;font-family:sans-serif;opacity:1;fill:none;fill-opacity:1;stroke:#414a4f;stroke-width:0.943143;stroke-opacity:1"
+           x="72.44236"
+           y="38.672649"
+           id="text1718-6"
+           transform="scale(0.72682622,1.3758447)"
+           mask="none"
+           clip-path="url(#clipPath1762-6)"><tspan
+             sodipodi:role="line"
+             id="tspan1716-0"
+             x="72.44236"
+             y="38.672649"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'ChunkFive Print';-inkscape-font-specification:'ChunkFive Print';fill:none;fill-opacity:1;stroke:#414a4f;stroke-width:0.943143;stroke-opacity:1">QOTD</tspan></text>
+        <ellipse
+           style="display:inline;fill:#ffffff;fill-opacity:1;stroke-width:0.158929"
+           id="path848-6"
+           cx="83.625854"
+           cy="36.463852"
+           rx="3.6741838"
+           ry="9.3736181" />
+        <rect
+           style="fill:#184f69;fill-opacity:1;stroke-width:0.264583"
+           id="rect906-2"
+           width="9.7596912"
+           height="13.087389"
+           x="71.073082"
+           y="4.7427125" />
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-weight:normal;font-size:19.4955px;line-height:1.25;font-family:sans-serif;fill:#fe6625;fill-opacity:1;stroke:none;stroke-width:0.487387"
+           x="71.348869"
+           y="20.836035"
+           id="text7942-7-6"
+           transform="scale(0.98613723,1.0140576)"><tspan
+             sodipodi:role="line"
+             id="tspan7940-6-1"
+             x="71.348869"
+             y="20.836035"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'ChunkFive Print';-inkscape-font-specification:'ChunkFive Print';fill:#fe6625;fill-opacity:1;stroke-width:0.487387">?</tspan></text>
+      </g>
+      <g
+         id="layer4-8"
+         inkscape:label="QOTD text"
+         style="display:inline"
+         transform="translate(-44.979172)">
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-weight:normal;font-size:35.4303px;line-height:1.25;font-family:sans-serif;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.885767"
+           x="67.958977"
+           y="40.842556"
+           id="text38-3-7"
+           transform="scale(0.77390737,1.2921443)"><tspan
+             sodipodi:role="line"
+             id="tspan36-0-9"
+             x="67.958977"
+             y="40.842556"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'ChunkFive Print';-inkscape-font-specification:'ChunkFive Print';fill:#ffffff;fill-opacity:1;stroke-width:0.885767">QOTD</tspan></text>
+      </g>
+      <g
+         id="layer3-2"
+         inkscape:label="quotes"
+         transform="translate(-44.979172)">
+        <g
+           id="text3019-3-0"
+           style="fill:#fe6625"
+           transform="matrix(-0.07038067,0,0,0.1352052,94.136581,-84.577449)">
+          <path
+             id="path3032-6-2"
+             inkscape:connector-curvature="0"
+             d="m 106.84343,997.36017 -6.82061,-11.25398 c 38.64954,-20.46104 57.97431,-39.78715 57.97565,-57.97565 -2.7e-4,-7.72964 -7.27553,-15.34578 -21.82539,-22.84897 -12.95947,-6.82022 -21.9971,-13.6407 -27.11236,-20.46239 -5.11567,-6.82021 -7.67343,-15.68653 -7.67316,-26.5999 -2.2e-4,-14.55026 5.17214,-26.99833 15.5175,-37.34289 10.34428,-10.34415 22.6786,-15.51616 37.00214,-15.5175 15.91459,4.9e-4 28.81611,6.36638 38.70722,19.09805 9.88951,12.73222 14.83466,29.32858 14.83466,49.79097 -3.3e-4,33.64831 -12.73207,62.5221 -38.1961,86.62138 -8.63973,7.9577 -17.10856,14.37989 -25.40727,19.26843 -8.29872,4.88841 -20.63277,10.62909 -37.00214,17.22259 z"
+             style="fill:#fe6625;fill-opacity:1;stroke-width:1.34153"
+             sodipodi:nodetypes="cccccccccccscc" />
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

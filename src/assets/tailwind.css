@@ -1,0 +1,345 @@
+@tailwind base;
+
+@tailwind components;
+
+/**
+ * Main site font.
+ */
+@font-face {
+  font-family: "ChunkFiveRegular";
+  src: url("./fonts/chunkfive-regular-webfont.woff2") format("woff2"),
+    url("./fonts/chunkfive-regular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "ChunkFivePrint";
+  src: url("./fonts/chunk_five_print-webfont.woff2") format("woff2"),
+    url("./fonts/chunk_five_print-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/**
+ * Navigation
+ */
+.main-nav li {
+  @apply mr-1;
+}
+
+@screen sm {
+  .footer-nav {
+    @apply text-right;
+  }
+
+  .footer-nav li:hover {
+    @apply text-orange;
+  }
+}
+
+/**
+ * Header flourish bg
+ */
+
+.flourish-grad-bg {
+  background-image: linear-gradient(
+      to right,
+      rgba(70, 133, 125, 0.76),
+      rgba(70, 133, 125, 1),
+      rgba(70, 133, 125, 0.76)
+    ),
+    url(./img/flourish-jade.svg);
+  background-repeat: no-repeat, no-repeat;
+  background-position: right, left bottom -50px;
+  background-color: #fd9230;
+}
+
+.flourish-genoa-bg {
+  background-image: url(./img/flourish-genoa.svg);
+  background-repeat: no-repeat;
+  background-position: left -22px bottom -22px;
+  background-color: #46857d;
+}
+
+.flourish-astro-bg {
+  background-image: url(./img/flourish-astronaut-blue.svg);
+  background-repeat: no-repeat;
+  background-position: left bottom;
+}
+
+@screen sm {
+  .flourish-grad-bg {
+    background-position: right, left bottom;
+  }
+
+  .flourish-footer-bg {
+    background-position: left -22px bottom -120px;
+  }
+}
+
+/**
+ * Header flourish text decorations
+ */
+h1.heading-flourish:before,
+h3.heading-flourish:before {
+  @apply hidden;
+}
+
+h1.heading-flourish:after {
+  width: 70px;
+  height: 33px;
+  display: inline-block;
+  margin-bottom: -0.3rem;
+  margin-right: -70px;
+  padding-right: 70px;
+}
+
+h3.heading-flourish:before,
+h3.heading-flourish:after {
+  width: 44px;
+  height: 21px;
+  margin-bottom: -0.2rem;
+}
+
+h1.heading-flourish:before,
+h3.heading-flourish:before {
+  margin-right: 0.4rem;
+}
+
+h1.heading-flourish:after,
+h3.heading-flourish:after {
+  margin-left: 0.4rem;
+}
+
+@screen sm {
+  h3.heading-flourish:before {
+    @apply inline-block;
+  }
+}
+
+@screen md {
+  h1.heading-flourish:before {
+    @apply inline-block;
+    width: 70px;
+    height: 33px;
+    margin-left: -70px;
+    padding-left: 70px;
+  }
+
+  h1.heading-flourish:before,
+  h1.heading-flourish:after {
+    margin-bottom: -0.1rem;
+  }
+
+  h3.heading-flourish:before,
+  h3.heading-flourish:after {
+    width: 70px;
+    height: 33px;
+    margin-bottom: -0.3rem;
+  }
+}
+
+.credits-copyright a {
+  @apply text-neon-carrot;
+}
+
+@screen sm {
+  .credits-copyright a:hover {
+    @apply text-faded-jade;
+  }
+}
+
+/**
+ * Today's Random Quote blockquote
+ */
+
+.icon-blockquote {
+  width: 37px;
+  height: 29px;
+  top: 2rem;
+  left: 2.75rem;
+}
+
+@screen lg {
+  .icon-blockquote {
+    width: 87px;
+    height: 69px;
+    left: 5rem;
+  }
+}
+
+@screen xl {
+  .icon-blockquote {
+    top: 4rem;
+  }
+}
+
+.blockquote-footer-li {
+  @apply h-7 flex justify-end items-center;
+}
+
+.blockquote-footer-li img {
+  @apply ml-2;
+}
+
+.icon-ext-link-blue,
+.icon-ext-link-orange {
+  @apply ml-2;
+}
+
+.blockquote-footer-li:hover {
+  @apply text-orange;
+}
+
+.blockquote-footer-li:hover .icon-ext-link-blue {
+  @apply hidden;
+}
+
+.blockquote-footer-li:hover .icon-ext-link-orange {
+  @apply block;
+}
+
+/**
+ * Previous Quotes block
+ */
+.previous-quotes-block-panel li {
+  @apply bg-white mb-4;
+}
+
+.previous-quotes-block-panel h7 {
+  @apply flex justify-center items-center h-13 bg-white;
+}
+
+.previous-quotes-block-panel li:hover h7 {
+  @apply bg-mako text-neon-carrot;
+}
+
+.previous-quotes-block-panel blockquote {
+  @apply bg-neon-carrot bg-opacity-25 px-5 pt-3 pb-5 text-lg font-normal;
+}
+
+.previous-quotes-block-panel footer {
+  @apply flex justify-end items-center pr-5 h-13;
+}
+
+.previous-quotes-block-panel li:hover {
+  background-image: url(./img/flourish-trans-bg.svg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
+.previous-quotes-block-panel .icon-calendar-blue,
+.previous-quotes-block-panel .icon-calendar-orange {
+  @apply mr-3;
+}
+
+.previous-quotes-block-panel li:hover .icon-calendar-blue {
+  @apply hidden;
+}
+
+.previous-quotes-block-panel li:hover .icon-calendar-orange {
+  @apply block;
+}
+
+@screen md {
+  .previous-quotes-block-panel h7 {
+    @apply justify-start px-6 h-20 text-base;
+  }
+}
+
+@screen lg {
+  .previous-quotes-block-panel li {
+    @apply inline-block w-1/3 shadow-blockquote;
+  }
+
+  .previous-quotes-block-panel blockquote {
+    @apply flex justify-center items-center h-42;
+  }
+
+  .previous-quotes-block-panel footer {
+    @apply pr-10 h-16;
+  }
+}
+
+@screen xl {
+  .previous-quotes-block-panel blockquote {
+    @apply px-16 text-lg;
+  }
+}
+
+@tailwind utilities;
+
+/**
+ * Base layer (preflight) customisations
+ */
+
+/* Default heading font sizes */
+@layer base {
+  h1 {
+    @apply text-5xl;
+  }
+
+  h2 {
+    @apply text-3xl;
+  }
+
+  h3 {
+    @apply text-2xl;
+  }
+
+  h4 {
+    @apply text-xl;
+  }
+
+  h5 {
+    @apply text-lg;
+  }
+
+  h6 {
+    @apply text-base;
+  }
+
+  h7 {
+    @apply text-sm;
+  }
+}
+
+/**
+ * Custom Utilities
+ */
+
+@layer utilities {
+  @responsive {
+    /* Text heading flourish decorations */
+    .heading-flourish:before,
+    .heading-flourish:after {
+      display: inline-block;
+      content: "";
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: left top;
+    }
+
+    .heading-flourish.heading-flourish-both:before {
+      background-image: url(./img/flourish-heading-left.svg);
+    }
+
+    .heading-flourish.heading-flourish-both:after,
+    .heading-flourish.heading-flourish-after:after {
+      background-image: url(./img/flourish-heading-right.svg);
+    }
+
+    /* Text indent */
+    .text-indent-0 {
+      text-indent: none;
+    }
+    .text-indent-4 {
+      text-indent: 4rem;
+    }
+    .text-indent-7 {
+      text-indent: 7.75rem;
+    }
+  }
+}
