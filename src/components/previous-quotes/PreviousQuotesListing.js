@@ -73,7 +73,7 @@ function PreviousQuotesListing() {
   };
 
   return (
-    <div className="previous-quotes-listing">
+    <div className="previous-quotes-listing bg-white lg:w-4/5 lg:relative top- lg:m-auto lg:-top-12 lg:shadow-blockquote">
       <header className="px-4 sm:px-8 md:px-10 py-2 md:h-16 text-gray-600 text-sm italic sm:flex sm:justify-between sm:items-center">
         <p className="mb-2 sm:mb-0 md:mt-7">Showing 1-20 of 1023 quotes</p>
         <div>

@@ -53,6 +53,7 @@ module.exports = {
         xxs: "18rem",
       },
       inset: {
+        "-12": "-2.5rem",
         "-18": "-4.5rem",
       },
       backgroundImage: (theme) => ({

@@ -14672,6 +14672,13 @@ h3.heading-flourish:after {
   left: auto;
 }
 
+.-inset-12 {
+  top: -2.5rem;
+  right: -2.5rem;
+  bottom: -2.5rem;
+  left: -2.5rem;
+}
+
 .-inset-18 {
   top: -4.5rem;
   right: -4.5rem;
@@ -14697,6 +14704,16 @@ h3.heading-flourish:after {
 .inset-x-auto {
   right: auto;
   left: auto;
+}
+
+.-inset-y-12 {
+  top: -2.5rem;
+  bottom: -2.5rem;
+}
+
+.-inset-x-12 {
+  right: -2.5rem;
+  left: -2.5rem;
 }
 
 .-inset-y-18 {
@@ -14739,6 +14756,22 @@ h3.heading-flourish:after {
 
 .left-auto {
   left: auto;
+}
+
+.-top-12 {
+  top: -2.5rem;
+}
+
+.-right-12 {
+  right: -2.5rem;
+}
+
+.-bottom-12 {
+  bottom: -2.5rem;
+}
+
+.-left-12 {
+  left: -2.5rem;
 }
 
 .-top-18 {
@@ -33445,6 +33478,13 @@ h3.heading-flourish:after {
     left: auto;
   }
 
+  .sm\:-inset-12 {
+    top: -2.5rem;
+    right: -2.5rem;
+    bottom: -2.5rem;
+    left: -2.5rem;
+  }
+
   .sm\:-inset-18 {
     top: -4.5rem;
     right: -4.5rem;
@@ -33470,6 +33510,16 @@ h3.heading-flourish:after {
   .sm\:inset-x-auto {
     right: auto;
     left: auto;
+  }
+
+  .sm\:-inset-y-12 {
+    top: -2.5rem;
+    bottom: -2.5rem;
+  }
+
+  .sm\:-inset-x-12 {
+    right: -2.5rem;
+    left: -2.5rem;
   }
 
   .sm\:-inset-y-18 {
@@ -33512,6 +33562,22 @@ h3.heading-flourish:after {
 
   .sm\:left-auto {
     left: auto;
+  }
+
+  .sm\:-top-12 {
+    top: -2.5rem;
+  }
+
+  .sm\:-right-12 {
+    right: -2.5rem;
+  }
+
+  .sm\:-bottom-12 {
+    bottom: -2.5rem;
+  }
+
+  .sm\:-left-12 {
+    left: -2.5rem;
   }
 
   .sm\:-top-18 {
@@ -52178,6 +52244,13 @@ h3.heading-flourish:after {
     left: auto;
   }
 
+  .md\:-inset-12 {
+    top: -2.5rem;
+    right: -2.5rem;
+    bottom: -2.5rem;
+    left: -2.5rem;
+  }
+
   .md\:-inset-18 {
     top: -4.5rem;
     right: -4.5rem;
@@ -52203,6 +52276,16 @@ h3.heading-flourish:after {
   .md\:inset-x-auto {
     right: auto;
     left: auto;
+  }
+
+  .md\:-inset-y-12 {
+    top: -2.5rem;
+    bottom: -2.5rem;
+  }
+
+  .md\:-inset-x-12 {
+    right: -2.5rem;
+    left: -2.5rem;
   }
 
   .md\:-inset-y-18 {
@@ -52245,6 +52328,22 @@ h3.heading-flourish:after {
 
   .md\:left-auto {
     left: auto;
+  }
+
+  .md\:-top-12 {
+    top: -2.5rem;
+  }
+
+  .md\:-right-12 {
+    right: -2.5rem;
+  }
+
+  .md\:-bottom-12 {
+    bottom: -2.5rem;
+  }
+
+  .md\:-left-12 {
+    left: -2.5rem;
   }
 
   .md\:-top-18 {
@@ -70911,6 +71010,13 @@ h3.heading-flourish:after {
     left: auto;
   }
 
+  .lg\:-inset-12 {
+    top: -2.5rem;
+    right: -2.5rem;
+    bottom: -2.5rem;
+    left: -2.5rem;
+  }
+
   .lg\:-inset-18 {
     top: -4.5rem;
     right: -4.5rem;
@@ -70936,6 +71042,16 @@ h3.heading-flourish:after {
   .lg\:inset-x-auto {
     right: auto;
     left: auto;
+  }
+
+  .lg\:-inset-y-12 {
+    top: -2.5rem;
+    bottom: -2.5rem;
+  }
+
+  .lg\:-inset-x-12 {
+    right: -2.5rem;
+    left: -2.5rem;
   }
 
   .lg\:-inset-y-18 {
@@ -70978,6 +71094,22 @@ h3.heading-flourish:after {
 
   .lg\:left-auto {
     left: auto;
+  }
+
+  .lg\:-top-12 {
+    top: -2.5rem;
+  }
+
+  .lg\:-right-12 {
+    right: -2.5rem;
+  }
+
+  .lg\:-bottom-12 {
+    bottom: -2.5rem;
+  }
+
+  .lg\:-left-12 {
+    left: -2.5rem;
   }
 
   .lg\:-top-18 {
@@ -89644,6 +89776,13 @@ h3.heading-flourish:after {
     left: auto;
   }
 
+  .xl\:-inset-12 {
+    top: -2.5rem;
+    right: -2.5rem;
+    bottom: -2.5rem;
+    left: -2.5rem;
+  }
+
   .xl\:-inset-18 {
     top: -4.5rem;
     right: -4.5rem;
@@ -89669,6 +89808,16 @@ h3.heading-flourish:after {
   .xl\:inset-x-auto {
     right: auto;
     left: auto;
+  }
+
+  .xl\:-inset-y-12 {
+    top: -2.5rem;
+    bottom: -2.5rem;
+  }
+
+  .xl\:-inset-x-12 {
+    right: -2.5rem;
+    left: -2.5rem;
   }
 
   .xl\:-inset-y-18 {
@@ -89711,6 +89860,22 @@ h3.heading-flourish:after {
 
   .xl\:left-auto {
     left: auto;
+  }
+
+  .xl\:-top-12 {
+    top: -2.5rem;
+  }
+
+  .xl\:-right-12 {
+    right: -2.5rem;
+  }
+
+  .xl\:-bottom-12 {
+    bottom: -2.5rem;
+  }
+
+  .xl\:-left-12 {
+    left: -2.5rem;
   }
 
   .xl\:-top-18 {
