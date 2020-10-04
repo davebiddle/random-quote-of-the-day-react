@@ -270,14 +270,38 @@ h3.heading-flourish:after {
 }
 
 /**
- * Previous Quotes block
+ * Previous Quotes Listing
  */
 .previous-quotes-listing a {
   @apply text-faded-jade;
 }
 
+.previous-quotes-listing a:hover {
+  @apply text-neon-carrot;
+}
+
 .previous-quotes-listing:visited {
   @apply text-neon-carrot;
+}
+
+.previous-quotes-listing thead tr {
+  @apply h-12 border-b-2 border-gray-400;
+}
+
+.previous-quotes-listing thead th {
+  @apply text-left pl-4;
+}
+
+.previous-quotes-listing th:nth-of-type(1) {
+  @apply w-1/5;
+}
+
+.previous-quotes-listing th:nth-of-type(2) {
+  @apply w-1/4;
+}
+
+.previous-quotes-listing td {
+  @apply pl-4 h-12;
 }
 
 /**
@@ -303,7 +327,7 @@ h3.heading-flourish:after {
   @apply bg-gray-300;
 }
 
-.pagination a:hover {
+.pagination a:not(.disabled):not(.active):hover {
   @apply bg-neon-carrot text-white;
 }
 

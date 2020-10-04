@@ -74,8 +74,8 @@ function PreviousQuotesListing() {
 
   return (
     <div className="previous-quotes-listing">
-      <header className="px-4 sm:px-8 py-2 text-gray-600 text-sm italic sm:flex sm:justify-between sm:items-center">
-        <p className="mb-2 sm:mb-0">Showing 1-20 of 1023 quotes</p>
+      <header className="px-4 sm:px-8 md:px-10 py-2 md:h-16 text-gray-600 text-sm italic sm:flex sm:justify-between sm:items-center">
+        <p className="mb-2 sm:mb-0 md:mt-7">Showing 1-20 of 1023 quotes</p>
         <div>
           <label for="select-order">Order by:</label>
           <div className="inline-block relative w-48 ml-4">
@@ -164,7 +164,7 @@ function PreviousQuotesListing() {
           </section>
         </div>
         <div className="hidden md:block">
-          <table>
+          <table className="table-fixed w-full">
             <thead>
               <tr>
                 <th>Date</th>
@@ -173,7 +173,7 @@ function PreviousQuotesListing() {
               </tr>
             </thead>
             <tbody>
-              <tr>
+              <tr className="bg-white odd:bg-gray-300">
                 <td>12th Sept 2020</td>
                 <td>
                   <a
@@ -194,7 +194,7 @@ function PreviousQuotesListing() {
                   </a>
                 </td>
               </tr>
-              <tr>
+              <tr className="bg-white odd:bg-gray-300">
                 <td>23rd Oct 2020</td>
                 <td>
                   <a
@@ -215,7 +215,7 @@ function PreviousQuotesListing() {
                   </a>
                 </td>
               </tr>
-              <tr>
+              <tr className="bg-white odd:bg-gray-300">
                 <td>16th July 2019</td>
                 <td>
                   <a

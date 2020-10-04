@@ -957,7 +957,7 @@ h3.heading-flourish:after {
 }
 
 /**
- * Previous Quotes block
+ * Previous Quotes Listing
  */
 
 .previous-quotes-listing a {
@@ -966,10 +966,42 @@ h3.heading-flourish:after {
   color: rgba(70, 133, 125, var(--text-opacity));
 }
 
+.previous-quotes-listing a:hover {
+  --text-opacity: 1;
+  color: #fd9230;
+  color: rgba(253, 146, 48, var(--text-opacity));
+}
+
 .previous-quotes-listing:visited {
   --text-opacity: 1;
   color: #fd9230;
   color: rgba(253, 146, 48, var(--text-opacity));
+}
+
+.previous-quotes-listing thead tr {
+  height: 3rem;
+  border-bottom-width: 2px;
+  --border-opacity: 1;
+  border-color: #cbd5e0;
+  border-color: rgba(203, 213, 224, var(--border-opacity));
+}
+
+.previous-quotes-listing thead th {
+  text-align: left;
+  padding-left: 1rem;
+}
+
+.previous-quotes-listing th:nth-of-type(1) {
+  width: 20%;
+}
+
+.previous-quotes-listing th:nth-of-type(2) {
+  width: 25%;
+}
+
+.previous-quotes-listing td {
+  padding-left: 1rem;
+  height: 3rem;
 }
 
 /**
@@ -1019,7 +1051,7 @@ h3.heading-flourish:after {
   background-color: rgba(226, 232, 240, var(--bg-opacity));
 }
 
-.pagination a:hover {
+.pagination a:not(.disabled):not(.active):hover {
   --bg-opacity: 1;
   background-color: #fd9230;
   background-color: rgba(253, 146, 48, var(--bg-opacity));
@@ -11348,6 +11380,10 @@ h3.heading-flourish:after {
   margin: 1.5rem;
 }
 
+.m-7 {
+  margin: 1.75rem;
+}
+
 .m-8 {
   margin: 2rem;
 }
@@ -11544,6 +11580,16 @@ h3.heading-flourish:after {
 .mx-6 {
   margin-left: 1.5rem;
   margin-right: 1.5rem;
+}
+
+.my-7 {
+  margin-top: 1.75rem;
+  margin-bottom: 1.75rem;
+}
+
+.mx-7 {
+  margin-left: 1.75rem;
+  margin-right: 1.75rem;
 }
 
 .my-8 {
@@ -11976,6 +12022,22 @@ h3.heading-flourish:after {
 
 .ml-6 {
   margin-left: 1.5rem;
+}
+
+.mt-7 {
+  margin-top: 1.75rem;
+}
+
+.mr-7 {
+  margin-right: 1.75rem;
+}
+
+.mb-7 {
+  margin-bottom: 1.75rem;
+}
+
+.ml-7 {
+  margin-left: 1.75rem;
 }
 
 .mt-8 {
@@ -30091,6 +30153,10 @@ h3.heading-flourish:after {
     margin: 1.5rem;
   }
 
+  .sm\:m-7 {
+    margin: 1.75rem;
+  }
+
   .sm\:m-8 {
     margin: 2rem;
   }
@@ -30287,6 +30353,16 @@ h3.heading-flourish:after {
   .sm\:mx-6 {
     margin-left: 1.5rem;
     margin-right: 1.5rem;
+  }
+
+  .sm\:my-7 {
+    margin-top: 1.75rem;
+    margin-bottom: 1.75rem;
+  }
+
+  .sm\:mx-7 {
+    margin-left: 1.75rem;
+    margin-right: 1.75rem;
   }
 
   .sm\:my-8 {
@@ -30719,6 +30795,22 @@ h3.heading-flourish:after {
 
   .sm\:ml-6 {
     margin-left: 1.5rem;
+  }
+
+  .sm\:mt-7 {
+    margin-top: 1.75rem;
+  }
+
+  .sm\:mr-7 {
+    margin-right: 1.75rem;
+  }
+
+  .sm\:mb-7 {
+    margin-bottom: 1.75rem;
+  }
+
+  .sm\:ml-7 {
+    margin-left: 1.75rem;
   }
 
   .sm\:mt-8 {
@@ -48794,6 +48886,10 @@ h3.heading-flourish:after {
     margin: 1.5rem;
   }
 
+  .md\:m-7 {
+    margin: 1.75rem;
+  }
+
   .md\:m-8 {
     margin: 2rem;
   }
@@ -48990,6 +49086,16 @@ h3.heading-flourish:after {
   .md\:mx-6 {
     margin-left: 1.5rem;
     margin-right: 1.5rem;
+  }
+
+  .md\:my-7 {
+    margin-top: 1.75rem;
+    margin-bottom: 1.75rem;
+  }
+
+  .md\:mx-7 {
+    margin-left: 1.75rem;
+    margin-right: 1.75rem;
   }
 
   .md\:my-8 {
@@ -49422,6 +49528,22 @@ h3.heading-flourish:after {
 
   .md\:ml-6 {
     margin-left: 1.5rem;
+  }
+
+  .md\:mt-7 {
+    margin-top: 1.75rem;
+  }
+
+  .md\:mr-7 {
+    margin-right: 1.75rem;
+  }
+
+  .md\:mb-7 {
+    margin-bottom: 1.75rem;
+  }
+
+  .md\:ml-7 {
+    margin-left: 1.75rem;
   }
 
   .md\:mt-8 {
@@ -67497,6 +67619,10 @@ h3.heading-flourish:after {
     margin: 1.5rem;
   }
 
+  .lg\:m-7 {
+    margin: 1.75rem;
+  }
+
   .lg\:m-8 {
     margin: 2rem;
   }
@@ -67693,6 +67819,16 @@ h3.heading-flourish:after {
   .lg\:mx-6 {
     margin-left: 1.5rem;
     margin-right: 1.5rem;
+  }
+
+  .lg\:my-7 {
+    margin-top: 1.75rem;
+    margin-bottom: 1.75rem;
+  }
+
+  .lg\:mx-7 {
+    margin-left: 1.75rem;
+    margin-right: 1.75rem;
   }
 
   .lg\:my-8 {
@@ -68125,6 +68261,22 @@ h3.heading-flourish:after {
 
   .lg\:ml-6 {
     margin-left: 1.5rem;
+  }
+
+  .lg\:mt-7 {
+    margin-top: 1.75rem;
+  }
+
+  .lg\:mr-7 {
+    margin-right: 1.75rem;
+  }
+
+  .lg\:mb-7 {
+    margin-bottom: 1.75rem;
+  }
+
+  .lg\:ml-7 {
+    margin-left: 1.75rem;
   }
 
   .lg\:mt-8 {
@@ -86200,6 +86352,10 @@ h3.heading-flourish:after {
     margin: 1.5rem;
   }
 
+  .xl\:m-7 {
+    margin: 1.75rem;
+  }
+
   .xl\:m-8 {
     margin: 2rem;
   }
@@ -86396,6 +86552,16 @@ h3.heading-flourish:after {
   .xl\:mx-6 {
     margin-left: 1.5rem;
     margin-right: 1.5rem;
+  }
+
+  .xl\:my-7 {
+    margin-top: 1.75rem;
+    margin-bottom: 1.75rem;
+  }
+
+  .xl\:mx-7 {
+    margin-left: 1.75rem;
+    margin-right: 1.75rem;
   }
 
   .xl\:my-8 {
@@ -86828,6 +86994,22 @@ h3.heading-flourish:after {
 
   .xl\:ml-6 {
     margin-left: 1.5rem;
+  }
+
+  .xl\:mt-7 {
+    margin-top: 1.75rem;
+  }
+
+  .xl\:mr-7 {
+    margin-right: 1.75rem;
+  }
+
+  .xl\:mb-7 {
+    margin-bottom: 1.75rem;
+  }
+
+  .xl\:ml-7 {
+    margin-left: 1.75rem;
   }
 
   .xl\:mt-8 {

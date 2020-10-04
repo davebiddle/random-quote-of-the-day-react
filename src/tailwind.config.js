@@ -45,6 +45,7 @@ module.exports = {
         18: "4.5rem",
       },
       margin: {
+        7: "1.75rem",
         18: "4.5rem",
       },
       maxWidth: {
