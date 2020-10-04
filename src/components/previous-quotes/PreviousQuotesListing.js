@@ -144,7 +144,7 @@ function PreviousQuotesListing() {
             <ul>
               {quotes.map((quote) => {
                 return (
-                  <li key={quote.id}>
+                  <li key={quote.id} className="bg-white odd:bg-gray-300">
                     {" "}
                     {quote.isOpen ? (
                       <PreviousQuoteOpen

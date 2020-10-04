@@ -12,7 +12,7 @@ function PreviousQuoteOpen(props) {
         isOpen ? "" : "hidden"
       } bg-neon-carrot bg-opacity-25 text-gray-600 text-md pb-6`}
     >
-      <div className="flex justify-start items-center h-12 mb-4 ">
+      <div className="flex justify-start items-center h-12 mb-4">
         <div
           className="px-2"
           onClick={() => {
