@@ -48,13 +48,25 @@ function PreviousQuotesListing() {
     },
   ]);
 
-  // Click handler for toggling listing item open/close state.
-  // Sets `isOpen` prop to inverse of current value.
+  /**
+   * Click handler for toggling listing item open/close state.
+   *
+   * @param {Object} quote The quote whose listing item is to be toggled
+   * @return {null}
+   */
   const toggleOpenState = (quote) => {
+    // Create a shallow copy of the `quotes` state prop (using
+    // spread), to work with.
     const updatedQuotes = [...quotes];
-    const index = updatedQuotes.indexOf(quote);
 
+    // Clone the quote to be updated in our shallow copy of the
+    // `quotes` state prop, to avoid working directly on the
+    // state object.
+    const index = updatedQuotes.indexOf(quote);
     updatedQuotes[index] = { ...quote };
+
+    // Set the `isOpen` prop on our cloned quote to the inverse
+    // of it's current value.
     updatedQuotes[index].isOpen = !updatedQuotes[index].isOpen;
 
     setQuotes(updatedQuotes);
@@ -132,17 +144,15 @@ function PreviousQuotesListing() {
             <ul>
               {quotes.map((quote) => {
                 return (
-                  <li>
+                  <li key={quote.id}>
                     {" "}
                     {quote.isOpen ? (
                       <PreviousQuoteOpen
-                        key={quote.id}
                         quote={quote}
                         onClose={toggleOpenState}
                       />
                     ) : (
                       <PreviousQuoteClosed
-                        key={quote.id}
                         quote={quote}
                         onOpen={toggleOpenState}
                       />
@@ -230,13 +240,22 @@ function PreviousQuotesListing() {
           </table>
         </div>
       </section>
-      <section>
-        <ul>
+      <section className="flex justify-center items-center h-20">
+        <ul className="pagination flex justify-center items-center border-2 border-gray-400 rounded h-10">
           <li>
-            <a href="#">&lt;</a>
+            <a className="disabled" href="#">
+              &lt;&lt;
+            </a>
           </li>
           <li>
-            <a href="#">1</a>
+            <a className="disabled" href="#">
+              &lt;
+            </a>
+          </li>
+          <li>
+            <a className="active" href="#">
+              1
+            </a>
           </li>
           <li>
             <a href="#">&hellip;</a>
@@ -255,6 +274,9 @@ function PreviousQuotesListing() {
           </li>
           <li>
             <a href="#">&gt;</a>
+          </li>
+          <li>
+            <a href="#">&gt;&gt;</a>
           </li>
         </ul>
       </section>

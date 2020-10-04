@@ -280,6 +280,33 @@ h3.heading-flourish:after {
   @apply text-neon-carrot;
 }
 
+/**
+ * Previous Quotes Listing Pagination
+ */
+.pagination li {
+  @apply flex justify-center items-center h-full border-l-2 border-gray-400;
+}
+
+.pagination li:first-child {
+  @apply border-l-0;
+}
+
+.pagination li a {
+  @apply flex justify-center items-center px-2 h-full w-full text-gray-600;
+}
+
+.pagination a.active {
+  @apply bg-faded-jade text-white;
+}
+
+.pagination a.disabled {
+  @apply bg-gray-300;
+}
+
+.pagination a:hover {
+  @apply bg-neon-carrot text-white;
+}
+
 @tailwind utilities;
 
 /**

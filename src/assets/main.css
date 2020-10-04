@@ -972,6 +972,62 @@ h3.heading-flourish:after {
   color: rgba(253, 146, 48, var(--text-opacity));
 }
 
+/**
+ * Previous Quotes Listing Pagination
+ */
+
+.pagination li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  border-left-width: 2px;
+  --border-opacity: 1;
+  border-color: #cbd5e0;
+  border-color: rgba(203, 213, 224, var(--border-opacity));
+}
+
+.pagination li:first-child {
+  border-left-width: 0;
+}
+
+.pagination li a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  height: 100%;
+  width: 100%;
+  --text-opacity: 1;
+  color: #718096;
+  color: rgba(113, 128, 150, var(--text-opacity));
+}
+
+.pagination a.active {
+  --bg-opacity: 1;
+  background-color: #46857d;
+  background-color: rgba(70, 133, 125, var(--bg-opacity));
+  --text-opacity: 1;
+  color: #fff;
+  color: rgba(255, 255, 255, var(--text-opacity));
+}
+
+.pagination a.disabled {
+  --bg-opacity: 1;
+  background-color: #e2e8f0;
+  background-color: rgba(226, 232, 240, var(--bg-opacity));
+}
+
+.pagination a:hover {
+  --bg-opacity: 1;
+  background-color: #fd9230;
+  background-color: rgba(253, 146, 48, var(--bg-opacity));
+  --text-opacity: 1;
+  color: #fff;
+  color: rgba(255, 255, 255, var(--text-opacity));
+}
+
 .space-y-0 > :not(template) ~ :not(template) {
   --space-y-reverse: 0;
   margin-top: calc(0px * calc(1 - var(--space-y-reverse)));
