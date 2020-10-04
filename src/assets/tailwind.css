@@ -269,6 +269,17 @@ h3.heading-flourish:after {
   }
 }
 
+/**
+ * Previous Quotes block
+ */
+.previous-quotes-listing a {
+  @apply text-faded-jade;
+}
+
+.previous-quotes-listing:visited {
+  @apply text-neon-carrot;
+}
+
 @tailwind utilities;
 
 /**
@@ -299,10 +310,6 @@ h3.heading-flourish:after {
 
   h6 {
     @apply text-base;
-  }
-
-  h7 {
-    @apply text-sm;
   }
 }
 
