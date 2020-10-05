@@ -73,8 +73,8 @@ function PreviousQuotesListing() {
   };
 
   return (
-    <div className="previous-quotes-listing bg-white lg:w-4/5 lg:relative top- lg:m-auto lg:-top-12 lg:shadow-blockquote">
-      <header className="px-4 sm:px-8 md:px-10 py-2 md:h-16 text-gray-600 text-sm italic sm:flex sm:justify-between sm:items-center">
+    <div className="previous-quotes-listing bg-white lg:w-4/5 lg:relative lg:m-auto lg:-top-12 lg:shadow-blockquote lg:px-8">
+      <header className="px-4 sm:px-8 md:px-10 py-2 md:h-16 lg:h-20 text-gray-600 text-sm italic sm:flex sm:justify-between sm:items-center lg:items-end lg:pl-0 lg:pt-0 lg:pb-4">
         <p className="mb-2 sm:mb-0 md:mt-7">Showing 1-20 of 1023 quotes</p>
         <div>
           <label for="select-order">Order by:</label>
@@ -163,7 +163,7 @@ function PreviousQuotesListing() {
             </ul>
           </section>
         </div>
-        <div className="hidden md:block">
+        <section className="hidden md:block">
           <table className="table-fixed w-full">
             <thead>
               <tr>
@@ -238,7 +238,7 @@ function PreviousQuotesListing() {
               </tr>
             </tbody>
           </table>
-        </div>
+        </section>
       </section>
       <section className="flex justify-center items-center h-20">
         <ul className="pagination flex justify-center items-center border-2 border-gray-400 rounded h-10">
