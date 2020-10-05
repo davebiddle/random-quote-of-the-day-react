@@ -2,7 +2,7 @@ import React from "react";
 
 function PreviousQuoteOpen(props) {
   const { onClose } = props;
-  const { isOpen, date: quoteDate } = props.quote;
+  const { isOpen, date: formattedDate } = props.quote;
   const { name: authorName, link: authorLink } = props.quote.author;
   const { excerpt: quoteExcerpt, link: quoteLink } = props.quote.quote;
 
@@ -52,7 +52,7 @@ function PreviousQuoteOpen(props) {
             </g>
           </svg>
         </div>
-        <div className="ml-16">{quoteDate}</div>
+        <div className="ml-16">{formattedDate}</div>
       </div>
       <div>
         <dl className="px-6">
