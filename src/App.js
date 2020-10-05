@@ -7,12 +7,14 @@ import PreviousQuotes from "pages/PreviousQuotes";
 
 function App() {
   return (
-    <div>
+    <div className="flex flex-col min-h-screen">
       <Header />
-      <Router>
-        <Route exact path="/" component={Home} />
-        <Route path="/previous-quotes" component={PreviousQuotes} />
-      </Router>
+      <main className="flex-grow">
+        <Router>
+          <Route exact path="/" component={Home} />
+          <Route path="/previous-quotes" component={PreviousQuotes} />
+        </Router>
+      </main>
       <Footer />
     </div>
   );
