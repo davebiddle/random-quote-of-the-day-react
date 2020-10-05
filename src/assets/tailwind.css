@@ -269,6 +269,68 @@ h3.heading-flourish:after {
   }
 }
 
+/**
+ * Previous Quotes Listing
+ */
+.previous-quotes-listing a {
+  @apply text-faded-jade;
+}
+
+.previous-quotes-listing a:hover {
+  @apply text-neon-carrot;
+}
+
+.previous-quotes-listing:visited {
+  @apply text-neon-carrot;
+}
+
+.previous-quotes-listing thead tr {
+  @apply h-12 border-b-2 border-gray-400;
+}
+
+.previous-quotes-listing thead th {
+  @apply text-left pl-4;
+}
+
+.previous-quotes-listing th:nth-of-type(1) {
+  @apply w-1/5;
+}
+
+.previous-quotes-listing th:nth-of-type(2) {
+  @apply w-1/4;
+}
+
+.previous-quotes-listing td {
+  @apply pl-4 h-12;
+}
+
+/**
+ * Previous Quotes Listing Pagination
+ */
+.pagination li {
+  @apply flex justify-center items-center h-full border-l-2 border-gray-400;
+}
+
+.pagination li:first-child {
+  @apply border-l-0;
+}
+
+.pagination li a {
+  @apply flex justify-center items-center px-2 h-full w-full text-gray-600;
+}
+
+.pagination a.active {
+  @apply bg-faded-jade text-white;
+}
+
+.pagination a.disabled {
+  @apply bg-gray-300;
+}
+
+.pagination a:not(.disabled):not(.active):hover {
+  @apply bg-neon-carrot text-white;
+}
+
 @tailwind utilities;
 
 /**
@@ -299,10 +361,6 @@ h3.heading-flourish:after {
 
   h6 {
     @apply text-base;
-  }
-
-  h7 {
-    @apply text-sm;
   }
 }
 
