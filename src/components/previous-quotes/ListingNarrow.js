@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import PreviousQuoteOpen from "components/previous-quotes/PreviousQuoteOpen";
 import PreviousQuoteClosed from "components/previous-quotes/PreviousQuoteClosed";
+import QuotesContext from "contexts/QuotesContext";
 
-function ListingNarrow(props) {
-  const { quotes } = props;
+function ListingNarrow() {
+  const { quotes } = useContext(QuotesContext);
 
   return (
     <React.Fragment>
