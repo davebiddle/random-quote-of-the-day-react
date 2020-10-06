@@ -102,7 +102,7 @@ function PreviousQuotesListing() {
         <ListingHeader />
         <section className="border-t-2 border-gray-400">
           <section className="md:hidden">
-            <ListingNarrow quotes={quotes} toggleOpenState={toggleOpenState} />
+            <ListingNarrow quotes={quotes} />
           </section>
           <section className="hidden md:block">
             <ListingWide quotes={quotes} />
