@@ -6,7 +6,7 @@ function PreviousQuoteOpen(props) {
   const { isOpen, date: formattedDate } = quote;
   const { name: authorName, link: authorLink } = quote.author;
   const { excerpt: quoteExcerpt, link: quoteLink } = quote.quote;
-  const { toggleOpenState: onClose } = useContext(QuotesContext);
+  const { dispatch } = useContext(QuotesContext);
 
   return (
     <div
@@ -18,7 +18,10 @@ function PreviousQuoteOpen(props) {
         <div
           className="px-2"
           onClick={() => {
-            onClose(quote);
+            dispatch({
+              type: "quote/toggleOpenState",
+              payload: { quote: quote },
+            });
           }}
         >
           <svg
