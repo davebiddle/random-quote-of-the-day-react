@@ -4,7 +4,7 @@ import QuotesContext from "contexts/QuotesContext";
 function PreviousQuoteClosed(props) {
   const { quote } = props;
   const { isOpen, date: quoteDate } = quote;
-  const { toggleOpenState: onOpen } = useContext(QuotesContext);
+  const { dispatch } = useContext(QuotesContext);
 
   return (
     <div
@@ -15,7 +15,10 @@ function PreviousQuoteClosed(props) {
       <div
         className="px-2"
         onClick={() => {
-          onOpen(quote);
+          dispatch({
+            type: "quote/toggleOpenState",
+            payload: { quote: quote },
+          });
         }}
       >
         <svg
