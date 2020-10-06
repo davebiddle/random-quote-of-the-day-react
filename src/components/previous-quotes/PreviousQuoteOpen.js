@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
+import QuotesContext from "contexts/QuotesContext";
 
 function PreviousQuoteOpen(props) {
-  const { onClose } = props;
-  const { isOpen, date: formattedDate } = props.quote;
-  const { name: authorName, link: authorLink } = props.quote.author;
-  const { excerpt: quoteExcerpt, link: quoteLink } = props.quote.quote;
+  const { quote } = props;
+  const { isOpen, date: formattedDate } = quote;
+  const { name: authorName, link: authorLink } = quote.author;
+  const { excerpt: quoteExcerpt, link: quoteLink } = quote.quote;
+  const { toggleOpenState: onClose } = useContext(QuotesContext);
 
   return (
     <div
@@ -16,7 +18,7 @@ function PreviousQuoteOpen(props) {
         <div
           className="px-2"
           onClick={() => {
-            onClose(props.quote);
+            onClose(quote);
           }}
         >
           <svg

@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useContext } from "react";
+import QuotesContext from "contexts/QuotesContext";
 
-function ListingWide(props) {
-  const { quotes } = props;
+function ListingWide() {
+  const { quotes } = useContext(QuotesContext);
 
   return (
     <table className="table-fixed w-full">

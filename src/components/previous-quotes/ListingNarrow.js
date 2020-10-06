@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import PreviousQuoteOpen from "components/previous-quotes/PreviousQuoteOpen";
 import PreviousQuoteClosed from "components/previous-quotes/PreviousQuoteClosed";
+import QuotesContext from "contexts/QuotesContext";
 
-function ListingNarrow(props) {
-  const { quotes, toggleOpenState } = props;
+function ListingNarrow() {
+  const { quotes } = useContext(QuotesContext);
 
   return (
     <React.Fragment>
@@ -42,9 +43,9 @@ function ListingNarrow(props) {
               <li key={quoteId} className="bg-white odd:bg-gray-300">
                 {" "}
                 {quote.isOpen ? (
-                  <PreviousQuoteOpen quote={quote} onClose={toggleOpenState} />
+                  <PreviousQuoteOpen quote={quote} />
                 ) : (
-                  <PreviousQuoteClosed quote={quote} onOpen={toggleOpenState} />
+                  <PreviousQuoteClosed quote={quote} />
                 )}
               </li>
             );

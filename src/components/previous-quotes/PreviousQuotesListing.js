@@ -3,6 +3,7 @@ import ListingHeader from "components/previous-quotes/ListingHeader";
 import ListingNarrow from "components/previous-quotes/ListingNarrow";
 import ListingWide from "components/previous-quotes/ListingWide";
 import ListingPagination from "components/previous-quotes/ListingPagination";
+import QuotesContext from "contexts/QuotesContext";
 
 function PreviousQuotesListing() {
   const [quotes, setQuotes] = useState([
@@ -51,6 +52,21 @@ function PreviousQuotesListing() {
   ]);
 
   /**
+   * Select handler for setting listing item order by date.
+   *
+   * @param {Object} event The select handler event
+   * @return {null}
+   */
+  const orderBy = (event) => {
+    console.log(event.target.value);
+    const updatedQuotes = [...quotes];
+
+    // Todo : When we fetch PQ's from Backend, we'll need
+    // to make a request to fetch them in the specified order.
+    setQuotes(updatedQuotes.reverse());
+  };
+
+  /**
    * Click handler for toggling listing item open/close state.
    *
    * @param {Object} quote The quote whose listing item is to be toggled
@@ -75,18 +91,26 @@ function PreviousQuotesListing() {
   };
 
   return (
-    <div className="previous-quotes-listing bg-white lg:w-4/5 lg:relative lg:m-auto lg:-top-12 lg:shadow-blockquote lg:px-8">
-      <ListingHeader />
-      <section className="border-t-2 border-gray-400">
-        <section className="md:hidden">
-          <ListingNarrow quotes={quotes} toggleOpenState={toggleOpenState} />
+    <QuotesContext.Provider
+      value={{
+        quotes,
+        orderBy,
+        toggleOpenState,
+      }}
+    >
+      <div className="previous-quotes-listing bg-white lg:w-4/5 lg:relative lg:m-auto lg:-top-12 lg:shadow-blockquote lg:px-8">
+        <ListingHeader />
+        <section className="border-t-2 border-gray-400">
+          <section className="md:hidden">
+            <ListingNarrow quotes={quotes} />
+          </section>
+          <section className="hidden md:block">
+            <ListingWide quotes={quotes} />
+          </section>
         </section>
-        <section className="hidden md:block">
-          <ListingWide quotes={quotes} />
-        </section>
-      </section>
-      <ListingPagination />
-    </div>
+        <ListingPagination />
+      </div>
+    </QuotesContext.Provider>
   );
 }
 
