@@ -3,7 +3,8 @@ import QuotesContext from "contexts/QuotesContext";
 
 function PreviousQuoteClosed(props) {
   const { quote } = props;
-  const { isOpen, date: quoteDate } = quote;
+  const { isOpen = false, formattedDate = "" } = quote;
+
   const { dispatch } = useContext(QuotesContext);
 
   return (
@@ -54,7 +55,7 @@ function PreviousQuoteClosed(props) {
           </g>
         </svg>
       </div>
-      <div className="ml-16">{quoteDate}</div>
+      <div className="ml-16">{formattedDate}</div>
     </div>
   );
 }
