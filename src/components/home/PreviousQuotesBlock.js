@@ -1,36 +1,18 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import icon_calendar_blue from "assets/img/icon-calendar-blue.svg";
 import icon_calendar_orange from "assets/img/icon-calendar-orange.svg";
+import fetchQuotesData from "helpers/fetchQuotesData";
 
 function PreviousQuotesBlock() {
-  const [previousQuotes, setPreviousQuotes] = useState([
-    {
-      id: 5507,
-      dateFormatted: "Wednesday 17th September 2020",
-      quoteContent:
-        '"Science can only arrange ethical propositions logically and furnish the means for the realization of ethical aims..."',
-      authorName: "Albert Einstein",
-      quoteLink:
-        "https://quotepark.com/quotes/1830729-leonardo-da-vinci-the-variety-of-colour-in-objects-cannot-be-discern/",
-    },
-    {
-      id: 5506,
-      dateFormatted: "Friday 1st May 2020",
-      quoteContent:
-        '"Some day some fellow will invent a way of concentrating and storing up sunshine to use instead of this old..."',
-      authorName: "Thomas Edison",
-      quoteLink:
-        "https://quotepark.com/quotes/1830729-leonardo-da-vinci-the-variety-of-colour-in-objects-cannot-be-discern/",
-    },
-    {
-      id: 5505,
-      dateFormatted: "Tuesday 9th July 2020",
-      quoteContent: '"Where id is, there shall ego be."',
-      authorName: "Sigmund Freud",
-      quoteLink:
-        "https://quotepark.com/quotes/1830729-leonardo-da-vinci-the-variety-of-colour-in-objects-cannot-be-discern/",
-    },
-  ]);
+  const [error, setError] = useState(null);
+  const [isLoaded, setIsLoaded] = useState(false);
+  const [previousQuotes, setPreviousQuotes] = useState([]);
+
+  useEffect(() => {
+    fetchQuotesData("api/quotes/previous/3", setIsLoaded, setError, (json) => {
+      setPreviousQuotes(json.data);
+    });
+  }, []);
 
   return (
     <div>
@@ -41,11 +23,11 @@ function PreviousQuotesBlock() {
         <ul className="previous-quotes-block-panel mt-3 text-astronaut-blue lg:flex lg:justify-between lg:space-x-8">
           {previousQuotes.map((quote) => {
             const {
-              id: quoteId,
-              dateFormatted,
-              quoteContent,
-              authorName,
-              quoteLink,
+              id: quoteId = 0,
+              dateFormatted = "Loading...",
+              quoteContent = "Loading...",
+              quoteLink = "Loading...",
+              author: { authorName = "Loading..." } = {},
             } = quote;
 
             return (
