@@ -3,9 +3,12 @@ import QuotesContext from "contexts/QuotesContext";
 
 function PreviousQuoteOpen(props) {
   const { quote } = props;
-  const { isOpen, date: formattedDate } = quote;
-  const { name: authorName, link: authorLink } = quote.author;
-  const { excerpt: quoteExcerpt, link: quoteLink } = quote.quote;
+  const {
+    isOpen = false,
+    formattedDate = "",
+    author: { authorName = "", quoteparkAuthorLink = "" } = {},
+    quote: { excerpt: quoteExcerpt = "", link: quoteLink = "" } = {},
+  } = quote;
   const { dispatch } = useContext(QuotesContext);
 
   return (
@@ -64,7 +67,7 @@ function PreviousQuoteOpen(props) {
           <dt className="font-bold">Author</dt>
           <dd className="mb-2">
             <a
-              href={authorLink}
+              href={quoteparkAuthorLink}
               title={`Find more quotes by ${authorName}`}
               target="_blank;"
             >

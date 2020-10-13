@@ -15,16 +15,19 @@ function ListingWide() {
       </thead>
       <tbody>
         {quotes.map((quote) => {
-          const { id: quoteId, date: formattedDate } = quote;
-          const { name: authorName, link: authorLink } = quote.author;
-          const { excerpt: quoteExcerpt, link: quoteLink } = quote.quote;
+          const {
+            id: quoteId,
+            formattedDate,
+            author: { authorName = "", quoteparkAuthorLink = "" } = {},
+            quote: { excerpt: quoteExcerpt = "", link: quoteLink = "" } = {},
+          } = quote;
 
           return (
             <tr key={quoteId} className="bg-white odd:bg-gray-300">
               <td>{formattedDate}</td>
               <td>
                 <a
-                  href={authorLink}
+                  href={quoteparkAuthorLink}
                   title={`Find more quotes by ${authorName}`}
                   target="_blank;"
                 >

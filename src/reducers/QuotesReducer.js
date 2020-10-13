@@ -35,9 +35,11 @@ const QuotesReducer = (state, action) => {
   const { type, payload } = action;
 
   switch (type) {
+    case "quotes/setQuotesData":
+      return { ...state, quotes: payload.quotes };
     case "quotes/orderBy":
       const { order } = payload;
-      console.log(order);
+      // console.log(order);
       // Todo : When we fetch PQ's from Backend, we'll need
       // to make a request to fetch them in the specified order.
       return { ...state, quotes: [...quotes].reverse() };
