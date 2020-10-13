@@ -15,7 +15,7 @@ function PreviousQuotesListing() {
   useEffect(() => {
     fetchQuotesData("api/quotes", setIsLoaded, setError, (json) => {
       dispatch({
-        type: "quotes/setData",
+        type: "quotes/setQuotesData",
         payload: {
           quotes: json.data,
         },

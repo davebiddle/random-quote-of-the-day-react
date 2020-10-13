@@ -35,10 +35,8 @@ const QuotesReducer = (state, action) => {
   const { type, payload } = action;
 
   switch (type) {
-    case "quotes/setData":
-      const { quotes } = payload;
-
-      return { ...state, quotes: quotes };
+    case "quotes/setQuotesData":
+      return { ...state, quotes: payload.quotes };
     case "quotes/orderBy":
       const { order } = payload;
       // console.log(order);
