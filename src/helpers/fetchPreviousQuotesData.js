@@ -1,0 +1,32 @@
+const fetchPreviousQuotesData = (path, dispatch) => {
+  fetch(`http://random-qotd.localhost/${path}`, {
+    method: "GET",
+    headers: {
+      Authorization:
+        "Bearer $2y$10$oEhfTbo2BDzrQ8HaVgW1Rud7pUmxa1ICIAbyNoC6xgk./0jP3I.yW",
+      Accept: "application/json",
+    },
+  })
+    .then((response) => response.json())
+    .then(
+      (json) => {
+        // call dispatch Reducer action for setting quotes data in context state
+        dispatch({
+          type: "ajax/setQuotesData",
+          payload: {
+            quotes: json.data,
+            meta: json.meta,
+          },
+        });
+      },
+      // The React docs specify handling errors here instead of a catch block:
+      // https://reactjs.org/docs/faq-ajax.html
+      (error) => {
+        dispatch({
+          type: "ajax/setError",
+        });
+      }
+    );
+};
+
+export default fetchPreviousQuotesData;

@@ -1,32 +1,29 @@
-import React, { useState, useReducer, useEffect } from "react";
+import React, { useReducer, useEffect } from "react";
 import ListingHeader from "components/previous-quotes/ListingHeader";
 import ListingNarrow from "components/previous-quotes/ListingNarrow";
 import ListingWide from "components/previous-quotes/ListingWide";
 import ListingPagination from "components/previous-quotes/ListingPagination";
 import QuotesContext from "contexts/QuotesContext";
 import QuotesReducer from "reducers/QuotesReducer";
-import fetchQuotesData from "helpers/fetchQuotesData";
+import fetchPreviousQuotesData from "helpers/fetchPreviousQuotesData";
 
 function PreviousQuotesListing() {
-  const [error, setError] = useState(null);
-  const [isLoaded, setIsLoaded] = useState(false);
-  const [state, dispatch] = useReducer(QuotesReducer, { quotes: [] });
+  const initialState = {
+    quotes: [],
+    ajaxError: null,
+    isLoaded: false,
+    paginationMeta: {},
+  };
+  const [state, dispatch] = useReducer(QuotesReducer, initialState);
 
   useEffect(() => {
-    fetchQuotesData("api/quotes", setIsLoaded, setError, (json) => {
-      dispatch({
-        type: "quotes/setQuotesData",
-        payload: {
-          quotes: json.data,
-        },
-      });
-    });
+    fetchPreviousQuotesData("api/quotes", dispatch);
   }, []);
 
-  const { quotes = [] } = state;
+  const { quotes = [], ajaxError, isLoaded, paginationMeta } = state;
 
-  if (error) {
-    return <div>Error: {error.message}</div>;
+  if (ajaxError) {
+    return <div>Error: {ajaxError.message}</div>;
   } else if (!isLoaded) {
     return <div>Loading...</div>;
   } else {
@@ -35,6 +32,7 @@ function PreviousQuotesListing() {
         value={{
           quotes,
           dispatch,
+          paginationMeta,
         }}
       >
         <div className="previous-quotes-listing bg-white lg:w-4/5 lg:relative lg:m-auto lg:-top-12 lg:shadow-blockquote lg:px-8">

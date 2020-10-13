@@ -32,13 +32,21 @@ const getUpdatedQuotes = (quotes, quote) => {
  */
 const QuotesReducer = (state, action) => {
   const { quotes } = state;
-  const { type, payload } = action;
+  const { type, payload = {} } = action;
 
   switch (type) {
-    case "quotes/setQuotesData":
-      return { ...state, quotes: payload.quotes };
+    case "ajax/setQuotesData":
+      console.log(payload, "payload");
+      return {
+        ...state,
+        quotes: payload.quotes,
+        isLoaded: true,
+        paginationMeta: payload.meta,
+      };
+    case "ajax/setError":
+      return { ...state, ajaxError: true, isLoaded: true };
     case "quotes/orderBy":
-      const { order } = payload;
+      const { order = "desc" } = payload;
       // console.log(order);
       // Todo : When we fetch PQ's from Backend, we'll need
       // to make a request to fetch them in the specified order.

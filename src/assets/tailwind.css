@@ -319,16 +319,20 @@ h3.heading-flourish:after {
   @apply flex justify-center items-center px-2 h-full w-full text-gray-600;
 }
 
-.pagination a.active {
+.pagination li.active a {
   @apply bg-faded-jade text-white;
 }
 
-.pagination a.disabled {
-  @apply bg-gray-300;
+.pagination li.disabled a {
+  @apply bg-gray-300 cursor-default;
 }
 
-.pagination a:not(.disabled):not(.active):hover {
+.pagination li:not(.disabled):not(.active) a:hover {
   @apply bg-neon-carrot text-white;
+}
+
+.pagination li.disabled a:hover {
+  @apply text-gray-600;
 }
 
 @tailwind utilities;
