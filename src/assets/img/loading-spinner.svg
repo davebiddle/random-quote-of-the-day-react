@@ -1,0 +1,23 @@
+<svg width="29.898mm" height="29.898mm" version="1.1" viewBox="0 0 29.898 29.898" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <g transform="translate(-90.884 -133.22)">
+  <g transform="matrix(.26458 0 0 .26458 105.83 148.17)" stroke-linecap="round" stroke-width="15">
+   <path id="a" d="m0 35v14"/>
+   <g stroke="#166f6f">
+    <use transform="rotate(210)" width="100%" height="100%" stroke-opacity=".26" xlink:href="#a"/>
+    <use transform="rotate(240)" width="100%" height="100%" stroke-opacity=".33" xlink:href="#a"/>
+    <use transform="rotate(-90)" width="100%" height="100%" stroke-opacity=".4" xlink:href="#a"/>
+   </g>
+   <use transform="rotate(-60)" width="100%" height="100%" stroke="#186d6d" stroke-opacity=".47" xlink:href="#a"/>
+   <use transform="rotate(-30)" width="100%" height="100%" stroke="#186d6d" stroke-opacity=".54" xlink:href="#a"/>
+   <use width="100%" height="100%" stroke="#176d6d" stroke-opacity=".61" xlink:href="#a"/>
+   <use transform="rotate(30)" width="100%" height="100%" stroke="#176d6d" stroke-opacity=".68" xlink:href="#a"/>
+   <g stroke="#176e6e">
+    <use transform="rotate(60)" width="100%" height="100%" stroke-opacity=".75" xlink:href="#a"/>
+    <use transform="rotate(90)" width="100%" height="100%" stroke-opacity=".82" xlink:href="#a"/>
+    <use transform="rotate(120)" width="100%" height="100%" stroke-opacity=".89" xlink:href="#a"/>
+    <use transform="rotate(150)" width="100%" height="100%" stroke-opacity=".95" xlink:href="#a"/>
+   </g>
+   <use transform="scale(-1)" width="100%" height="100%" fill="#167070" stroke="#167070" xlink:href="#a"/>
+  </g>
+ </g>
+</svg>

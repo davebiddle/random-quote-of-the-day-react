@@ -6,14 +6,16 @@ import ListingPagination from "components/previous-quotes/ListingPagination";
 import QuotesContext from "contexts/QuotesContext";
 import QuotesReducer from "reducers/QuotesReducer";
 import fetchPreviousQuotesData from "helpers/fetchPreviousQuotesData";
+import loading_spinner from "assets/img/loading-spinner.svg";
 
 function PreviousQuotesListing() {
+  const defaultPerPage = process.env.REACT_APP_DEFAULT_PER_PAGE;
   const initialState = {
     quotes: [],
     ajaxError: null,
     isLoaded: false,
     paginationMeta: {},
-    filterQuery: { page: 1, per_page: 10, order: "desc" },
+    filterQuery: { page: 1, per_page: defaultPerPage, order: "desc" },
   };
   const [state, dispatch] = useReducer(QuotesReducer, initialState);
   const { quotes, ajaxError, isLoaded, paginationMeta, filterQuery } = state;
@@ -27,7 +29,14 @@ function PreviousQuotesListing() {
   if (ajaxError) {
     return <div>Error: {ajaxError.message}</div>;
   } else if (!isLoaded) {
-    return <div>Loading...</div>;
+    return (
+      <div className="w-full py-16 flex justify-center items-center font-serif text-faded-jade">
+        <div className="flex flex-col justify-center items-center">
+          <img className="animate-spin h-16 w-16 mb-4" src={loading_spinner} />
+          <h2>Loading...</h2>
+        </div>
+      </div>
+    );
   } else {
     return (
       <QuotesContext.Provider
