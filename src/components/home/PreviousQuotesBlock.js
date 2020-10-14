@@ -7,9 +7,10 @@ function PreviousQuotesBlock() {
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const [previousQuotes, setPreviousQuotes] = useState([]);
+  const apiEndpoint = process.env.REACT_APP_API_ENDPOINT_PREVIOUS_QUOTES_BLOCK;
 
   useEffect(() => {
-    fetchQuotesData("api/quotes/previous/3", setIsLoaded, setError, (json) => {
+    fetchQuotesData(apiEndpoint, setIsLoaded, setError, (json) => {
       setPreviousQuotes(json.data);
     });
   }, []);

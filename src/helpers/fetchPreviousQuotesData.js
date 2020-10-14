@@ -1,13 +1,14 @@
 import queryString from "query-string";
 
 const fetchPreviousQuotesData = (path, filterQuery, dispatch) => {
+  const API_URL = process.env.REACT_APP_API_URL;
+  const API_TOKEN = process.env.REACT_APP_API_TOKEN;
   const query = queryString.stringify(filterQuery);
 
-  fetch(`http://random-qotd.localhost/${path}?${query}`, {
+  fetch(`${API_URL}/${path}?${query}`, {
     method: "GET",
     headers: {
-      Authorization:
-        "Bearer $2y$10$oEhfTbo2BDzrQ8HaVgW1Rud7pUmxa1ICIAbyNoC6xgk./0jP3I.yW",
+      Authorization: `Bearer ${API_TOKEN}`,
       Accept: "application/json",
     },
   })

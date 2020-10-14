@@ -1,9 +1,11 @@
 const fetchQuotesData = (path, setisLoaded, setError, callback) => {
-  fetch(`http://random-qotd.localhost/${path}`, {
+  const API_URL = process.env.REACT_APP_API_URL;
+  const API_TOKEN = process.env.REACT_APP_API_TOKEN;
+
+  fetch(`${API_URL}/${path}`, {
     method: "GET",
     headers: {
-      Authorization:
-        "Bearer $2y$10$oEhfTbo2BDzrQ8HaVgW1Rud7pUmxa1ICIAbyNoC6xgk./0jP3I.yW",
+      Authorization: `Bearer ${API_TOKEN}`,
       Accept: "application/json",
     },
   })

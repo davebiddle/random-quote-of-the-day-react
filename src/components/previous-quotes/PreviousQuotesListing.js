@@ -17,9 +17,11 @@ function PreviousQuotesListing() {
   };
   const [state, dispatch] = useReducer(QuotesReducer, initialState);
   const { quotes, ajaxError, isLoaded, paginationMeta, filterQuery } = state;
+  const apiEndpoint =
+    process.env.REACT_APP_API_ENDPOINT_PREVIOUS_QUOTES_LISTING;
 
   useEffect(() => {
-    fetchPreviousQuotesData("api/quotes", filterQuery, dispatch);
+    fetchPreviousQuotesData(apiEndpoint, filterQuery, dispatch);
   }, []);
 
   if (ajaxError) {
