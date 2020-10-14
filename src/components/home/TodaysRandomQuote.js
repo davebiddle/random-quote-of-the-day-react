@@ -9,21 +9,22 @@ function TodaysRandomQuote() {
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const [todaysQuote, setTodaysQuote] = useState({});
+  const apiEndpoint = process.env.REACT_APP_API_ENDPOINT_TODAYS_QUOTE;
 
   useEffect(() => {
-    fetchQuotesData("api/quotes/latest", setIsLoaded, setError, (json) => {
+    fetchQuotesData(apiEndpoint, setIsLoaded, setError, (json) => {
       setTodaysQuote(json.data);
     });
   }, []);
 
   const {
-    dateFormatted = "Loading...",
-    quoteContent = "Loading...",
-    quoteLink = "Loading...",
+    dateFormatted = "",
+    quoteContent = "",
+    quoteLink = "",
     author: {
-      authorName = "Loading...",
-      quoteparkAuthorLink = "Loading...",
-      wikiquoteAuthorLink = "Loading...",
+      authorName = "",
+      quoteparkAuthorLink = "",
+      wikiquoteAuthorLink = "",
     } = {},
   } = todaysQuote;
 

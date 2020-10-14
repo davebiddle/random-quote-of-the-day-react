@@ -6,12 +6,14 @@ import ReactPaginate from "react-paginate";
 function ListingPagination() {
   const { dispatch, paginationMeta, filterQuery } = useContext(QuotesContext);
   const { last_page: pageCount } = paginationMeta;
+  const apiEndpoint =
+    process.env.REACT_APP_API_ENDPOINT_PREVIOUS_QUOTES_LISTING;
 
   const handlePaginationLinkClick = (data) => {
     const { selected: page } = data;
     const params = { ...filterQuery, page: page + 1 };
 
-    fetchPreviousQuotesData(`api/quotes`, params, dispatch);
+    fetchPreviousQuotesData(apiEndpoint, params, dispatch);
   };
 
   return (
