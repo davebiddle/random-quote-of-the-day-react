@@ -1036,7 +1036,7 @@ h3.heading-flourish:after {
   color: rgba(113, 128, 150, var(--text-opacity));
 }
 
-.pagination a.active {
+.pagination li.active a {
   --bg-opacity: 1;
   background-color: #46857d;
   background-color: rgba(70, 133, 125, var(--bg-opacity));
@@ -1045,19 +1045,26 @@ h3.heading-flourish:after {
   color: rgba(255, 255, 255, var(--text-opacity));
 }
 
-.pagination a.disabled {
+.pagination li.disabled a {
   --bg-opacity: 1;
   background-color: #e2e8f0;
   background-color: rgba(226, 232, 240, var(--bg-opacity));
+  cursor: default;
 }
 
-.pagination a:not(.disabled):not(.active):hover {
+.pagination li:not(.disabled):not(.active) a:hover {
   --bg-opacity: 1;
   background-color: #fd9230;
   background-color: rgba(253, 146, 48, var(--bg-opacity));
   --text-opacity: 1;
   color: #fff;
   color: rgba(255, 255, 255, var(--text-opacity));
+}
+
+.pagination li.disabled a:hover {
+  --text-opacity: 1;
+  color: #718096;
+  color: rgba(113, 128, 150, var(--text-opacity));
 }
 
 .space-y-0 > :not(template) ~ :not(template) {
