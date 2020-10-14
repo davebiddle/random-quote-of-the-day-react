@@ -36,21 +36,17 @@ const QuotesReducer = (state, action) => {
 
   switch (type) {
     case "ajax/setQuotesData":
-      console.log(payload, "payload");
+      const { quotes: newQuotes, paginationMeta, filterQuery } = payload;
+
       return {
         ...state,
-        quotes: payload.quotes,
+        quotes: newQuotes,
         isLoaded: true,
-        paginationMeta: payload.meta,
+        paginationMeta: paginationMeta,
+        filterQuery: filterQuery,
       };
     case "ajax/setError":
       return { ...state, ajaxError: true, isLoaded: true };
-    case "quotes/orderBy":
-      const { order = "desc" } = payload;
-      // console.log(order);
-      // Todo : When we fetch PQ's from Backend, we'll need
-      // to make a request to fetch them in the specified order.
-      return { ...state, quotes: [...quotes].reverse() };
     case "quote/toggleOpenState":
       const { quote } = payload;
 

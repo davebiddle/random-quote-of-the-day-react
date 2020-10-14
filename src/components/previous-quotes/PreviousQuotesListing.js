@@ -13,14 +13,14 @@ function PreviousQuotesListing() {
     ajaxError: null,
     isLoaded: false,
     paginationMeta: {},
+    filterQuery: { page: 1, per_page: 10, order: "desc" },
   };
   const [state, dispatch] = useReducer(QuotesReducer, initialState);
+  const { quotes, ajaxError, isLoaded, paginationMeta, filterQuery } = state;
 
   useEffect(() => {
-    fetchPreviousQuotesData("api/quotes", dispatch);
+    fetchPreviousQuotesData("api/quotes", filterQuery, dispatch);
   }, []);
-
-  const { quotes = [], ajaxError, isLoaded, paginationMeta } = state;
 
   if (ajaxError) {
     return <div>Error: {ajaxError.message}</div>;
@@ -33,6 +33,7 @@ function PreviousQuotesListing() {
           quotes,
           dispatch,
           paginationMeta,
+          filterQuery,
         }}
       >
         <div className="previous-quotes-listing bg-white lg:w-4/5 lg:relative lg:m-auto lg:-top-12 lg:shadow-blockquote lg:px-8">

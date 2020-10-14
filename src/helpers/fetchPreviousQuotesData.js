@@ -1,5 +1,9 @@
-const fetchPreviousQuotesData = (path, dispatch) => {
-  fetch(`http://random-qotd.localhost/${path}`, {
+import queryString from "query-string";
+
+const fetchPreviousQuotesData = (path, filterQuery, dispatch) => {
+  const query = queryString.stringify(filterQuery);
+
+  fetch(`http://random-qotd.localhost/${path}?${query}`, {
     method: "GET",
     headers: {
       Authorization:
@@ -15,7 +19,8 @@ const fetchPreviousQuotesData = (path, dispatch) => {
           type: "ajax/setQuotesData",
           payload: {
             quotes: json.data,
-            meta: json.meta,
+            paginationMeta: json.meta,
+            filterQuery: filterQuery,
           },
         });
       },
