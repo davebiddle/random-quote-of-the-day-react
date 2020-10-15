@@ -4,6 +4,7 @@ import icon_blockquote from "assets/img/quotes-icon.png";
 import icon_ext_link_blue from "assets/img/icon-ext-link-blue.svg";
 import icon_ext_link_orange from "assets/img/icon-ext-link-orange.svg";
 import fetchQuotesData from "helpers/fetchQuotesData";
+import AjaxLoadingSpinner from "components/AjaxLoadingSpinner";
 
 function TodaysRandomQuote() {
   const [error, setError] = useState(null);
@@ -31,7 +32,7 @@ function TodaysRandomQuote() {
   if (error) {
     return <div>Error: {error.message}</div>;
   } else if (!isLoaded) {
-    return <div>Loading...</div>;
+    return <AjaxLoadingSpinner />;
   } else {
     return (
       <div>
