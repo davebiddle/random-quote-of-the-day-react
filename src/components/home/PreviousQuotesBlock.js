@@ -2,7 +2,8 @@ import React, { useState, useEffect } from "react";
 import icon_calendar_blue from "assets/img/icon-calendar-blue.svg";
 import icon_calendar_orange from "assets/img/icon-calendar-orange.svg";
 import fetchQuotesData from "helpers/fetchQuotesData";
-import AjaxLoadingSpinner from "components/AjaxLoadingSpinner";
+import AjaxLoadingSpinner from "components/ajax/AjaxLoadingSpinner";
+import AjaxError from "components/ajax/AjaxError";
 
 function PreviousQuotesBlock() {
   const [error, setError] = useState(null);
@@ -17,7 +18,7 @@ function PreviousQuotesBlock() {
   }, []);
 
   if (error) {
-    return <div>Error: {error.message}</div>;
+    return <AjaxError ajaxError={error} />;
   } else if (!isLoaded) {
     return <AjaxLoadingSpinner />;
   } else {

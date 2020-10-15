@@ -30,6 +30,9 @@ const fetchPreviousQuotesData = (path, filterQuery, dispatch) => {
       (error) => {
         dispatch({
           type: "ajax/setError",
+          payload: {
+            ajaxError: error,
+          },
         });
       }
     );
