@@ -29,9 +29,9 @@ function PreviousQuotesBlock() {
             Previous Quotes
           </h3>
           <ul className="previous-quotes-block-panel mt-3 text-astronaut-blue lg:flex lg:justify-between lg:space-x-8">
-            {previousQuotes.map((quote) => {
+            {previousQuotes.map((quote, index) => {
               const {
-                id: quoteId = 0,
+                id: quoteId = index, // index will only be used on first page load, prior to AJAX response
                 dateFormatted = "",
                 quoteContent = "",
                 quoteLink = "",
@@ -41,15 +41,15 @@ function PreviousQuotesBlock() {
               return (
                 <li key={quoteId}>
                   <a target="_blank;" href={quoteLink}>
-                    <h7>
+                    <h6>
                       <span className="icon-calendar-blue">
                         <img src={icon_calendar_blue} />
                       </span>
-                      <span className="hidden icon-calendar-orange">
+                      <span className="icon-calendar-orange">
                         <img src={icon_calendar_orange} />
                       </span>
                       {dateFormatted}
-                    </h7>
+                    </h6>
                     <blockquote>
                       <p>{quoteContent}</p>
                     </blockquote>
