@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import logo_footer from "assets/img/logo-footer.svg";
 
 function FooterNav() {
@@ -7,20 +8,17 @@ function FooterNav() {
       <nav className="footer-nav">
         <ul>
           <li>
-            <a href="/">Today's Quote</a>
+            <Link to="/">Today's Quote</Link>
           </li>
           <li>
-            <a href="/previous-quotes">Previous Quotes</a>
-          </li>
-          <li>
-            <a href="/about">About Random QOTD</a>
+            <Link to="/previous-quotes">Previous Quotes</Link>
           </li>
         </ul>
       </nav>
       <div>
-        <a href="/">
+        <Link to="/">
           <img src={logo_footer} alt="Logo" />
-        </a>
+        </Link>
       </div>
     </div>
   );

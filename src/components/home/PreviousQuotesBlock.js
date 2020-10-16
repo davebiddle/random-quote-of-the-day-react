@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import icon_calendar_blue from "assets/img/icon-calendar-blue.svg";
 import icon_calendar_orange from "assets/img/icon-calendar-orange.svg";
 import fetchQuotesData from "helpers/fetchQuotesData";
@@ -61,12 +62,12 @@ function PreviousQuotesBlock() {
           </ul>
         </section>
         <section className="bg-genoa h-48 flex justify-center lg:justify-end items-center lg:pr-24">
-          <a
+          <Link
             className="text-astronaut-blue hover:text-genoa px-8 py-4 bg-neon-carrot-lighter hover:bg-white rounded sm:text-lg"
-            href="/previous-quotes"
+            to="/previous-quotes"
           >
             See all previous quotes
-          </a>
+          </Link>
         </section>
       </div>
     );
