@@ -10,6 +10,7 @@
     "postcss-cli": "^8.0.0",
     "query-string": "^6.13.5",
     "react": "^16.13.1",
+    "react-device-detect": "^1.14.0",
     "react-dom": "^16.13.1",
     "react-paginate": "^6.5.0",
     "react-router-dom": "^5.2.0",

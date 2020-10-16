@@ -6,14 +6,17 @@ import ListingPagination from "components/previous-quotes/ListingPagination";
 import QuotesContext from "contexts/QuotesContext";
 import QuotesReducer from "reducers/QuotesReducer";
 import fetchPreviousQuotesData from "helpers/fetchPreviousQuotesData";
+import AjaxLoadingSpinner from "components/ajax/AjaxLoadingSpinner";
+import AjaxError from "components/ajax/AjaxError";
 
 function PreviousQuotesListing() {
+  const defaultPerPage = process.env.REACT_APP_DEFAULT_PER_PAGE;
   const initialState = {
     quotes: [],
     ajaxError: null,
     isLoaded: false,
     paginationMeta: {},
-    filterQuery: { page: 1, per_page: 10, order: "desc" },
+    filterQuery: { page: 1, per_page: defaultPerPage, order: "desc" },
   };
   const [state, dispatch] = useReducer(QuotesReducer, initialState);
   const { quotes, ajaxError, isLoaded, paginationMeta, filterQuery } = state;
@@ -25,9 +28,9 @@ function PreviousQuotesListing() {
   }, []);
 
   if (ajaxError) {
-    return <div>Error: {ajaxError.message}</div>;
+    return <AjaxError ajaxError={ajaxError} />;
   } else if (!isLoaded) {
-    return <div>Loading...</div>;
+    return <AjaxLoadingSpinner />;
   } else {
     return (
       <QuotesContext.Provider

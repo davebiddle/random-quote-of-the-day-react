@@ -3,13 +3,14 @@ import QuotesContext from "contexts/QuotesContext";
 import fetchPreviousQuotesData from "helpers/fetchPreviousQuotesData";
 
 function ListingHeader() {
-  const { dispatch, filterQuery } = useContext(QuotesContext);
+  const { dispatch, filterQuery, paginationMeta } = useContext(QuotesContext);
+  const { from, to, total } = paginationMeta;
   const apiEndpoint =
     process.env.REACT_APP_API_ENDPOINT_PREVIOUS_QUOTES_LISTING;
 
   return (
     <header className="px-4 sm:px-8 md:px-10 py-2 md:h-16 lg:h-20 text-gray-600 text-sm italic sm:flex sm:justify-between sm:items-center lg:items-end lg:pl-0 lg:pt-0 lg:pb-4">
-      <p className="mb-2 sm:mb-0 md:mt-7">Showing 1-20 of 1023 quotes</p>
+      <p className="mb-2 sm:mb-0 md:mt-7">{`Showing ${from}-${to} of ${total} quotes`}</p>
       <div className="md:flex md:justify-end">
         <div className="pr-4 mb-2 md:mb-0">
           <label for="select-per-page">Per page:</label>

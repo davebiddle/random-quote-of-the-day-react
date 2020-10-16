@@ -15,7 +15,7 @@ function CreditsAndCopyright() {
         <a target="_blank;" href="https://quotepark.com">
           quotepark.com
         </a>
-        . Clipart is from{" "}
+        . Visual elements are from{" "}
         <a target="_blank;" href="https://openclipart.org">
           openclipart.org
         </a>

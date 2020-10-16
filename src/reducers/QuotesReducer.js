@@ -35,6 +35,8 @@ const QuotesReducer = (state, action) => {
   const { type, payload = {} } = action;
 
   switch (type) {
+    case "ajax/setLoading":
+      return { ...state, isLoaded: false };
     case "ajax/setQuotesData":
       const { quotes: newQuotes, paginationMeta, filterQuery } = payload;
 
@@ -46,7 +48,9 @@ const QuotesReducer = (state, action) => {
         filterQuery: filterQuery,
       };
     case "ajax/setError":
-      return { ...state, ajaxError: true, isLoaded: true };
+      const { ajaxError } = payload;
+
+      return { ...state, ajaxError: ajaxError, isLoaded: true };
     case "quote/toggleOpenState":
       const { quote } = payload;
 

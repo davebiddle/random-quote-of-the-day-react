@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import icon_calendar_blue from "assets/img/icon-calendar-blue.svg";
 import icon_calendar_orange from "assets/img/icon-calendar-orange.svg";
 import fetchQuotesData from "helpers/fetchQuotesData";
+import AjaxLoadingSpinner from "components/ajax/AjaxLoadingSpinner";
+import AjaxError from "components/ajax/AjaxError";
 
 function PreviousQuotesBlock() {
   const [error, setError] = useState(null);
@@ -16,9 +19,9 @@ function PreviousQuotesBlock() {
   }, []);
 
   if (error) {
-    return <div>Error: {error.message}</div>;
+    return <AjaxError ajaxError={error} />;
   } else if (!isLoaded) {
-    return <div>Loading...</div>;
+    return <AjaxLoadingSpinner />;
   } else {
     return (
       <div>
@@ -27,9 +30,9 @@ function PreviousQuotesBlock() {
             Previous Quotes
           </h3>
           <ul className="previous-quotes-block-panel mt-3 text-astronaut-blue lg:flex lg:justify-between lg:space-x-8">
-            {previousQuotes.map((quote) => {
+            {previousQuotes.map((quote, index) => {
               const {
-                id: quoteId = 0,
+                id: quoteId = index, // index will only be used on first page load, prior to AJAX response
                 dateFormatted = "",
                 quoteContent = "",
                 quoteLink = "",
@@ -39,15 +42,15 @@ function PreviousQuotesBlock() {
               return (
                 <li key={quoteId}>
                   <a target="_blank;" href={quoteLink}>
-                    <h7>
+                    <h6>
                       <span className="icon-calendar-blue">
                         <img src={icon_calendar_blue} />
                       </span>
-                      <span className="hidden icon-calendar-orange">
+                      <span className="icon-calendar-orange">
                         <img src={icon_calendar_orange} />
                       </span>
                       {dateFormatted}
-                    </h7>
+                    </h6>
                     <blockquote>
                       <p>{quoteContent}</p>
                     </blockquote>
@@ -59,12 +62,12 @@ function PreviousQuotesBlock() {
           </ul>
         </section>
         <section className="bg-genoa h-48 flex justify-center lg:justify-end items-center lg:pr-24">
-          <a
+          <Link
             className="text-astronaut-blue hover:text-genoa px-8 py-4 bg-neon-carrot-lighter hover:bg-white rounded sm:text-lg"
-            href="/previous-quotes"
+            to="/previous-quotes"
           >
             See all previous quotes
-          </a>
+          </Link>
         </section>
       </div>
     );

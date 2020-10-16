@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { NavLink } from "react-router-dom";
 import logo from "assets/img/logo-header-117x72.png";
 import mob_nav_hamburger_icon from "assets/img/menu-mobile-hamburger.svg";
 import mob_nav_close_icon from "assets/img/menu-mobile-close.svg";
@@ -22,11 +23,18 @@ function MainNav() {
         <div className="hidden sm:block">
           <nav className="flex main-nav list-none">
             <li className="hover:text-neon-carrot">
-              <a href="/">Today's Quote</a>
+              <NavLink exact to="/" activeClassName="text-neon-carrot-lighter">
+                Today's Quote
+              </NavLink>
             </li>
             <li>|</li>
             <li className="hover:text-neon-carrot">
-              <a href="/previous-quotes">Previous Quotes</a>
+              <NavLink
+                to="/previous-quotes"
+                activeClassName="text-neon-carrot-lighter"
+              >
+                Previous Quotes
+              </NavLink>
             </li>
           </nav>
         </div>

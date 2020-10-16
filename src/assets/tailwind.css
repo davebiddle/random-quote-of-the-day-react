@@ -207,12 +207,27 @@ h3.heading-flourish:after {
   @apply bg-white mb-4;
 }
 
-.previous-quotes-block-panel h7 {
-  @apply flex justify-center items-center h-13 bg-white;
+.previous-quotes-block-panel li {
+  background-image: url(./img/flourish-trans-bg.svg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
 }
 
-.previous-quotes-block-panel li:hover h7 {
-  @apply bg-mako text-neon-carrot;
+.previous-quotes-block-panel li a {
+  @apply bg-white bg-opacity-100 inline-block w-full;
+}
+
+.previous-quotes-block-panel a:hover {
+  @apply transition duration-700 ease-in-out bg-opacity-0;
+}
+
+.previous-quotes-block-panel h6 {
+  @apply flex justify-center items-center h-13 bg-white relative;
+}
+
+.previous-quotes-block-panel a:hover h6 {
+  @apply transition-colors ease-in-out duration-700  bg-mako text-neon-carrot;
 }
 
 .previous-quotes-block-panel blockquote {
@@ -223,28 +238,25 @@ h3.heading-flourish:after {
   @apply flex justify-end items-center pr-5 h-13;
 }
 
-.previous-quotes-block-panel li:hover {
-  background-image: url(./img/flourish-trans-bg.svg);
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-}
-
 .previous-quotes-block-panel .icon-calendar-blue,
 .previous-quotes-block-panel .icon-calendar-orange {
   @apply mr-3;
 }
 
-.previous-quotes-block-panel li:hover .icon-calendar-blue {
+/* .previous-quotes-block-panel .icon-calendar-blue {
   @apply hidden;
+} */
+
+.previous-quotes-block-panel .icon-calendar-orange {
+  @apply absolute opacity-0;
 }
 
-.previous-quotes-block-panel li:hover .icon-calendar-orange {
-  @apply block;
+.previous-quotes-block-panel a:hover .icon-calendar-orange {
+  @apply transition-opacity ease-in-out duration-700 opacity-100;
 }
 
 @screen md {
-  .previous-quotes-block-panel h7 {
+  .previous-quotes-block-panel h6 {
     @apply justify-start px-6 h-20 text-base;
   }
 }
