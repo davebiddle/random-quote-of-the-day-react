@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from "react";
 import icon_calendar from "assets/img/icon-calendar.svg";
 import icon_blockquote from "assets/img/quotes-icon.png";
-import icon_ext_link_blue from "assets/img/icon-ext-link-blue.svg";
-import icon_ext_link_orange from "assets/img/icon-ext-link-orange.svg";
 import fetchQuotesData from "helpers/fetchQuotesData";
 import AjaxLoadingSpinner from "components/ajax/AjaxLoadingSpinner";
 import AjaxError from "components/ajax/AjaxError";
@@ -62,34 +60,22 @@ function TodaysRandomQuote() {
                   <a target="_blank;" href={quoteLink}>
                     View this quote on quotepark.com
                   </a>
-                  <span className="icon-ext-link-blue">
-                    <img src={icon_ext_link_blue} />
-                  </span>
-                  <span className="hidden icon-ext-link-orange">
-                    <img src={icon_ext_link_orange} />
-                  </span>
+                  <span className="icon-ext-link-blue"></span>
+                  <span className="hidden icon-ext-link-orange"></span>
                 </li>
                 <li className="blockquote-footer-li">
                   <a target="_blank;" href={quoteparkAuthorLink}>
                     {`More quotes from ${authorName}`}
                   </a>
-                  <span className="icon-ext-link-blue">
-                    <img src={icon_ext_link_blue} />
-                  </span>
-                  <span className="hidden icon-ext-link-orange">
-                    <img src={icon_ext_link_orange} />
-                  </span>
+                  <span className="icon-ext-link-blue"></span>
+                  <span className="hidden icon-ext-link-orange"></span>
                 </li>
                 <li className="blockquote-footer-li">
                   <a target="_blank;" href={wikiquoteAuthorLink}>
                     {`Find ${authorName} on Wikiquote`}
                   </a>
-                  <span className="icon-ext-link-blue">
-                    <img src={icon_ext_link_blue} />
-                  </span>
-                  <span className="hidden icon-ext-link-orange">
-                    <img src={icon_ext_link_orange} />
-                  </span>
+                  <span className="icon-ext-link-blue"></span>
+                  <span className="hidden icon-ext-link-orange"></span>
                 </li>
               </ul>
             </footer>

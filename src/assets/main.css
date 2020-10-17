@@ -824,13 +824,23 @@ h3.heading-flourish:after {
   align-items: center;
 }
 
-.blockquote-footer-li img {
-  margin-left: 0.5rem;
-}
-
 .icon-ext-link-blue,
 .icon-ext-link-orange {
-  margin-left: 0.5rem;
+  display: inline-block;
+  margin-left: 1rem;
+  width: 17px;
+  height: 17px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
+.icon-ext-link-blue {
+  background-image: url(./img/icon-ext-link-blue.svg);
+}
+
+.icon-ext-link-orange {
+  background-image: url(./img/icon-ext-link-orange.svg);
 }
 
 .blockquote-footer-li:hover {

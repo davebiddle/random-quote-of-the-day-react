@@ -179,13 +179,22 @@ h3.heading-flourish:after {
   @apply h-7 flex justify-end items-center;
 }
 
-.blockquote-footer-li img {
-  @apply ml-2;
-}
-
 .icon-ext-link-blue,
 .icon-ext-link-orange {
-  @apply ml-2;
+  @apply inline-block ml-4;
+  width: 17px;
+  height: 17px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
+.icon-ext-link-blue {
+  background-image: url(./img/icon-ext-link-blue.svg);
+}
+
+.icon-ext-link-orange {
+  background-image: url(./img/icon-ext-link-orange.svg);
 }
 
 .blockquote-footer-li:hover {
