@@ -40,6 +40,9 @@ module.exports = {
         13: "3.25rem",
         42: "11.25rem",
       },
+      minHeight: {
+        44: "14rem",
+      },
       padding: {
         14: "3.5rem",
         18: "4.5rem",
