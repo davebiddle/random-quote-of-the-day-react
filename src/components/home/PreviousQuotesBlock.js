@@ -52,7 +52,7 @@ function PreviousQuotesBlock() {
                       {dateFormatted}
                     </h6>
                     <blockquote>
-                      <p>{quoteContent}</p>
+                      <p>{`"${quoteContent}"`}</p>
                     </blockquote>
                     <footer>{authorName}</footer>
                   </a>
