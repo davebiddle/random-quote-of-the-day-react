@@ -224,7 +224,7 @@ h3.heading-flourish:after {
 }
 
 .previous-quotes-block-panel li a {
-  @apply bg-white bg-opacity-100 inline-block w-full;
+  @apply bg-white bg-opacity-100 block w-full;
 }
 
 .previous-quotes-block-panel a:hover {
@@ -252,10 +252,6 @@ h3.heading-flourish:after {
   @apply mr-3;
 }
 
-/* .previous-quotes-block-panel .icon-calendar-blue {
-  @apply hidden;
-} */
-
 .previous-quotes-block-panel .icon-calendar-orange {
   @apply absolute opacity-0;
 }
@@ -276,7 +272,7 @@ h3.heading-flourish:after {
   }
 
   .previous-quotes-block-panel blockquote {
-    @apply flex justify-center items-center h-42;
+    @apply flex justify-center items-center h-full min-h-44;
   }
 
   .previous-quotes-block-panel footer {

@@ -880,7 +880,7 @@ h3.heading-flourish:after {
   background-color: #fff;
   background-color: rgba(255, 255, 255, var(--bg-opacity));
   --bg-opacity: 1;
-  display: inline-block;
+  display: block;
   width: 100%;
 }
 
@@ -940,10 +940,6 @@ h3.heading-flourish:after {
   margin-right: 0.75rem;
 }
 
-/* .previous-quotes-block-panel .icon-calendar-blue {
-  @apply hidden;
-} */
-
 .previous-quotes-block-panel .icon-calendar-orange {
   position: absolute;
   opacity: 0;
@@ -977,7 +973,8 @@ h3.heading-flourish:after {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 11.25rem;
+    height: 100%;
+    min-height: 14rem;
   }
 
   .previous-quotes-block-panel footer {
@@ -12679,6 +12676,10 @@ h3.heading-flourish:after {
 
 .min-h-0 {
   min-height: 0;
+}
+
+.min-h-44 {
+  min-height: 14rem;
 }
 
 .min-h-full {
@@ -31487,6 +31488,10 @@ h3.heading-flourish:after {
     min-height: 0;
   }
 
+  .sm\:min-h-44 {
+    min-height: 14rem;
+  }
+
   .sm\:min-h-full {
     min-height: 100%;
   }
@@ -50251,6 +50256,10 @@ h3.heading-flourish:after {
 
   .md\:min-h-0 {
     min-height: 0;
+  }
+
+  .md\:min-h-44 {
+    min-height: 14rem;
   }
 
   .md\:min-h-full {
@@ -69019,6 +69028,10 @@ h3.heading-flourish:after {
     min-height: 0;
   }
 
+  .lg\:min-h-44 {
+    min-height: 14rem;
+  }
+
   .lg\:min-h-full {
     min-height: 100%;
   }
@@ -87783,6 +87796,10 @@ h3.heading-flourish:after {
 
   .xl\:min-h-0 {
     min-height: 0;
+  }
+
+  .xl\:min-h-44 {
+    min-height: 14rem;
   }
 
   .xl\:min-h-full {
