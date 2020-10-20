@@ -1,11 +1,6 @@
 import queryString from "query-string";
 
-const fetchPreviousQuotesData = (
-  filterQuery,
-  dispatch,
-  state,
-  historyPusher
-) => {
+const fetchPreviousQuotesData = (filterQuery, dispatch, historyPusher) => {
   const apiUrl = process.env.REACT_APP_API_URL;
   const apiToken = process.env.REACT_APP_API_TOKEN;
   const apiEndpoint =
@@ -22,20 +17,16 @@ const fetchPreviousQuotesData = (
     .then((response) => response.json())
     .then(
       (json) => {
-        const newState = {
-          ...state,
-          quotes: json.data,
-          isLoaded: true,
-          paginationMeta: json.meta,
-          filterQuery: filterQuery,
-        };
         // call dispatch Reducer action for setting quotes data in context state
         dispatch({
           type: "ajax/setQuotesData",
-          payload: newState,
+          payload: {
+            quotes: json.data,
+            paginationMeta: json.meta,
+            filterQuery,
+            historyPusher,
+          },
         });
-        // push location to history
-        historyPusher(query, newState);
       },
       // The React docs specify handling errors here instead of a catch block:
       // https://reactjs.org/docs/faq-ajax.html

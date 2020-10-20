@@ -1,14 +1,9 @@
 import { useEffect } from "react";
 import { useHistory } from "react-router-dom";
-import { createPath } from "history";
-import queryString from "query-string";
 import usePreviousQuotesHistoryState from "hooks/PreviousQuotesHistoryState";
 
-function usePreviousQuotesHistory(state, dispatch) {
+function usePreviousQuotesHistory(dispatch) {
   const history = useHistory();
-  const { location } = history;
-  const { filterQuery } = state;
-  const query = queryString.stringify(filterQuery);
   const [locationKeys, setLocationKeys] = usePreviousQuotesHistoryState();
 
   // useEffect(() => {
@@ -27,6 +22,7 @@ function usePreviousQuotesHistory(state, dispatch) {
   useEffect(() => {
     return history.listen((location) => {
       console.log(history.action);
+      console.log(location);
 
       if (history.action == "POP") {
         if (locationKeys[1] === location.key) {

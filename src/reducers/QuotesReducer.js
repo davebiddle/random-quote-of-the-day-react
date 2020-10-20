@@ -50,16 +50,19 @@ const QuotesReducer = (state, action) => {
         quotes: newQuotes,
         paginationMeta,
         filterQuery,
-        queryString,
+        historyPusher,
       } = payload;
-
-      return {
+      const newState = {
         ...state,
         quotes: newQuotes,
         isLoaded: true,
         paginationMeta: paginationMeta,
         filterQuery: filterQuery,
       };
+
+      historyPusher(newState);
+
+      return newState;
     case "ajax/setError":
       const { ajaxError } = payload;
 

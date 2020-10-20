@@ -6,10 +6,14 @@ import { isMobile } from "react-device-detect";
 import usePreviousQuotesHistoryPusher from "hooks/PreviousQuotesHistoryPusher";
 
 function ListingPagination() {
-  const { dispatch, paginationMeta, filterQuery } = useContext(QuotesContext);
+  const {
+    dispatch,
+    paginationMeta,
+    filterQuery,
+    pushToHistoryStack,
+  } = useContext(QuotesContext);
   const { last_page: pageCount } = paginationMeta;
   const pageRangeToDisplay = isMobile ? 3 : 6;
-  const pushToHistoryStack = usePreviousQuotesHistoryPusher();
 
   const handlePaginationLinkClick = (data) => {
     const { selected: page } = data;

@@ -9,6 +9,7 @@ import fetchPreviousQuotesData from "helpers/fetchPreviousQuotesData";
 import AjaxLoadingSpinner from "components/ajax/AjaxLoadingSpinner";
 import AjaxError from "components/ajax/AjaxError";
 import usePreviousQuotesHistory from "hooks/PreviousQuotesHistory";
+import usePreviousQuotesHistoryPusher from "hooks/PreviousQuotesHistoryPusher";
 
 function PreviousQuotesListing() {
   const defaultPerPage = process.env.REACT_APP_DEFAULT_PER_PAGE;
@@ -21,13 +22,12 @@ function PreviousQuotesListing() {
   };
   const [state, dispatch] = useReducer(QuotesReducer, initialState);
   const { quotes, ajaxError, isLoaded, paginationMeta, filterQuery } = state;
-  const apiEndpoint =
-    process.env.REACT_APP_API_ENDPOINT_PREVIOUS_QUOTES_LISTING;
+  const pushToHistoryStack = usePreviousQuotesHistoryPusher(state);
 
-  usePreviousQuotesHistory(state, dispatch);
+  usePreviousQuotesHistory(dispatch);
 
   useEffect(() => {
-    fetchPreviousQuotesData(apiEndpoint, filterQuery, dispatch);
+    fetchPreviousQuotesData(filterQuery, dispatch, pushToHistoryStack);
   }, []);
 
   if (ajaxError) {
@@ -42,6 +42,7 @@ function PreviousQuotesListing() {
           dispatch,
           paginationMeta,
           filterQuery,
+          pushToHistoryStack,
         }}
       >
         <div className="previous-quotes-listing bg-white lg:w-4/5 lg:relative lg:m-auto lg:-top-12 lg:shadow-blockquote lg:px-8">
