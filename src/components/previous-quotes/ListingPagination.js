@@ -3,19 +3,19 @@ import QuotesContext from "contexts/QuotesContext";
 import fetchPreviousQuotesData from "helpers/fetchPreviousQuotesData";
 import ReactPaginate from "react-paginate";
 import { isMobile } from "react-device-detect";
+import usePreviousQuotesHistoryPusher from "hooks/PreviousQuotesHistoryPusher";
 
 function ListingPagination() {
   const { dispatch, paginationMeta, filterQuery } = useContext(QuotesContext);
   const { last_page: pageCount } = paginationMeta;
-  const apiEndpoint =
-    process.env.REACT_APP_API_ENDPOINT_PREVIOUS_QUOTES_LISTING;
   const pageRangeToDisplay = isMobile ? 3 : 6;
+  const pushToHistoryStack = usePreviousQuotesHistoryPusher();
 
   const handlePaginationLinkClick = (data) => {
     const { selected: page } = data;
     const params = { ...filterQuery, page: page + 1 };
 
-    fetchPreviousQuotesData(apiEndpoint, params, dispatch);
+    fetchPreviousQuotesData(params, dispatch, pushToHistoryStack);
   };
 
   return (
