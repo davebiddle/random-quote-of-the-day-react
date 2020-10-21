@@ -60,22 +60,19 @@ function TodaysRandomQuote() {
                   <a target="_blank;" href={quoteLink}>
                     View this quote on quotepark.com
                   </a>
-                  <span className="icon-ext-link-blue"></span>
-                  <span className="hidden icon-ext-link-orange"></span>
+                  <span className="icon-ext-link"></span>
                 </li>
                 <li className="blockquote-footer-li">
                   <a target="_blank;" href={quoteparkAuthorLink}>
                     {`More quotes from ${authorName}`}
                   </a>
-                  <span className="icon-ext-link-blue"></span>
-                  <span className="hidden icon-ext-link-orange"></span>
+                  <span className="icon-ext-link"></span>
                 </li>
                 <li className="blockquote-footer-li">
                   <a target="_blank;" href={wikiquoteAuthorLink}>
                     {`Find ${authorName} on Wikiquote`}
                   </a>
-                  <span className="icon-ext-link-blue"></span>
-                  <span className="hidden icon-ext-link-orange"></span>
+                  <span className="icon-ext-link"></span>
                 </li>
               </ul>
             </footer>

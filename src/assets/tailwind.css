@@ -179,34 +179,25 @@ h3.heading-flourish:after {
   @apply h-7 flex justify-end items-center;
 }
 
-.icon-ext-link-blue,
-.icon-ext-link-orange {
+.icon-ext-link {
   @apply inline-block ml-4;
   width: 17px;
   height: 17px;
   background-repeat: no-repeat;
-  background-position: center center;
+  background-position: left top;
   background-size: cover;
 }
 
-.icon-ext-link-blue {
-  background-image: url(./img/icon-ext-link-blue.svg);
-}
-
-.icon-ext-link-orange {
-  background-image: url(./img/icon-ext-link-orange.svg);
+.icon-ext-link {
+  background-image: url(./img/icon-ext-link-sprite.svg);
 }
 
 .blockquote-footer-li:hover {
   @apply text-orange;
 }
 
-.blockquote-footer-li:hover .icon-ext-link-blue {
-  @apply hidden;
-}
-
-.blockquote-footer-li:hover .icon-ext-link-orange {
-  @apply block;
+.blockquote-footer-li:hover .icon-ext-link {
+  background-position: left -17px;
 }
 
 /**
@@ -224,7 +215,7 @@ h3.heading-flourish:after {
 }
 
 .previous-quotes-block-panel li a {
-  @apply bg-white bg-opacity-100 w-full flex-grow flex flex-col;
+  @apply bg-white bg-opacity-100 w-full flex-grow flex flex-col leading-6;
 }
 
 .previous-quotes-block-panel a:hover {
