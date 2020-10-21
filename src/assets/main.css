@@ -866,6 +866,9 @@ h3.heading-flourish:after {
   background-color: #fff;
   background-color: rgba(255, 255, 255, var(--bg-opacity));
   margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
 }
 
 .previous-quotes-block-panel li {
@@ -880,8 +883,10 @@ h3.heading-flourish:after {
   background-color: #fff;
   background-color: rgba(255, 255, 255, var(--bg-opacity));
   --bg-opacity: 1;
-  display: block;
   width: 100%;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .previous-quotes-block-panel a:hover {
@@ -964,17 +969,14 @@ h3.heading-flourish:after {
 
 @media (min-width: 1024px) {
   .previous-quotes-block-panel li {
-    display: inline-block;
     width: 33.333333%;
     box-shadow: 8px 8px 16px -1px rgba(0, 0, 0, 0.5);
   }
 
   .previous-quotes-block-panel blockquote {
     display: flex;
-    justify-content: center;
     align-items: center;
-    height: 100%;
-    min-height: 16rem;
+    flex-grow: 1;
   }
 
   .previous-quotes-block-panel footer {
@@ -985,8 +987,8 @@ h3.heading-flourish:after {
 
 @media (min-width: 1280px) {
   .previous-quotes-block-panel blockquote {
-    padding-left: 4rem;
-    padding-right: 4rem;
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
     font-size: 1.125rem;
   }
 }

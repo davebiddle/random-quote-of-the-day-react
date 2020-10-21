@@ -46,7 +46,7 @@ function TodaysRandomQuote() {
         </header>
         <div className="w-full bg-white">
           <blockquote
-            className="relative bg-quote-texture font-blockquote text-astronaut-blue text-opacity-75 text-3.5xl lg:text-5xl lg:leading-18 px-8 lg:px-20 pt-8 lg:pt-12 xl:pt-20 pb-14 sm:w-4/5 lg:w-3/4 sm:mx-auto sm:-top-18 sm:shadow-blockquote"
+            className="relative bg-quote-texture font-blockquote text-astronaut-blue text-opacity-75 text-3.5xl lg:text-5xl lg:leading-18 px-8 lg:px-20 pt-8 lg:pt-12 xl:pt-20 pb-14 sm:w-4/5 lg:w-3/4 xl:w-3/5 sm:mx-auto sm:-top-18 sm:shadow-blockquote"
             cite={quoteLink}
           >
             <img className="absolute icon-blockquote" src={icon_blockquote} />
