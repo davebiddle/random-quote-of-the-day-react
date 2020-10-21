@@ -6,16 +6,14 @@ import { isMobile } from "react-device-detect";
 
 function ListingPagination() {
   const { dispatch, paginationMeta, filterQuery } = useContext(QuotesContext);
-  const { last_page: pageCount } = paginationMeta;
-  const apiEndpoint =
-    process.env.REACT_APP_API_ENDPOINT_PREVIOUS_QUOTES_LISTING;
+  const { last_page: pageCount, current_page: currentPage } = paginationMeta;
   const pageRangeToDisplay = isMobile ? 3 : 6;
 
   const handlePaginationLinkClick = (data) => {
     const { selected: page } = data;
     const params = { ...filterQuery, page: page + 1 };
 
-    fetchPreviousQuotesData(apiEndpoint, params, dispatch);
+    fetchPreviousQuotesData(params, dispatch);
   };
 
   return (
@@ -26,6 +24,8 @@ function ListingPagination() {
         breakLabel={"..."}
         pageCount={pageCount}
         disableInitialCallback={true}
+        initialPage={0}
+        forcePage={currentPage - 1}
         marginPagesDisplayed={1}
         pageRangeDisplayed={pageRangeToDisplay}
         onPageChange={handlePaginationLinkClick}
