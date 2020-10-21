@@ -38,17 +38,18 @@ const QuotesReducer = (state, action) => {
     case "history/pushEventComplete":
       return { ...state, historyPushEvent: false };
     case "history/handleForward":
-      console.log("Forward POP event");
-
       return payload.oldState;
     case "history/handleBack":
-      console.log("Back POP event");
-
       return payload.oldState;
     case "ajax/setLoading":
       return { ...state, isLoaded: false };
     case "ajax/setQuotesData":
-      const { quotes: newQuotes, paginationMeta, filterQuery } = payload;
+      const {
+        quotes: newQuotes,
+        paginationMeta,
+        filterQuery,
+        queryString,
+      } = payload;
 
       return {
         ...state,
@@ -57,6 +58,7 @@ const QuotesReducer = (state, action) => {
         paginationMeta: paginationMeta,
         filterQuery,
         historyPushEvent: true,
+        queryString,
       };
     case "ajax/setError":
       const { ajaxError } = payload;

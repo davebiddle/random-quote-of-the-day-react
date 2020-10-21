@@ -7,13 +7,13 @@ function usePreviousQuotesHistory(dispatch, state) {
   const [locationKeys, setLocationKeys] = useState([]);
 
   useEffect(() => {
-    const { historyPushEvent: pushEvent } = state;
+    const { historyPushEvent: pushEvent, queryString } = state;
 
     if (pushEvent) {
       const { location } = history;
       const path = createPath({
         pathname: location.pathname,
-        search: location.search,
+        search: queryString,
       });
 
       history.push(path, state);
