@@ -35,6 +35,8 @@ const QuotesReducer = (state, action) => {
   const { quotes } = state;
 
   switch (type) {
+    case "history/pushEventComplete":
+      return { ...state, historyPushEvent: false };
     case "history/handleForward":
       console.log("Forward POP event");
 
@@ -46,23 +48,16 @@ const QuotesReducer = (state, action) => {
     case "ajax/setLoading":
       return { ...state, isLoaded: false };
     case "ajax/setQuotesData":
-      const {
-        quotes: newQuotes,
-        paginationMeta,
-        filterQuery,
-        historyPusher,
-      } = payload;
-      const newState = {
+      const { quotes: newQuotes, paginationMeta, filterQuery } = payload;
+
+      return {
         ...state,
         quotes: newQuotes,
         isLoaded: true,
         paginationMeta: paginationMeta,
-        filterQuery: filterQuery,
+        filterQuery,
+        historyPushEvent: true,
       };
-
-      historyPusher(newState);
-
-      return newState;
     case "ajax/setError":
       const { ajaxError } = payload;
 

@@ -3,23 +3,17 @@ import QuotesContext from "contexts/QuotesContext";
 import fetchPreviousQuotesData from "helpers/fetchPreviousQuotesData";
 import ReactPaginate from "react-paginate";
 import { isMobile } from "react-device-detect";
-import usePreviousQuotesHistoryPusher from "hooks/PreviousQuotesHistoryPusher";
 
 function ListingPagination() {
-  const {
-    dispatch,
-    paginationMeta,
-    filterQuery,
-    pushToHistoryStack,
-  } = useContext(QuotesContext);
-  const { last_page: pageCount } = paginationMeta;
+  const { dispatch, paginationMeta, filterQuery } = useContext(QuotesContext);
+  const { last_page: pageCount, current_page: currentPage } = paginationMeta;
   const pageRangeToDisplay = isMobile ? 3 : 6;
 
   const handlePaginationLinkClick = (data) => {
     const { selected: page } = data;
     const params = { ...filterQuery, page: page + 1 };
 
-    fetchPreviousQuotesData(params, dispatch, pushToHistoryStack);
+    fetchPreviousQuotesData(params, dispatch);
   };
 
   return (
@@ -30,6 +24,8 @@ function ListingPagination() {
         breakLabel={"..."}
         pageCount={pageCount}
         disableInitialCallback={true}
+        initialPage={0}
+        forcePage={currentPage - 1}
         marginPagesDisplayed={1}
         pageRangeDisplayed={pageRangeToDisplay}
         onPageChange={handlePaginationLinkClick}

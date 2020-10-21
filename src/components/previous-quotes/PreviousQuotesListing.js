@@ -1,4 +1,4 @@
-import React, { useReducer, useEffect } from "react";
+import React, { useReducer, useEffect, useCallback } from "react";
 import ListingHeader from "components/previous-quotes/ListingHeader";
 import ListingNarrow from "components/previous-quotes/ListingNarrow";
 import ListingWide from "components/previous-quotes/ListingWide";
@@ -9,26 +9,27 @@ import fetchPreviousQuotesData from "helpers/fetchPreviousQuotesData";
 import AjaxLoadingSpinner from "components/ajax/AjaxLoadingSpinner";
 import AjaxError from "components/ajax/AjaxError";
 import usePreviousQuotesHistory from "hooks/PreviousQuotesHistory";
-import usePreviousQuotesHistoryPusher from "hooks/PreviousQuotesHistoryPusher";
 
 function PreviousQuotesListing() {
   const defaultPerPage = process.env.REACT_APP_DEFAULT_PER_PAGE;
+  const defaultOrder = process.env.REACT_APP_DEFAULT_ORDER;
   const initialState = {
     quotes: [],
     ajaxError: null,
     isLoaded: false,
     paginationMeta: {},
-    filterQuery: { page: 1, per_page: defaultPerPage, order: "desc" },
+    filterQuery: { page: 1, per_page: defaultPerPage, order: defaultOrder },
+    historyPushEvent: false,
   };
   const [state, dispatch] = useReducer(QuotesReducer, initialState);
+  const stableDispatch = useCallback(dispatch, []);
   const { quotes, ajaxError, isLoaded, paginationMeta, filterQuery } = state;
-  const pushToHistoryStack = usePreviousQuotesHistoryPusher(state);
-
-  usePreviousQuotesHistory(dispatch);
 
   useEffect(() => {
-    fetchPreviousQuotesData(filterQuery, dispatch, pushToHistoryStack);
+    fetchPreviousQuotesData(filterQuery, stableDispatch);
   }, []);
+
+  usePreviousQuotesHistory(stableDispatch, state);
 
   if (ajaxError) {
     return <AjaxError ajaxError={ajaxError} />;
@@ -42,7 +43,6 @@ function PreviousQuotesListing() {
           dispatch,
           paginationMeta,
           filterQuery,
-          pushToHistoryStack,
         }}
       >
         <div className="previous-quotes-listing bg-white lg:w-4/5 lg:relative lg:m-auto lg:-top-12 lg:shadow-blockquote lg:px-8">

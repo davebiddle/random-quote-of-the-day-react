@@ -1,6 +1,6 @@
 import queryString from "query-string";
 
-const fetchPreviousQuotesData = (filterQuery, dispatch, historyPusher) => {
+const fetchPreviousQuotesData = (filterQuery, dispatch) => {
   const apiUrl = process.env.REACT_APP_API_URL;
   const apiToken = process.env.REACT_APP_API_TOKEN;
   const apiEndpoint =
@@ -24,7 +24,6 @@ const fetchPreviousQuotesData = (filterQuery, dispatch, historyPusher) => {
             quotes: json.data,
             paginationMeta: json.meta,
             filterQuery,
-            historyPusher,
           },
         });
       },

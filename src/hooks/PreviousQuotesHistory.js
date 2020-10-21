@@ -1,41 +1,46 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
-import usePreviousQuotesHistoryState from "hooks/PreviousQuotesHistoryState";
+import { createPath } from "history";
 
-function usePreviousQuotesHistory(dispatch) {
+function usePreviousQuotesHistory(dispatch, state) {
   const history = useHistory();
-  const [locationKeys, setLocationKeys] = usePreviousQuotesHistoryState();
-
-  // useEffect(() => {
-  //   console.log(history.action);
-  //     history.push(
-  //       createPath({
-  //         pathname: location.pathname,
-  //         search: query,
-  //       }),
-  //       state
-  //     );
-
-  //     setLocationKeys([location.key]);
-  // }, [query]);
+  const [locationKeys, setLocationKeys] = useState([]);
 
   useEffect(() => {
-    return history.listen((location) => {
-      console.log(history.action);
-      console.log(location);
+    const { historyPushEvent: pushEvent } = state;
 
-      if (history.action == "POP") {
-        if (locationKeys[1] === location.key) {
+    if (pushEvent) {
+      const { location } = history;
+      const path = createPath({
+        pathname: location.pathname,
+        search: location.search,
+      });
+
+      history.push(path, state);
+
+      dispatch({
+        type: "history/pushEventComplete",
+      });
+    }
+
+    return history.listen((location) => {
+      const { action } = history;
+      const { key } = location;
+
+      if (action === "PUSH") {
+        setLocationKeys([key]);
+      } else if (action === "POP") {
+        if (locationKeys[1] === key) {
           // handle browser 'forward' button click
           dispatch({
             type: "history/handleForward",
             payload: {
-              oldState: location.state,
+              oldState: { ...location.state, historyPushEvent: false },
             },
           });
 
-          // set locationKeys array, with the first
-          // element removed.
+          // set locationKeys array with
+          // the first element removed.
           // eslint-disable-next-line
           setLocationKeys(([_, ...keys]) => keys);
         } else {
@@ -43,17 +48,17 @@ function usePreviousQuotesHistory(dispatch) {
           dispatch({
             type: "history/handleBack",
             payload: {
-              oldState: location.state,
+              oldState: { ...location.state, historyPushEvent: false },
             },
           });
 
           // add the current location's key
-          // to the start of the array of location keys.
+          // to the start of the array of location keys.{
           setLocationKeys((keys) => [location.key, ...keys]);
         }
       }
     });
-  }, [locationKeys]);
+  }, [locationKeys, history, dispatch, state]);
 }
 
 export default usePreviousQuotesHistory;
