@@ -17,7 +17,7 @@ function PreviousQuotesListing() {
     quotes: [],
     ajaxError: null,
     isLoaded: false,
-    paginationMeta: {},
+    paginationMeta: null,
     filterQuery: { page: 1, per_page: defaultPerPage, order: defaultOrder },
     historyPushEvent: false,
   };

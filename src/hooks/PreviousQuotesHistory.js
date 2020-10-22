@@ -7,9 +7,11 @@ function usePreviousQuotesHistory(dispatch, state) {
   const [locationKeys, setLocationKeys] = useState([]);
 
   useEffect(() => {
-    const { historyPushEvent: pushEvent, queryString } = state;
+    const { historyPushEvent: pushEvent, paginationMeta, queryString } = state;
 
-    if (pushEvent) {
+    // check if a pagination/filter change has been made by user
+    // and push an entry onto the history stack if it has.
+    if (pushEvent && paginationMeta) {
       const { location } = history;
       const path = createPath({
         pathname: location.pathname,
