@@ -20,6 +20,7 @@ function PreviousQuotesListing() {
     paginationMeta: null,
     filterQuery: { page: 1, per_page: defaultPerPage, order: defaultOrder },
     historyPushEvent: false,
+    queryString: "",
   };
   const [state, dispatch] = useReducer(QuotesReducer, initialState);
   const { quotes, ajaxError, isLoaded, paginationMeta, filterQuery } = state;
