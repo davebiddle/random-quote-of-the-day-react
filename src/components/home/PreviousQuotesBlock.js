@@ -29,7 +29,7 @@ function PreviousQuotesBlock() {
           <h3 className="heading-flourish heading-flourish-after sm:heading-flourish-both text-white sm:text-3xl md:text-4xl sm:text-center sm:mb-10">
             Previous Quotes
           </h3>
-          <ul className="previous-quotes-block-panel mt-3 text-astronaut-blue lg:flex lg:justify-between lg:space-x-8">
+          <ul className="previous-quotes-block-panel mt-3 text-astronaut-blue lg:flex lg:justify-between lg:space-x-8 xl:w-10/12 mx-auto">
             {previousQuotes.map((quote, index) => {
               const {
                 id: quoteId = index, // index will only be used on first page load, prior to AJAX response
@@ -61,7 +61,7 @@ function PreviousQuotesBlock() {
             })}
           </ul>
         </section>
-        <section className="bg-genoa h-48 flex justify-center lg:justify-end items-center lg:pr-24">
+        <section className="bg-genoa h-48 flex justify-center lg:justify-end items-center lg:pr-24 xl:pr-64">
           <Link
             className="text-astronaut-blue hover:text-genoa px-8 py-4 bg-neon-carrot-lighter hover:bg-white rounded sm:text-lg"
             to="/previous-quotes"

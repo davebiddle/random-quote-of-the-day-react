@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import logo_footer from "assets/img/logo-footer.svg";
+import logo_footer from "assets/img/logo-footer.png";
 
 function FooterNav() {
   return (
