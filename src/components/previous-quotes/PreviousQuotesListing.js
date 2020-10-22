@@ -1,4 +1,4 @@
-import React, { useReducer, useEffect, useCallback } from "react";
+import React, { useReducer, useEffect } from "react";
 import ListingHeader from "components/previous-quotes/ListingHeader";
 import ListingNarrow from "components/previous-quotes/ListingNarrow";
 import ListingWide from "components/previous-quotes/ListingWide";
@@ -17,19 +17,18 @@ function PreviousQuotesListing() {
     quotes: [],
     ajaxError: null,
     isLoaded: false,
-    paginationMeta: {},
+    paginationMeta: null,
     filterQuery: { page: 1, per_page: defaultPerPage, order: defaultOrder },
     historyPushEvent: false,
   };
   const [state, dispatch] = useReducer(QuotesReducer, initialState);
-  const stableDispatch = useCallback(dispatch, []);
   const { quotes, ajaxError, isLoaded, paginationMeta, filterQuery } = state;
 
   useEffect(() => {
-    fetchPreviousQuotesData(filterQuery, stableDispatch);
+    fetchPreviousQuotesData(filterQuery, dispatch);
   }, []);
 
-  usePreviousQuotesHistory(stableDispatch, state);
+  usePreviousQuotesHistory(dispatch, state);
 
   if (ajaxError) {
     return <AjaxError ajaxError={ajaxError} />;

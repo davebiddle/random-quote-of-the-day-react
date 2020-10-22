@@ -24,6 +24,7 @@ const fetchPreviousQuotesData = (filterQuery, dispatch) => {
             quotes: json.data,
             paginationMeta: json.meta,
             filterQuery,
+            queryString: query,
           },
         });
       },
