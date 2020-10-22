@@ -7,9 +7,9 @@ function usePreviousQuotesHistory(dispatch, state) {
   const [locationKeys, setLocationKeys] = useState([]);
 
   useEffect(() => {
-    const { historyPushEvent: pushEvent, queryString } = state;
+    const { historyPushEvent: pushEvent, paginationMeta, queryString } = state;
 
-    if (pushEvent) {
+    if (pushEvent && paginationMeta) {
       const { location } = history;
       const path = createPath({
         pathname: location.pathname,
