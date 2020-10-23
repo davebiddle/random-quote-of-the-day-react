@@ -1,7 +1,7 @@
 import React from "react";
 import PreviousQuotesListing from "components/previous-quotes/PreviousQuotesListing";
 
-function PreviousQuotes(props) {
+function PreviousQuotes() {
   return (
     <div>
       <div className="bg-faded-jade font-serif px-5 py-4 sm:px-14 sm:pt-10">

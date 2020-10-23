@@ -9,14 +9,60 @@ function usePreviousQuotesHistory(dispatch, state) {
   useEffect(() => {
     const { historyPushEvent: pushEvent, paginationMeta, queryString } = state;
 
-    // check if a pagination/filter change has been made by user
-    // and push an entry onto the history stack if it has.
-    if (pushEvent && paginationMeta) {
-      const { location } = history;
-      const path = createPath({
-        pathname: location.pathname,
-        search: queryString,
-      });
+  /**
+   * Deregisters a history stack push event.
+   */
+  deregisterHistoryStackPushEvent: function () {
+    PreviouseQuotesHistory.pushEvent.current = false;
+  },
+
+  /**
+   * Returns whether a history stack push event has been
+   * registered.
+   *
+   * @returns bool
+   */
+  pushEventRegistered: function () {
+    return PreviouseQuotesHistory.pushEvent.current;
+  },
+
+  /**
+   * Custom hook for pushing to browser history
+   * and handling back/forward events.
+   *
+   * @param {Function} dispatch
+   * @param {*} state
+   */
+  usePreviousQuotesHistory: function (dispatch, state) {
+    const history = useHistory();
+    const [locationKeys, setLocationKeys] = useState([]);
+    const { promiseInProgress: ajaxInProgress } = usePromiseTracker();
+
+    // create memoized callbacks of history methods
+    // for use as effect deps
+    const pushEventRegistered = useCallback(
+      PreviouseQuotesHistory.pushEventRegistered,
+      []
+    );
+    const deregisterHistoryStackPushEvent = useCallback(
+      PreviouseQuotesHistory.deregisterHistoryStackPushEvent,
+      []
+    );
+
+    // Create the pushEvent ref flag
+    PreviouseQuotesHistory.pushEvent = useRef(false);
+
+    // Push a location onto the history stack if a push event has
+    // been registered and the associated AJAX request has completed.
+    useEffect(() => {
+      const { queryString } = state;
+
+      if (pushEventRegistered() && !ajaxInProgress) {
+        const { location } = history;
+        const path = createPath({
+          pathname: location.pathname,
+          search: queryString,
+        });
 
       history.push(path, state);
 
