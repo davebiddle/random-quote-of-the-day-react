@@ -6,14 +6,14 @@ function ListingWide() {
 
   return (
     <table className="table-fixed w-full">
-      <thead>
+      <thead className="text-mako-600">
         <tr>
           <th>Date</th>
           <th>Author</th>
           <th>Quote</th>
         </tr>
       </thead>
-      <tbody>
+      <tbody className="text-mako-700">
         {quotes.map((quote) => {
           const {
             id: quoteId,

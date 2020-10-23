@@ -8,7 +8,7 @@ function ListingNarrow() {
 
   return (
     <React.Fragment>
-      <header className="flex justify-start items-center h-10 border-b-2 border-gray-400 font-bold">
+      <header className="flex justify-start items-center h-10 border-b-2 text-mako-600 border-mako-300 font-bold">
         <div className="px-2">
           <svg
             width="7.9375mm"
@@ -20,7 +20,7 @@ function ListingNarrow() {
             <g transform="translate(-82.591 -137.4)" fill="none">
               <g
                 transform="matrix(.72688 0 0 .72688 78.867 92.231)"
-                stroke="#000"
+                stroke="#6e7f86"
                 stroke-linecap="round"
                 stroke-width=".88645"
               >
@@ -40,7 +40,7 @@ function ListingNarrow() {
             const { id: quoteId } = quote;
 
             return (
-              <li key={quoteId} className="bg-white odd:bg-gray-300">
+              <li key={quoteId} className="bg-white odd:bg-mako-100">
                 {" "}
                 {quote.isOpen ? (
                   <PreviousQuoteOpen quote={quote} />

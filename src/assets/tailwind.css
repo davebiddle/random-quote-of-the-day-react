@@ -227,7 +227,7 @@ h3.heading-flourish:after {
 }
 
 .previous-quotes-block-panel a:hover h6 {
-  @apply transition-colors ease-in-out duration-700  bg-mako text-neon-carrot;
+  @apply transition-colors ease-in-out duration-700  bg-mako-900 text-neon-carrot;
 }
 
 .previous-quotes-block-panel blockquote {
@@ -316,7 +316,11 @@ h3.heading-flourish:after {
  * Previous Quotes Listing Pagination
  */
 .pagination li {
-  @apply flex justify-center items-center h-full border-l-2 border-gray-400;
+  @apply flex justify-center items-center h-full border-l-2 border-mako-300;
+}
+
+.pagination li:hover {
+  @apply border-mako-400;
 }
 
 .pagination li:first-child {
@@ -324,7 +328,7 @@ h3.heading-flourish:after {
 }
 
 .pagination li a {
-  @apply flex justify-center items-center px-2 h-full w-full text-gray-600;
+  @apply flex justify-center items-center px-2 h-full w-full text-mako-700;
 }
 
 .pagination li.active a {
@@ -332,7 +336,7 @@ h3.heading-flourish:after {
 }
 
 .pagination li.disabled a {
-  @apply bg-gray-300 cursor-default;
+  @apply bg-mako-200 cursor-default;
 }
 
 .pagination li:not(.disabled):not(.active) a:hover {
@@ -340,7 +344,7 @@ h3.heading-flourish:after {
 }
 
 .pagination li.disabled a:hover {
-  @apply text-gray-600;
+  @apply text-mako-700;
 }
 
 @tailwind utilities;
