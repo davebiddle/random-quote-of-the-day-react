@@ -11,7 +11,7 @@ function PreviousQuoteClosed(props) {
     <div
       className={`${
         isOpen ? "hidden" : ""
-      } flex justify-start items-center h-12 text-gray-600`}
+      } flex justify-start items-center h-12 text-mako-600`}
     >
       <div
         className="px-2"

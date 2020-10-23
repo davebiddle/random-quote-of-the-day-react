@@ -14,7 +14,7 @@ function ListingHeader() {
     : filterQuery.order;
 
   return (
-    <header className="px-4 sm:px-8 md:px-10 py-2 md:h-16 lg:h-20 text-gray-600 text-sm italic sm:flex sm:justify-between sm:items-center lg:items-end lg:pl-0 lg:pt-0 lg:pb-4">
+    <header className="px-4 sm:px-8 md:px-10 py-2 md:h-16 lg:h-20 text-mako-600 text-sm italic sm:flex sm:justify-between sm:items-center lg:items-end lg:pl-0 lg:pt-0 lg:pb-4">
       <p className="mb-2 sm:mb-0 md:mt-7">{`Showing ${from}-${to} of ${total} quotes`}</p>
       <div className="md:flex md:justify-end">
         <div className="pr-4 mb-2 md:mb-0">
@@ -29,7 +29,7 @@ function ListingHeader() {
 
                 trackPromise(fetchPreviousQuotesData(params, dispatch));
               }}
-              className="appearance-none w-full bg-white border-2 border-gray-400 hover:border-gray-600 rounded px-4 py-1 pr-8 focus:outline-none focus:shadow-outline"
+              className="appearance-none w-full bg-white border-2 border-mako-300 hover:border-mako-400 rounded px-4 py-1 pr-8 focus:outline-none focus:shadow-outline"
             >
               {[5, 10, 15, 20, 25, 30].map((perPage, index) => {
                 return (
@@ -73,7 +73,7 @@ function ListingHeader() {
 
                 trackPromise(fetchPreviousQuotesData(params, dispatch));
               }}
-              className="appearance-none w-full bg-white border-2 border-gray-400 hover:border-gray-600 rounded px-4 py-1 pr-8 focus:outline-none focus:shadow-outline"
+              className="appearance-none w-full bg-white border-2 border-mako-300 hover:border-mako-400 rounded px-4 py-1 pr-8 focus:outline-none focus:shadow-outline"
             >
               <option value="desc">Date (Newest first)</option>
               <option value="asc">Date (Oldest first)</option>

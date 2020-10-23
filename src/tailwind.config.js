@@ -13,7 +13,17 @@ module.exports = {
         "neon-carrot": "#fd9230",
         "neon-carrot-lighter": "#fff1e5ff",
         "astronaut-blue": "#003d59",
-        mako: "#414a4f",
+        mako: {
+          100: "#ebeeef",
+          200: "#dde2e3",
+          300: "#c1cacc",
+          400: "#a5b1b5",
+          500: "#89989e",
+          600: "#6e7f86",
+          700: "#57646a",
+          800: "#4c575c",
+          900: "#414a4f",
+        },
       },
       fontFamily: {
         serif: [

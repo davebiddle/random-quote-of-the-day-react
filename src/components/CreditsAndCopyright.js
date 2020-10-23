@@ -2,7 +2,7 @@ import React from "react";
 
 function CreditsAndCopyright() {
   return (
-    <div className="credits-copyright bg-mako px-5 py-4 leading-7 sm:pt-8">
+    <div className="credits-copyright bg-mako-900 px-5 py-4 leading-7 sm:pt-8">
       <p className="w-full sm:text-center">
         Random QOTD is powered by{" "}
         <a

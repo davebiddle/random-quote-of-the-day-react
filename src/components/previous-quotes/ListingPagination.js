@@ -32,7 +32,7 @@ function ListingPagination() {
         onPageChange={handlePaginationLinkClick}
         activeClassName={"active"}
         containerClassName={
-          "pagination flex justify-center items-center border-2 border-gray-400 rounded h-10"
+          "pagination flex justify-center items-center border-2 border-mako-300 hover:border-mako-400 rounded h-10"
         }
         disabledClassName={"disabled"}
       />
