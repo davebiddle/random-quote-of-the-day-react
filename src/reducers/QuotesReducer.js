@@ -31,21 +31,31 @@ const getUpdatedQuotes = (quotes, quote) => {
  * @param {Object} action
  */
 const QuotesReducer = (state, action) => {
-  const { quotes } = state;
   const { type, payload = {} } = action;
+  const { quotes } = state;
 
   switch (type) {
+    case "history/handleForward":
+      return payload.oldState;
+    case "history/handleBack":
+      return payload.oldState;
     case "ajax/setLoading":
       return { ...state, isLoaded: false };
     case "ajax/setQuotesData":
-      const { quotes: newQuotes, paginationMeta, filterQuery } = payload;
+      const {
+        quotes: newQuotes,
+        paginationMeta,
+        filterQuery,
+        queryString,
+      } = payload;
 
       return {
         ...state,
         quotes: newQuotes,
         isLoaded: true,
         paginationMeta: paginationMeta,
-        filterQuery: filterQuery,
+        filterQuery,
+        queryString,
       };
     case "ajax/setError":
       const { ajaxError } = payload;

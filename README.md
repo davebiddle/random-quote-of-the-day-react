@@ -1,3 +1,11 @@
+## React SPA Frontend for [Random Quote of the Day](https://rqotd.davebiddle.co.uk)
+
+This project was built as a way of learning to build a React UI which consumes an API for fetching data.
+
+Backend API code is [here](https://github.com/davebiddle/random-quote-of-the-day-api).
+
+---
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
