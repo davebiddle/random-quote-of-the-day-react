@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import QuotesContext from "contexts/QuotesContext";
 import fetchPreviousQuotesData from "helpers/fetchPreviousQuotesData";
 import { trackPromise } from "react-promise-tracker";
+import SvgIconSelectDown from "components/svg/SvgIconSelectDown";
 
 function ListingHeader() {
   const { dispatch, filterQuery, paginationMeta } = useContext(QuotesContext);
@@ -40,24 +41,7 @@ function ListingHeader() {
               })}
             </select>
             <div className="pointer-events-none absolute inset-y-0 right-0 flex justify-center items-center border-l-2 border-gray-400 w-10">
-              <svg
-                width="3.2217mm"
-                height="1.933mm"
-                version="1.1"
-                viewBox="0 0 3.2217 1.933"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <g
-                  transform="translate(-98.931 -142.66)"
-                  fill="none"
-                  stroke="#979797"
-                  stroke-linecap="round"
-                  stroke-width=".64434"
-                >
-                  <path d="m101.83 142.99-1.2887 1.2887" />
-                  <path d="m99.253 142.99 1.2887 1.2887" />
-                </g>
-              </svg>
+              <SvgIconSelectDown />
             </div>
           </div>
         </div>
@@ -78,25 +62,8 @@ function ListingHeader() {
               <option value="desc">Date (Newest first)</option>
               <option value="asc">Date (Oldest first)</option>
             </select>
-            <div className="pointer-events-none absolute inset-y-0 right-0 flex justify-center items-center border-l-2 border-gray-400 w-10">
-              <svg
-                width="3.2217mm"
-                height="1.933mm"
-                version="1.1"
-                viewBox="0 0 3.2217 1.933"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <g
-                  transform="translate(-98.931 -142.66)"
-                  fill="none"
-                  stroke="#979797"
-                  stroke-linecap="round"
-                  stroke-width=".64434"
-                >
-                  <path d="m101.83 142.99-1.2887 1.2887" />
-                  <path d="m99.253 142.99 1.2887 1.2887" />
-                </g>
-              </svg>
+            <div className="pointer-events-none absolute inset-y-0 right-0 flex justify-center items-center border-l-2 border-mako-300 w-10">
+              <SvgIconSelectDown />
             </div>
           </div>
         </div>
