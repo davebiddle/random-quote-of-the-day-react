@@ -35,8 +35,6 @@ const QuotesReducer = (state, action) => {
   const { quotes } = state;
 
   switch (type) {
-    case "history/pushEventComplete":
-      return { ...state, historyPushEvent: false };
     case "history/handleForward":
       return payload.oldState;
     case "history/handleBack":
@@ -57,7 +55,6 @@ const QuotesReducer = (state, action) => {
         isLoaded: true,
         paginationMeta: paginationMeta,
         filterQuery,
-        historyPushEvent: true,
         queryString,
       };
     case "ajax/setError":

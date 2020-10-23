@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import QuotesContext from "contexts/QuotesContext";
 import fetchPreviousQuotesData from "helpers/fetchPreviousQuotesData";
+import { trackPromise } from "react-promise-tracker";
 
 function ListingHeader() {
   const { dispatch, filterQuery, paginationMeta } = useContext(QuotesContext);
@@ -26,7 +27,7 @@ function ListingHeader() {
               onChange={(event) => {
                 const params = { ...filterQuery, per_page: event.target.value };
 
-                fetchPreviousQuotesData(params, dispatch);
+                trackPromise(fetchPreviousQuotesData(params, dispatch));
               }}
               className="appearance-none w-full bg-white border-2 border-gray-400 hover:border-gray-600 rounded px-4 py-1 pr-8 focus:outline-none focus:shadow-outline"
             >
@@ -70,7 +71,7 @@ function ListingHeader() {
               onChange={(event) => {
                 const params = { ...filterQuery, order: event.target.value };
 
-                fetchPreviousQuotesData(params, dispatch);
+                trackPromise(fetchPreviousQuotesData(params, dispatch));
               }}
               className="appearance-none w-full bg-white border-2 border-gray-400 hover:border-gray-600 rounded px-4 py-1 pr-8 focus:outline-none focus:shadow-outline"
             >
