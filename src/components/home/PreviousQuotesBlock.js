@@ -44,10 +44,16 @@ function PreviousQuotesBlock() {
                   <a target="_blank;" href={quoteLink}>
                     <h6>
                       <span className="icon-calendar-blue">
-                        <img src={icon_calendar_blue} />
+                        <img
+                          src={icon_calendar_blue}
+                          alt="Blue calendar icon"
+                        />
                       </span>
                       <span className="icon-calendar-orange">
-                        <img src={icon_calendar_orange} />
+                        <img
+                          src={icon_calendar_orange}
+                          alt="Orange calendar icon"
+                        />
                       </span>
                       {dateFormatted}
                     </h6>
