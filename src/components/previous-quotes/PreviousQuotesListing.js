@@ -10,6 +10,7 @@ import AjaxLoadingSpinner from "components/ajax/AjaxLoadingSpinner";
 import AjaxError from "components/ajax/AjaxError";
 import { usePreviousQuotesHistory } from "hooks/PreviousQuotesHistory";
 import { trackPromise } from "react-promise-tracker";
+import { usePromiseTracker } from "react-promise-tracker";
 
 function PreviousQuotesListing() {
   const defaultPerPage = process.env.REACT_APP_DEFAULT_PER_PAGE;
@@ -18,13 +19,14 @@ function PreviousQuotesListing() {
     quotes: [],
     ajaxError: null,
     isLoaded: false,
-    paginationMeta: null,
+    paginationMeta: [],
     filterQuery: { page: 1, per_page: defaultPerPage, order: defaultOrder },
     historyPushEvent: false,
     queryString: "",
   };
   const [state, dispatch] = useReducer(QuotesReducer, initialState);
   const { quotes, ajaxError, isLoaded, paginationMeta, filterQuery } = state;
+  const { promiseInProgress: ajaxInProgress } = usePromiseTracker();
 
   useEffect(() => {
     trackPromise(fetchPreviousQuotesData(filterQuery, dispatch));
@@ -34,7 +36,7 @@ function PreviousQuotesListing() {
 
   if (ajaxError) {
     return <AjaxError ajaxError={ajaxError} />;
-  } else if (!isLoaded) {
+  } else if (!isLoaded || ajaxInProgress) {
     return <AjaxLoadingSpinner />;
   } else {
     return (
