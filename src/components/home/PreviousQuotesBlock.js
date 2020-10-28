@@ -16,7 +16,7 @@ function PreviousQuotesBlock() {
     fetchQuotesData(apiEndpoint, setIsLoaded, setError, (json) => {
       setPreviousQuotes(json.data);
     });
-  }, []);
+  }, [apiEndpoint]);
 
   if (error) {
     return <AjaxError ajaxError={error} />;

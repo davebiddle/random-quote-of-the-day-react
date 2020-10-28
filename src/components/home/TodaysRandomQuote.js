@@ -15,7 +15,7 @@ function TodaysRandomQuote() {
     fetchQuotesData(apiEndpoint, setIsLoaded, setError, (json) => {
       setTodaysQuote(json.data);
     });
-  }, []);
+  }, [apiEndpoint]);
 
   const {
     dateFormatted = "",
