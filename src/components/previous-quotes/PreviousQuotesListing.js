@@ -5,7 +5,6 @@ import ListingWide from "components/previous-quotes/ListingWide";
 import ListingPagination from "components/previous-quotes/ListingPagination";
 import QuotesContext from "contexts/QuotesContext";
 import QuotesReducer from "reducers/QuotesReducer";
-// import fetchPreviousQuotesData from "helpers/fetchPreviousQuotesData";
 import { useApiClient } from "hooks/ApiClient";
 import AjaxLoadingSpinner from "components/ajax/AjaxLoadingSpinner";
 import AjaxError from "components/ajax/AjaxError";
@@ -30,10 +29,13 @@ function PreviousQuotesListing() {
   const { promiseInProgress: ajaxInProgress } = usePromiseTracker();
   const ApiClient = useApiClient(dispatch);
 
-  ApiClient.setEndpoint(
-    process.env.REACT_APP_API_ENDPOINT_PREVIOUS_QUOTES_LISTING
-  );
-  ApiClient.setFilterParams(filterQuery);
+  // bootstrap API client
+  if (!isLoaded) {
+    ApiClient.setEndpoint(
+      process.env.REACT_APP_API_ENDPOINT_PREVIOUS_QUOTES_LISTING
+    );
+    ApiClient.setFilterParams(filterQuery);
+  }
 
   useEffect(() => {
     trackPromise(ApiClient.fetchData());

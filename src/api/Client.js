@@ -9,7 +9,7 @@ class ApiClient {
     this.token = process.env.REACT_APP_API_TOKEN;
 
     this.buildQueryString = function () {
-      this.queryString = queryString.stringify(this.filterParams);
+      this._queryString = queryString.stringify(this.filterParams);
     };
   }
 
@@ -36,14 +36,14 @@ class ApiClient {
   }
 
   getQueryString() {
-    return this.queryString;
+    return this._queryString;
   }
 
   fetchData() {
     let url = `${this.domain}/${this.endpoint}`;
 
-    if (this.queryString) {
-      url += `?${this.queryString}`;
+    if (this._queryString) {
+      url += `?${this._queryString}`;
     }
 
     const promise = new Promise((resolve, reject) => {
@@ -71,7 +71,7 @@ class ApiClient {
                   quotes: json.data,
                   paginationMeta: json.meta,
                   filterQuery: this.filterParams,
-                  queryString: this.queryString,
+                  queryString: this._queryString,
                 },
               });
             },
