@@ -5,7 +5,7 @@ import ListingWide from "components/previous-quotes/ListingWide";
 import ListingPagination from "components/previous-quotes/ListingPagination";
 import QuotesContext from "contexts/QuotesContext";
 import QuotesReducer from "reducers/QuotesReducer";
-import { useApiClient } from "hooks/ApiClient";
+import { useApiClient } from "hooks/ApiReducerClient";
 import AjaxLoadingSpinner from "components/ajax/AjaxLoadingSpinner";
 import AjaxError from "components/ajax/AjaxError";
 import { usePreviousQuotesHistory } from "hooks/PreviousQuotesHistory";

@@ -1,10 +1,14 @@
 import queryString from "query-string";
-import { registerHistoryStackPushEvent } from "hooks/PreviousQuotesHistory";
 
-class ApiClient {
-  constructor(dispatch) {
-    this.dispatch = dispatch;
-
+/**
+ * Base class for fetching data from backend API endpoints.
+ *
+ * Expects subclasses to implement updateState() and
+ * handleError() methods, which will be called with the fetch()
+ * reponse.
+ */
+class BaseClient {
+  constructor() {
     this.domain = process.env.REACT_APP_API_URL;
     this.token = process.env.REACT_APP_API_TOKEN;
 
@@ -13,32 +17,81 @@ class ApiClient {
     };
   }
 
+  /**
+   * Set the 'path' portion of the fetch URL.
+   *
+   * @param {string} endpoint
+   * @return {BaseClient}
+   */
   setEndpoint(endpoint) {
     this.endpoint = endpoint;
+
+    return this;
   }
 
+  /**
+   * Set filter parameters for the request. Replaces
+   * any current parameters.
+   *
+   * @param {Object} filterParams
+   * @return {BaseClient}
+   */
   setFilterParams(filterParams) {
     this.filterParams = filterParams;
     this.buildQueryString();
+
+    return this;
   }
 
+  /**
+   * Set a single filter parameter for the request.
+   *
+   * @param {string} key
+   * @param {string} param
+   * @return {BaseClient}
+   */
   setFilterParam(key, param) {
     this.filterParams[key] = param;
     this.buildQueryString();
+
+    return this;
   }
 
+  /**
+   * Get the filter parameters for the request.
+   *
+   * @return {Object}
+   */
   getFilterParams() {
     return this.filterParams;
   }
 
+  /**
+   * Get a single filter parameter.
+   *
+   * @return {string}
+   */
   getFilterParam(key) {
     return this.filterParams[key];
   }
 
+  /**
+   * Get a single filter parameter.
+   *
+   * @return {string}
+   */
   getQueryString() {
     return this._queryString;
   }
 
+  /**
+   * Sets up a Promise when fetching data, which may optionally be
+   * used with `react-promise-tracker` to track the status of requests
+   * and do something; such as display a loading spinner while in
+   * progress.
+   *
+   * @return {Promise}
+   */
   fetchData() {
     let url = `${this.domain}/${this.endpoint}`;
 
@@ -58,32 +111,12 @@ class ApiClient {
           .then((response) => response.json())
           .then(
             (json) => {
-              // Register a history stack push event, to be picked up by our history
-              // hook when the state has been updated with this response.
-              // We do this here because we need the updated state in the history item
-              // which is pushed onto the stack.
-              registerHistoryStackPushEvent();
-
-              // Call dispatch Reducer action for setting quotes data in context state
-              this.dispatch({
-                type: "ajax/setQuotesData",
-                payload: {
-                  quotes: json.data,
-                  paginationMeta: json.meta,
-                  filterQuery: this.filterParams,
-                  queryString: this._queryString,
-                },
-              });
+              this.updateState(json);
             },
             // The React docs specify handling errors here instead of a catch block:
             // https://reactjs.org/docs/faq-ajax.html
             (error) => {
-              this.dispatch({
-                type: "ajax/setError",
-                payload: {
-                  ajaxError: error,
-                },
-              });
+              this.handleError(error);
             }
           )
       );
@@ -93,4 +126,4 @@ class ApiClient {
   }
 }
 
-export default ApiClient;
+export default BaseClient;

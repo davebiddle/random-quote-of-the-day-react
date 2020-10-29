@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import QuotesContext from "contexts/QuotesContext";
-import { getApiClient } from "hooks/ApiClient";
+import { getApiClient } from "hooks/ApiReducerClient";
 import { trackPromise } from "react-promise-tracker";
 import SvgIconSelectDown from "components/svg/SvgIconSelectDown";
 

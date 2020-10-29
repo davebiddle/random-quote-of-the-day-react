@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import QuotesContext from "contexts/QuotesContext";
-import { getApiClient } from "hooks/ApiClient";
+import { getApiClient } from "hooks/ApiReducerClient";
 import ReactPaginate from "react-paginate";
 import { isMobile } from "react-device-detect";
 import { trackPromise } from "react-promise-tracker";

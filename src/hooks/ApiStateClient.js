@@ -1,9 +1,11 @@
 import { useRef } from "react";
-import ApiClient from "api/Client";
+import { ApiClient } from "api/StateClient";
 
 class ApiClientWrapper {
-  static useApiClient(dispatch) {
-    ApiClientWrapper.apiClient = useRef(new ApiClient(dispatch));
+  static useApiClient(setState, setError, setIsLoaded) {
+    ApiClientWrapper.apiClient = useRef(
+      new ApiClient(setState, setError, setIsLoaded)
+    );
 
     return ApiClientWrapper.getApiClient();
   }
