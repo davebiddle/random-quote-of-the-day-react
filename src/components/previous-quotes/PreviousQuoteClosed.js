@@ -2,8 +2,7 @@ import React, { useContext } from "react";
 import QuotesContext from "contexts/QuotesContext";
 import SvgIconPlus from "components/svg/SvgIconPlus";
 
-function PreviousQuoteClosed(props) {
-  const { quote } = props;
+const PreviousQuoteClosed = ({ quote }) => {
   const { isOpen = false, formattedDate = "" } = quote;
 
   const { dispatch } = useContext(QuotesContext);
@@ -28,6 +27,6 @@ function PreviousQuoteClosed(props) {
       <div className="ml-16">{formattedDate}</div>
     </div>
   );
-}
+};
 
 export default PreviousQuoteClosed;

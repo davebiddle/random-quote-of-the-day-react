@@ -1,6 +1,6 @@
 import * as React from "react";
 
-function SvgIconArrowDown(props) {
+const SvgIconArrowDown = (props) => {
   return (
     <svg width={30} height={30} viewBox="0 0 7.938 7.938" {...props}>
       <g fill="none">
@@ -14,6 +14,6 @@ function SvgIconArrowDown(props) {
       </g>
     </svg>
   );
-}
+};
 
 export default SvgIconArrowDown;

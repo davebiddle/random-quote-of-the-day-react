@@ -2,8 +2,7 @@ import React, { useContext } from "react";
 import QuotesContext from "contexts/QuotesContext";
 import SvgIconMinus from "components/svg/SvgIconMinus";
 
-function PreviousQuoteOpen(props) {
-  const { quote } = props;
+const PreviousQuoteOpen = ({ quote }) => {
   const {
     isOpen = false,
     formattedDate = "",
@@ -58,6 +57,6 @@ function PreviousQuoteOpen(props) {
       </div>
     </div>
   );
-}
+};
 
 export default PreviousQuoteOpen;

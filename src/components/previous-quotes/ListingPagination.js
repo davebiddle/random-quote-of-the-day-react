@@ -5,7 +5,7 @@ import ReactPaginate from "react-paginate";
 import { isMobile } from "react-device-detect";
 import { trackPromise } from "react-promise-tracker";
 
-function ListingPagination() {
+const ListingPagination = () => {
   const { dispatch, paginationMeta, filterQuery } = useContext(QuotesContext);
   const { last_page: pageCount, current_page: currentPage } = paginationMeta;
   const pageRangeToDisplay = isMobile ? 3 : 6;
@@ -38,6 +38,6 @@ function ListingPagination() {
       />
     </section>
   );
-}
+};
 
 export default ListingPagination;

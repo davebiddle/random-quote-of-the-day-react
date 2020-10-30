@@ -1,6 +1,6 @@
 import * as React from "react";
 
-function SvgIconSelectDown(props) {
+const SvgIconSelectDown = (props) => {
   return (
     <svg width={12.177} height={7.306} viewBox="0 0 3.222 1.933" {...props}>
       <g fill="none" stroke="#c1cacc" strokeLinecap="round" strokeWidth={0.644}>
@@ -8,6 +8,6 @@ function SvgIconSelectDown(props) {
       </g>
     </svg>
   );
-}
+};
 
 export default SvgIconSelectDown;

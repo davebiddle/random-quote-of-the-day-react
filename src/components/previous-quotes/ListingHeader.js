@@ -4,7 +4,7 @@ import fetchPreviousQuotesData from "helpers/fetchPreviousQuotesData";
 import { trackPromise } from "react-promise-tracker";
 import SvgIconSelectDown from "components/svg/SvgIconSelectDown";
 
-function ListingHeader() {
+const ListingHeader = () => {
   const { dispatch, filterQuery, paginationMeta } = useContext(QuotesContext);
   const { from, to, total } = paginationMeta;
   const perPageValue = paginationMeta.per_page
@@ -70,6 +70,6 @@ function ListingHeader() {
       </div>
     </header>
   );
-}
+};
 
 export default ListingHeader;

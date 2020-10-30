@@ -1,6 +1,6 @@
 import React from "react";
 
-function CreditsAndCopyright() {
+const CreditsAndCopyright = () => {
   return (
     <div className="credits-copyright bg-mako-900 px-5 py-4 leading-7 sm:pt-8">
       <p className="w-full sm:text-center">
@@ -24,6 +24,6 @@ function CreditsAndCopyright() {
       <p className="w-full sm:text-center">&copy; 2020 Dave Biddle</p>
     </div>
   );
-}
+};
 
 export default CreditsAndCopyright;

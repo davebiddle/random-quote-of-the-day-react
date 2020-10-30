@@ -5,7 +5,7 @@ import fetchQuotesData from "helpers/fetchQuotesData";
 import AjaxLoadingSpinner from "components/ajax/AjaxLoadingSpinner";
 import AjaxError from "components/ajax/AjaxError";
 
-function TodaysRandomQuote() {
+const TodaysRandomQuote = () => {
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const [todaysQuote, setTodaysQuote] = useState({});
@@ -85,6 +85,6 @@ function TodaysRandomQuote() {
       </div>
     );
   }
-}
+};
 
 export default TodaysRandomQuote;

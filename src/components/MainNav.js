@@ -5,7 +5,7 @@ import mob_nav_hamburger_icon from "assets/img/menu-mobile-hamburger.svg";
 import mob_nav_close_icon from "assets/img/menu-mobile-close.svg";
 import MobileNavDropdown from "components/MobileNavDropdown";
 
-function MainNav() {
+const MainNav = () => {
   // Create isOpen state prop using useState hook,
   // setting default value to `false`.
   const [isOpen, setIsOpen] = useState(false);
@@ -60,6 +60,6 @@ function MainNav() {
       }
     </header>
   );
-}
+};
 
 export default MainNav;

@@ -1,6 +1,6 @@
 import * as React from "react";
 
-function SvgIconPlus(props) {
+const SvgIconPlus = (props) => {
   return (
     <svg width={31.002} height={31.002} viewBox="0 0 8.203 8.203" {...props}>
       <g
@@ -27,6 +27,6 @@ function SvgIconPlus(props) {
       </g>
     </svg>
   );
-}
+};
 
 export default SvgIconPlus;
