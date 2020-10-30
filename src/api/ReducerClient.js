@@ -36,4 +36,4 @@ class ReducerClient extends BaseClient {
   }
 }
 
-export { ReducerClient as ApiClient };
+export { ReducerClient as ApiReducerClient };

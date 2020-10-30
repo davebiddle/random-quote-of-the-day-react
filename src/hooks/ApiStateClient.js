@@ -1,10 +1,20 @@
 import { useRef } from "react";
-import { ApiClient } from "api/StateClient";
+import { ApiStateClient } from "api/StateClient";
 
 class ApiClientWrapper {
+  /**
+   * Custom hook which instantiates a new ApiStateClient
+   * instance and sets is as a useRef property of
+   * this class.
+   *
+   * @param {Function} setState
+   * @param {Function} setError
+   * @param {Function} setIsLoaded
+   * @returns {ApiStateClient}
+   */
   static useApiClient(setState, setError, setIsLoaded) {
     ApiClientWrapper.apiClient = useRef(
-      new ApiClient(setState, setError, setIsLoaded)
+      new ApiStateClient(setState, setError, setIsLoaded)
     );
 
     return ApiClientWrapper.getApiClient();

@@ -19,4 +19,4 @@ class StateClient extends BaseClient {
   }
 }
 
-export { StateClient as ApiClient };
+export { StateClient as ApiStateClient };
