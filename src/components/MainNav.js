@@ -15,7 +15,7 @@ function MainNav() {
   const toggleMobileNavMenu = () => setIsOpen(!isOpen);
 
   return (
-    <div className="relative">
+    <header className="relative">
       <div className="relative z-20 w-full h-24 pl-4 sm:pl-24 pr-8 flex justify-between items-center bg-genoa font-serif text-white">
         <a href="/">
           <img src={logo} alt="Logo" />
@@ -58,7 +58,7 @@ function MainNav() {
         // state prop value
         isOpen ? <MobileNavDropdown onClose={toggleMobileNavMenu} /> : null
       }
-    </div>
+    </header>
   );
 }
 

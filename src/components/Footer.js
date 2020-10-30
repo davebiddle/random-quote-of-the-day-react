@@ -4,10 +4,10 @@ import CreditsAndCopyright from "components/CreditsAndCopyright";
 
 function Footer() {
   return (
-    <div className="text-white font-serif">
+    <footer className="text-white font-serif">
       <FooterNav />
       <CreditsAndCopyright />
-    </div>
+    </footer>
   );
 }
 
