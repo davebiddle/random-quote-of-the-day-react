@@ -12,10 +12,10 @@ const MainNav = () => {
 
   // Click handler for toggling mobile nav dropdown.
   // Sets `isOpen` state prop to inverse of current value.
-  const toggleMobileNavMenu = useCallback(() => setIsOpen(!isOpen), [
-    isOpen,
-    setIsOpen,
-  ]);
+  const toggleMobileNavMenu = useCallback(
+    () => setIsOpen((prevValue) => !prevValue),
+    [setIsOpen]
+  );
 
   return (
     <header className="relative">

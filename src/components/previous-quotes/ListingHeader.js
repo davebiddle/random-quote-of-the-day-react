@@ -15,7 +15,7 @@ const ListingHeader = () => {
       <p className="mb-2 sm:mb-0 md:mt-7">{`Showing ${from}-${to} of ${total} quotes`}</p>
       <div className="md:flex md:justify-end">
         <div className="pr-4 mb-2 md:mb-0">
-          <label for="select-per-page">Per page:</label>
+          <label htmlFor="select-per-page">Per page:</label>
           <div className="inline-block relative w-24 ml-4">
             <select
               id="select-per-page"
@@ -48,7 +48,7 @@ const ListingHeader = () => {
           </div>
         </div>
         <div>
-          <label for="select-order">Order by:</label>
+          <label htmlFor="select-order">Order by:</label>
           <div className="inline-block relative w-48 ml-4">
             <select
               id="select-order"
