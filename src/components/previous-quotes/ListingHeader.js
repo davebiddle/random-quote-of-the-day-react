@@ -7,12 +7,8 @@ import SvgIconSelectDown from "components/svg/SvgIconSelectDown";
 const ListingHeader = () => {
   const { dispatch, filterQuery, paginationMeta } = useContext(QuotesContext);
   const { from, to, total } = paginationMeta;
-  const perPageValue = paginationMeta.per_page
-    ? paginationMeta.per_page
-    : filterQuery.per_page;
-  const orderValue = paginationMeta.order
-    ? paginationMeta.order
-    : filterQuery.order;
+  const perPageValue = paginationMeta.per_page || filterQuery.per_page;
+  const orderValue = paginationMeta.order || filterQuery.order;
 
   return (
     <header className="px-4 sm:px-8 md:px-10 py-2 md:h-16 lg:h-20 text-mako-600 text-sm italic sm:flex sm:justify-between sm:items-center lg:items-end lg:pl-0 lg:pt-0 lg:pb-4">
