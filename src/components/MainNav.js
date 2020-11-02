@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useCallback, useState } from "react";
 import { NavLink } from "react-router-dom";
 import logo from "assets/img/logo-header-117x72.png";
 import mob_nav_hamburger_icon from "assets/img/menu-mobile-hamburger.svg";
@@ -12,7 +12,10 @@ const MainNav = () => {
 
   // Click handler for toggling mobile nav dropdown.
   // Sets `isOpen` state prop to inverse of current value.
-  const toggleMobileNavMenu = () => setIsOpen(!isOpen);
+  const toggleMobileNavMenu = useCallback(() => setIsOpen(!isOpen), [
+    isOpen,
+    setIsOpen,
+  ]);
 
   return (
     <header className="relative">

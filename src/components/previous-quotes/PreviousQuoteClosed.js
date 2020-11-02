@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useCallback } from "react";
 import QuotesContext from "contexts/QuotesContext";
 import SvgIconPlus from "components/svg/SvgIconPlus";
 
@@ -15,12 +15,12 @@ const PreviousQuoteClosed = ({ quote }) => {
     >
       <div
         className="px-2"
-        onClick={() => {
+        onClick={useCallback(() => {
           dispatch({
             type: "quote/toggleOpenState",
             payload: { quote: quote },
           });
-        }}
+        }, [dispatch, quote])}
       >
         <SvgIconPlus />
       </div>

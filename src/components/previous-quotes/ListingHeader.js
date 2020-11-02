@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useCallback } from "react";
 import QuotesContext from "contexts/QuotesContext";
 import fetchPreviousQuotesData from "helpers/fetchPreviousQuotesData";
 import { trackPromise } from "react-promise-tracker";
@@ -21,11 +21,17 @@ const ListingHeader = () => {
               id="select-per-page"
               name="select-per-page"
               value={perPageValue}
-              onChange={(event) => {
-                const params = { ...filterQuery, per_page: event.target.value };
+              onChange={useCallback(
+                (event) => {
+                  const params = {
+                    ...filterQuery,
+                    per_page: event.target.value,
+                  };
 
-                trackPromise(fetchPreviousQuotesData(params, dispatch));
-              }}
+                  trackPromise(fetchPreviousQuotesData(params, dispatch));
+                },
+                [filterQuery, dispatch]
+              )}
               className="appearance-none w-full bg-white border-2 border-mako-300 hover:border-mako-400 rounded px-4 py-1 pr-8 focus:outline-none focus:shadow-outline"
             >
               {[5, 10, 15, 20, 25, 30].map((perPage, index) => {
@@ -48,11 +54,14 @@ const ListingHeader = () => {
               id="select-order"
               name="select-order"
               value={orderValue}
-              onChange={(event) => {
-                const params = { ...filterQuery, order: event.target.value };
+              onChange={useCallback(
+                (event) => {
+                  const params = { ...filterQuery, order: event.target.value };
 
-                trackPromise(fetchPreviousQuotesData(params, dispatch));
-              }}
+                  trackPromise(fetchPreviousQuotesData(params, dispatch));
+                },
+                [filterQuery, dispatch]
+              )}
               className="appearance-none w-full bg-white border-2 border-mako-300 hover:border-mako-400 rounded px-4 py-1 pr-8 focus:outline-none focus:shadow-outline"
             >
               <option value="desc">Date (Newest first)</option>
