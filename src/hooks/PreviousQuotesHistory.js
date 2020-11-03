@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef, useCallback } from "react";
+import { useEffect, useState, useRef } from "react";
 import { useHistory } from "react-router-dom";
 import { createPath } from "history";
 import { usePromiseTracker } from "react-promise-tracker";
@@ -9,19 +9,30 @@ import { usePromiseTracker } from "react-promise-tracker";
  *
  * @param {Function} dispatch
  * @param {*} state
+ * @return {Object}
  */
-const usePreviousQuotesHistory = (dispatch, state, pushRef, setPushRef) => {
+const usePreviousQuotesHistory = (dispatch, state) => {
   const history = useHistory();
   const [locationKeys, setLocationKeys] = useState([]);
   const { ajaxInProgress } = usePromiseTracker();
 
-  console.log(pushRef);
+  /**
+   * Tracks whether a location should be pushed onto the
+   * browser history stack. Allows components to flag
+   * that an AJAX request has been made which will update their
+   * state, and that state should be added as a location
+   * in the browster history.
+   *
+   * @var bool
+   */
+  const pushRef = useRef(false);
+
   // Push a location onto the history stack if a push event has
   // been registered and the associated AJAX request has completed.
   useEffect(() => {
     const { queryString } = state;
 
-    if (pushRef && !ajaxInProgress) {
+    if (pushRef.current && !ajaxInProgress) {
       console.log("Push event in progress");
       const { location } = history;
       const path = createPath({
@@ -31,7 +42,7 @@ const usePreviousQuotesHistory = (dispatch, state, pushRef, setPushRef) => {
 
       history.push(path, state);
 
-      setPushRef(false);
+      pushRef.current = false;
     }
   }, [ajaxInProgress, state, pushRef, history]);
 
@@ -75,6 +86,9 @@ const usePreviousQuotesHistory = (dispatch, state, pushRef, setPushRef) => {
       }
     });
   }, [locationKeys, history, dispatch]);
+
+  // return our pushRef object so that it can be set by components
+  return pushRef;
 };
 
 export default usePreviousQuotesHistory;

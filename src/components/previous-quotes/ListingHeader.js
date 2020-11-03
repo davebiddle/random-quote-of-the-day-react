@@ -5,7 +5,7 @@ import { trackPromise } from "react-promise-tracker";
 import SvgIconSelectDown from "components/svg/SvgIconSelectDown";
 
 function ListingHeader() {
-  const { dispatch, filterQuery, paginationMeta, setPushRef } = useContext(
+  const { dispatch, filterQuery, paginationMeta, pushRef } = useContext(
     QuotesContext
   );
   const { from, to, total } = paginationMeta;
@@ -31,7 +31,7 @@ function ListingHeader() {
                 const params = { ...filterQuery, per_page: event.target.value };
 
                 trackPromise(
-                  fetchPreviousQuotesData(params, dispatch, setPushRef)
+                  fetchPreviousQuotesData(params, dispatch, pushRef)
                 );
               }}
               className="appearance-none w-full bg-white border-2 border-mako-300 hover:border-mako-400 rounded px-4 py-1 pr-8 focus:outline-none focus:shadow-outline"
@@ -60,7 +60,7 @@ function ListingHeader() {
                 const params = { ...filterQuery, order: event.target.value };
 
                 trackPromise(
-                  fetchPreviousQuotesData(params, dispatch, setPushRef)
+                  fetchPreviousQuotesData(params, dispatch, pushRef)
                 );
               }}
               className="appearance-none w-full bg-white border-2 border-mako-300 hover:border-mako-400 rounded px-4 py-1 pr-8 focus:outline-none focus:shadow-outline"

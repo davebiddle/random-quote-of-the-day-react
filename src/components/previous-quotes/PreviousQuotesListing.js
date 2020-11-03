@@ -9,7 +9,6 @@ import fetchPreviousQuotesData from "helpers/FetchPreviousQuotesData";
 import AjaxLoadingSpinner from "components/ajax/AjaxLoadingSpinner";
 import AjaxError from "components/ajax/AjaxError";
 import usePreviousQuotesHistory from "hooks/PreviousQuotesHistory";
-import useHistoryStackPushRef from "hooks/HistoryStackPushRef";
 import { trackPromise } from "react-promise-tracker";
 import { usePromiseTracker } from "react-promise-tracker";
 
@@ -27,13 +26,12 @@ function PreviousQuotesListing() {
   const [state, dispatch] = useReducer(QuotesReducer, initialState);
   const { quotes, ajaxError, isLoaded, paginationMeta, filterQuery } = state;
   const { promiseInProgress: ajaxInProgress } = usePromiseTracker();
-  const [pushRef, setPushRef] = useHistoryStackPushRef();
+
+  const pushRef = usePreviousQuotesHistory(dispatch, state);
 
   useEffect(() => {
-    trackPromise(fetchPreviousQuotesData(filterQuery, dispatch, setPushRef));
+    trackPromise(fetchPreviousQuotesData(filterQuery, dispatch, pushRef));
   }, []);
-
-  usePreviousQuotesHistory(dispatch, state, pushRef, setPushRef);
 
   if (ajaxError) {
     return <AjaxError ajaxError={ajaxError} />;
@@ -47,7 +45,7 @@ function PreviousQuotesListing() {
           dispatch,
           paginationMeta,
           filterQuery,
-          setPushRef,
+          pushRef,
         }}
       >
         <div className="previous-quotes-listing bg-white lg:w-4/5 lg:relative lg:m-auto lg:-top-12 lg:shadow-blockquote lg:px-8">
