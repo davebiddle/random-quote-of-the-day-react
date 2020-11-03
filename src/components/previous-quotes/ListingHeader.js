@@ -1,11 +1,13 @@
 import React, { useContext } from "react";
 import QuotesContext from "contexts/QuotesContext";
-import fetchPreviousQuotesData from "helpers/fetchPreviousQuotesData";
+import fetchPreviousQuotesData from "helpers/FetchPreviousQuotesData";
 import { trackPromise } from "react-promise-tracker";
 import SvgIconSelectDown from "components/svg/SvgIconSelectDown";
 
 function ListingHeader() {
-  const { dispatch, filterQuery, paginationMeta } = useContext(QuotesContext);
+  const { dispatch, filterQuery, paginationMeta, setPushRef } = useContext(
+    QuotesContext
+  );
   const { from, to, total } = paginationMeta;
   const perPageValue = paginationMeta.per_page
     ? paginationMeta.per_page
@@ -28,7 +30,9 @@ function ListingHeader() {
               onChange={(event) => {
                 const params = { ...filterQuery, per_page: event.target.value };
 
-                trackPromise(fetchPreviousQuotesData(params, dispatch));
+                trackPromise(
+                  fetchPreviousQuotesData(params, dispatch, setPushRef)
+                );
               }}
               className="appearance-none w-full bg-white border-2 border-mako-300 hover:border-mako-400 rounded px-4 py-1 pr-8 focus:outline-none focus:shadow-outline"
             >
@@ -55,7 +59,9 @@ function ListingHeader() {
               onChange={(event) => {
                 const params = { ...filterQuery, order: event.target.value };
 
-                trackPromise(fetchPreviousQuotesData(params, dispatch));
+                trackPromise(
+                  fetchPreviousQuotesData(params, dispatch, setPushRef)
+                );
               }}
               className="appearance-none w-full bg-white border-2 border-mako-300 hover:border-mako-400 rounded px-4 py-1 pr-8 focus:outline-none focus:shadow-outline"
             >
