@@ -6,7 +6,7 @@ import { isMobile } from "react-device-detect";
 import { trackPromise } from "react-promise-tracker";
 
 function ListingPagination() {
-  const { dispatch, paginationMeta, filterQuery, pushRef } = useContext(
+  const { dispatch, paginationMeta, filterQuery, setPushRef } = useContext(
     QuotesContext
   );
   const { last_page: pageCount, current_page: currentPage } = paginationMeta;
@@ -16,7 +16,7 @@ function ListingPagination() {
     const { selected: page } = data;
     const params = { ...filterQuery, page: page + 1 };
 
-    trackPromise(fetchPreviousQuotesData(params, dispatch, pushRef));
+    trackPromise(fetchPreviousQuotesData(params, dispatch, setPushRef));
   };
 
   return (

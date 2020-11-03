@@ -27,10 +27,10 @@ function PreviousQuotesListing() {
   const { quotes, ajaxError, isLoaded, paginationMeta, filterQuery } = state;
   const { promiseInProgress: ajaxInProgress } = usePromiseTracker();
 
-  const pushRef = usePreviousQuotesHistory(dispatch, state);
+  const setPushRef = usePreviousQuotesHistory(dispatch, state);
 
   useEffect(() => {
-    trackPromise(fetchPreviousQuotesData(filterQuery, dispatch, pushRef));
+    trackPromise(fetchPreviousQuotesData(filterQuery, dispatch, setPushRef));
   }, []);
 
   if (ajaxError) {
@@ -45,7 +45,7 @@ function PreviousQuotesListing() {
           dispatch,
           paginationMeta,
           filterQuery,
-          pushRef,
+          setPushRef,
         }}
       >
         <div className="previous-quotes-listing bg-white lg:w-4/5 lg:relative lg:m-auto lg:-top-12 lg:shadow-blockquote lg:px-8">

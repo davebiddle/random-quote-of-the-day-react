@@ -27,13 +27,20 @@ const usePreviousQuotesHistory = (dispatch, state) => {
    */
   const pushRef = useRef(false);
 
+  const setPushRef = (val) => {
+    pushRef.current = val;
+  };
+
+  const getPushRef = () => {
+    return pushRef.current;
+  };
+
   // Push a location onto the history stack if a push event has
   // been registered and the associated AJAX request has completed.
   useEffect(() => {
     const { queryString } = state;
 
     if (pushRef.current && !ajaxInProgress) {
-      console.log("Push event in progress");
       const { location } = history;
       const path = createPath({
         pathname: location.pathname,
@@ -52,7 +59,6 @@ const usePreviousQuotesHistory = (dispatch, state) => {
     return history.listen((location) => {
       const { action } = history;
       const { key } = location;
-      console.log("Action: " + action);
 
       if (action === "PUSH") {
         setLocationKeys([key]);
@@ -87,8 +93,8 @@ const usePreviousQuotesHistory = (dispatch, state) => {
     });
   }, [locationKeys, history, dispatch]);
 
-  // return our pushRef object so that it can be set by components
-  return pushRef;
+  // return our pushRef setter so that the ref can be set by components
+  return setPushRef;
 };
 
 export default usePreviousQuotesHistory;
