@@ -1,6 +1,19 @@
-import { useCallback } from "react";
+import { useState, useCallback } from "react";
 
-const useFetchQuotesData = (path, setisLoaded, setError, setState) => {
+/**
+ * Custom hook which houses parameters and functions for making
+ * AJAX requests to the backend API, for fetching data for the
+ * hompage components.
+ *
+ * @param {string} path The API endpoint to make the request to.
+ * @param {*} defaultResponseState The default state to set when creating the response state.
+ * @return {Object}
+ */
+const useFetchQuotesData = (path, defaultResponseState) => {
+  const [error, setError] = useState(null);
+  const [isLoaded, setIsLoaded] = useState(false);
+  const [responseState, setResponseState] = useState(defaultResponseState);
+
   const apiUrl = process.env.REACT_APP_API_URL;
   const apiToken = process.env.REACT_APP_API_TOKEN;
 
@@ -15,20 +28,21 @@ const useFetchQuotesData = (path, setisLoaded, setError, setState) => {
       .then((response) => response.json())
       .then(
         (json) => {
-          setisLoaded(true);
-          // set response in state using passed in state setter
-          setState(json.data);
+          // set isLoaded state flag
+          setIsLoaded(true);
+          // set response state
+          setResponseState(json.data);
         },
         // The React docs specify handling errors here instead of a catch block:
         // https://reactjs.org/docs/faq-ajax.html
         (error) => {
-          setisLoaded(true);
+          setIsLoaded(true);
           setError(error);
         }
       );
-  }, [path, apiUrl, apiToken, setisLoaded, setState, setError]);
+  }, [path, apiUrl, apiToken, setIsLoaded, setResponseState, setError]);
 
-  return fetchData;
+  return { error, isLoaded, responseState, fetchData };
 };
 
 export default useFetchQuotesData;

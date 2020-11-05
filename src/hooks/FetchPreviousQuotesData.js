@@ -4,7 +4,7 @@ import { registerHistoryStackPushEvent } from "hooks/PreviousQuotesHistory";
 
 /**
  * Custom hook which houses parameters and functions for making
- * AJAX requests to the backend API for fetching data, for the
+ * AJAX requests to the backend API, for fetching data for the
  * Previous Quotes listing components.
  *
  * Takes the `dispatch` function returned by useReducer() as it's

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import icon_calendar from "assets/img/icon-calendar.svg";
 import icon_blockquote from "assets/img/quotes-icon.png";
 import AjaxLoadingSpinner from "components/ajax/AjaxLoadingSpinner";
@@ -6,16 +6,13 @@ import AjaxError from "components/ajax/AjaxError";
 import useFetchQuotesData from "hooks/FetchQuotesData";
 
 function TodaysRandomQuote() {
-  const [error, setError] = useState(null);
-  const [isLoaded, setIsLoaded] = useState(false);
-  const [todaysQuote, setTodaysQuote] = useState({});
   const apiEndpoint = process.env.REACT_APP_API_ENDPOINT_TODAYS_QUOTE;
-  const fetchData = useFetchQuotesData(
-    apiEndpoint,
-    setIsLoaded,
-    setError,
-    setTodaysQuote
-  );
+  const {
+    error,
+    isLoaded,
+    responseState: todaysQuote,
+    fetchData,
+  } = useFetchQuotesData(apiEndpoint, {});
 
   useEffect(() => {
     fetchData();
