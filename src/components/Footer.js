@@ -2,13 +2,13 @@ import React from "react";
 import FooterNav from "components/FooterNav";
 import CreditsAndCopyright from "components/CreditsAndCopyright";
 
-function Footer() {
+const Footer = () => {
   return (
-    <div className="text-white font-serif">
+    <footer className="text-white font-serif">
       <FooterNav />
       <CreditsAndCopyright />
-    </div>
+    </footer>
   );
-}
+};
 
 export default Footer;

@@ -1,6 +1,6 @@
 import * as React from "react";
 
-function SvgLoadingSpinner(props) {
+const SvgLoadingSpinner = (props) => {
   return (
     <svg width={113} height={113} viewBox="0 0 29.898 29.898" {...props}>
       <g
@@ -104,6 +104,6 @@ function SvgLoadingSpinner(props) {
       </g>
     </svg>
   );
-}
+};
 
 export default SvgLoadingSpinner;

@@ -12,7 +12,7 @@ import usePreviousQuotesHistory from "hooks/PreviousQuotesHistory";
 import { trackPromise } from "react-promise-tracker";
 import { usePromiseTracker } from "react-promise-tracker";
 
-function PreviousQuotesListing() {
+const PreviousQuotesListing = () => {
   const defaultPerPage = process.env.REACT_APP_DEFAULT_PER_PAGE;
   const defaultOrder = process.env.REACT_APP_DEFAULT_ORDER;
   const initialState = {
@@ -63,6 +63,6 @@ function PreviousQuotesListing() {
       </QuotesContext.Provider>
     );
   }
-}
+};
 
 export default PreviousQuotesListing;

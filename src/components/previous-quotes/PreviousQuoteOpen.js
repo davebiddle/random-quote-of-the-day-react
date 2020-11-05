@@ -1,9 +1,8 @@
-import React, { useContext } from "react";
+import React, { useContext, useCallback } from "react";
 import QuotesContext from "contexts/QuotesContext";
 import SvgIconMinus from "components/svg/SvgIconMinus";
 
-function PreviousQuoteOpen(props) {
-  const { quote } = props;
+const PreviousQuoteOpen = ({ quote }) => {
   const {
     isOpen = false,
     formattedDate = "",
@@ -21,12 +20,12 @@ function PreviousQuoteOpen(props) {
       <div className="flex justify-start items-center h-12 mb-4">
         <div
           className="px-2"
-          onClick={() => {
+          onClick={useCallback(() => {
             dispatch({
               type: "quote/toggleOpenState",
               payload: { quote: quote },
             });
-          }}
+          }, [dispatch, quote])}
         >
           <SvgIconMinus />
         </div>
@@ -58,6 +57,6 @@ function PreviousQuoteOpen(props) {
       </div>
     </div>
   );
-}
+};
 
 export default PreviousQuoteOpen;

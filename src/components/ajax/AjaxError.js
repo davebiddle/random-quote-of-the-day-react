@@ -1,8 +1,6 @@
 import React from "react";
 
-function AjaxError(props) {
-  const { ajaxError } = props;
-
+const AjaxError = ({ ajaxError }) => {
   return (
     <div className="w-full flex justify-center items-center">
       <div>
@@ -11,6 +9,6 @@ function AjaxError(props) {
       </div>
     </div>
   );
-}
+};
 
 export default AjaxError;

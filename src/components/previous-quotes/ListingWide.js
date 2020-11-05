@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import QuotesContext from "contexts/QuotesContext";
 
-function ListingWide() {
+const ListingWide = () => {
   const { quotes } = useContext(QuotesContext);
 
   return (
@@ -49,6 +49,6 @@ function ListingWide() {
       </tbody>
     </table>
   );
-}
+};
 
 export default ListingWide;
