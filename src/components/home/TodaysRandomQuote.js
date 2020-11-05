@@ -68,13 +68,13 @@ const TodaysRandomQuote = () => {
                 </li>
                 <li className="blockquote-footer-li">
                   <a target="_blank;" href={quoteparkAuthorLink}>
-                    {`More quotes from ${authorName}`}
+                    More quotes from {authorName}
                   </a>
                   <span className="icon-ext-link"></span>
                 </li>
                 <li className="blockquote-footer-li">
                   <a target="_blank;" href={wikiquoteAuthorLink}>
-                    {`Find ${authorName} on Wikiquote`}
+                    Find {authorName} on Wikiquote
                   </a>
                   <span className="icon-ext-link"></span>
                 </li>

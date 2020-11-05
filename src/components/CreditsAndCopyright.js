@@ -21,7 +21,9 @@ const CreditsAndCopyright = () => {
         </a>
         .
       </p>
-      <p className="w-full sm:text-center">&copy; 2020 Dave Biddle</p>
+      <p className="w-full sm:text-center">
+        &copy; {new Date().getFullYear()} Dave Biddle
+      </p>
     </div>
   );
 };
