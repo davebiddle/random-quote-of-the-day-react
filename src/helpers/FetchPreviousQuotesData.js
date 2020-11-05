@@ -1,7 +1,6 @@
 import queryString from "query-string";
-import { registerHistoryStackPushEvent } from "hooks/PreviousQuotesHistory";
 
-const fetchPreviousQuotesData = (filterQuery, dispatch) => {
+const fetchPreviousQuotesData = (filterQuery, dispatch, setPushRef) => {
   const apiUrl = process.env.REACT_APP_API_URL;
   const apiToken = process.env.REACT_APP_API_TOKEN;
   const apiEndpoint =
@@ -24,7 +23,7 @@ const fetchPreviousQuotesData = (filterQuery, dispatch) => {
             // hook when the state has been updated with this response.
             // We do this here because we need the updated state in the history item
             // which is pushed onto the stack.
-            registerHistoryStackPushEvent();
+            setPushRef(true);
 
             // Call dispatch Reducer action for setting quotes data in context state
             dispatch({
