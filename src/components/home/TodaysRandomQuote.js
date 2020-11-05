@@ -5,7 +5,7 @@ import fetchQuotesData from "helpers/fetchQuotesData";
 import AjaxLoadingSpinner from "components/ajax/AjaxLoadingSpinner";
 import AjaxError from "components/ajax/AjaxError";
 
-function TodaysRandomQuote() {
+const TodaysRandomQuote = () => {
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const [todaysQuote, setTodaysQuote] = useState({});
@@ -68,13 +68,13 @@ function TodaysRandomQuote() {
                 </li>
                 <li className="blockquote-footer-li">
                   <a target="_blank;" href={quoteparkAuthorLink}>
-                    {`More quotes from ${authorName}`}
+                    More quotes from {authorName}
                   </a>
                   <span className="icon-ext-link"></span>
                 </li>
                 <li className="blockquote-footer-li">
                   <a target="_blank;" href={wikiquoteAuthorLink}>
-                    {`Find ${authorName} on Wikiquote`}
+                    Find {authorName} on Wikiquote
                   </a>
                   <span className="icon-ext-link"></span>
                 </li>
@@ -85,6 +85,6 @@ function TodaysRandomQuote() {
       </div>
     );
   }
-}
+};
 
 export default TodaysRandomQuote;

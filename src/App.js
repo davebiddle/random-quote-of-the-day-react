@@ -5,7 +5,7 @@ import Footer from "components/Footer";
 import Home from "pages/Home";
 import PreviousQuotes from "pages/PreviousQuotes";
 
-function App() {
+const App = () => {
   return (
     <Router>
       <div className="flex flex-col min-h-screen">
@@ -18,6 +18,6 @@ function App() {
       </div>
     </Router>
   );
-}
+};
 
 export default App;

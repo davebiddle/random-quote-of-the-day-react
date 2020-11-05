@@ -6,7 +6,7 @@ import fetchQuotesData from "helpers/fetchQuotesData";
 import AjaxLoadingSpinner from "components/ajax/AjaxLoadingSpinner";
 import AjaxError from "components/ajax/AjaxError";
 
-function PreviousQuotesBlock() {
+const PreviousQuotesBlock = () => {
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const [previousQuotes, setPreviousQuotes] = useState([]);
@@ -78,6 +78,6 @@ function PreviousQuotesBlock() {
       </div>
     );
   }
-}
+};
 
 export default PreviousQuotesBlock;

@@ -1,8 +1,8 @@
 import React from "react";
 
-function mobileNavDropdown(props) {
+const mobileNavDropdown = (props) => {
   return (
-    <React.Fragment>
+    <>
       <button
         className="fixed top-0 right-0 bottom-0 left-0 w-full h-full bg-black opacity-50 cursor-default"
         onClick={props.onClose}
@@ -21,8 +21,8 @@ function mobileNavDropdown(props) {
           </li>
         </nav>
       </div>
-    </React.Fragment>
+    </>
   );
-}
+};
 
 export default mobileNavDropdown;

@@ -1,21 +1,23 @@
-import React, { useContext } from "react";
+import React, { useContext, useCallback } from "react";
 import QuotesContext from "contexts/QuotesContext";
 import fetchPreviousQuotesData from "helpers/fetchPreviousQuotesData";
 import ReactPaginate from "react-paginate";
 import { isMobile } from "react-device-detect";
 import { trackPromise } from "react-promise-tracker";
 
-function ListingPagination() {
+const ListingPagination = () => {
   const { dispatch, paginationMeta, filterQuery } = useContext(QuotesContext);
   const { last_page: pageCount, current_page: currentPage } = paginationMeta;
   const pageRangeToDisplay = isMobile ? 3 : 6;
 
-  const handlePaginationLinkClick = (data) => {
-    const { selected: page } = data;
-    const params = { ...filterQuery, page: page + 1 };
+  const handlePaginationLinkClick = useCallback(
+    ({ selected: page }) => {
+      const params = { ...filterQuery, page: page + 1 };
 
-    trackPromise(fetchPreviousQuotesData(params, dispatch));
-  };
+      trackPromise(fetchPreviousQuotesData(params, dispatch));
+    },
+    [filterQuery, dispatch]
+  );
 
   return (
     <section className="flex justify-center items-center h-20">
@@ -38,6 +40,6 @@ function ListingPagination() {
       />
     </section>
   );
-}
+};
 
 export default ListingPagination;

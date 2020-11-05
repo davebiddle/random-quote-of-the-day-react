@@ -1,6 +1,6 @@
 import * as React from "react";
 
-function SvgIconMinus(props) {
+const SvgIconMinus = (props) => {
   return (
     <svg width={31} height={31} viewBox="0 0 8.202 8.202" {...props}>
       <g transform="translate(-5.16 -79.244)" stroke="#c1cacc">
@@ -25,6 +25,6 @@ function SvgIconMinus(props) {
       </g>
     </svg>
   );
-}
+};
 
 export default SvgIconMinus;
