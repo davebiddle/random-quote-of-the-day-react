@@ -6,26 +6,11 @@
  * @param {Object} quote  The quote whose listing item is to be toggled
  * @return {Object}
  */
-const getUpdatedQuotes = (quotes, quote) => {
-  // Create a shallow copy of the `quotes` state prop (using
-  // spread), to work with.
-  const updatedQuotes = [...quotes];
-
-  // Clone the quote to be updated in our shallow copy of the
-  // `quotes` state prop, to avoid working directly on the
-  // state object.
-  const index = updatedQuotes.indexOf(quote);
-  updatedQuotes[index] = { ...quote };
-
-  // Set the `isOpen` prop on our cloned quote to the inverse
-  // of it's current value.
-  updatedQuotes[index].isOpen = !updatedQuotes[index].isOpen;
-
-  return updatedQuotes;
-};
+const getUpdatedQuotes = (quotes, quote) =>
+  quotes.map((q) => (quote.id === q.id ? { ...q, isOpen: !q.isOpen } : q));
 
 /**
- * Our main Reducer funcion, to be registered with `React.useReducer()`.
+ * Our main Reducer function, for managing Previous Quotes state.
  *
  * @param {Object} state
  * @param {Object} action

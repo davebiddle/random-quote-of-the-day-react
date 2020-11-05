@@ -8,11 +8,11 @@ import QuotesReducer from "reducers/QuotesReducer";
 import useFetchPreviousQuotesData from "hooks/FetchPreviousQuotesData";
 import AjaxLoadingSpinner from "components/ajax/AjaxLoadingSpinner";
 import AjaxError from "components/ajax/AjaxError";
-import { usePreviousQuotesHistory } from "hooks/PreviousQuotesHistory";
-import { trackPromise } from "react-promise-tracker";
+import usePreviousQuotesHistory from "hooks/PreviousQuotesHistory";
+// import { trackPromise } from "react-promise-tracker";
 import { usePromiseTracker } from "react-promise-tracker";
 
-function PreviousQuotesListing() {
+const PreviousQuotesListing = () => {
   const initialState = {
     quotes: [],
     ajaxError: null,
@@ -29,11 +29,11 @@ function PreviousQuotesListing() {
     getQueryString,
   } = useFetchPreviousQuotesData(dispatch);
 
-  useEffect(() => {
-    trackPromise(fetchData());
-  }, [fetchData]);
+  const flagPushRef = usePreviousQuotesHistory(dispatch, state, getQueryString);
 
-  usePreviousQuotesHistory(dispatch, state, getQueryString);
+  useEffect(() => {
+    fetchData(flagPushRef);
+  }, [fetchData, flagPushRef]);
 
   if (ajaxError) {
     return <AjaxError ajaxError={ajaxError} />;
@@ -48,6 +48,7 @@ function PreviousQuotesListing() {
           getFilterParams,
           setFilterParams,
           fetchData,
+          flagPushRef,
         }}
       >
         <div className="previous-quotes-listing bg-white lg:w-4/5 lg:relative lg:m-auto lg:-top-12 lg:shadow-blockquote lg:px-8">
@@ -65,6 +66,6 @@ function PreviousQuotesListing() {
       </QuotesContext.Provider>
     );
   }
-}
+};
 
 export default PreviousQuotesListing;

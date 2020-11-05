@@ -5,7 +5,7 @@ import AjaxLoadingSpinner from "components/ajax/AjaxLoadingSpinner";
 import AjaxError from "components/ajax/AjaxError";
 import useFetchQuotesData from "hooks/FetchQuotesData";
 
-function TodaysRandomQuote() {
+const TodaysRandomQuote = () => {
   const apiEndpoint = process.env.REACT_APP_API_ENDPOINT_TODAYS_QUOTE;
   const {
     error,
@@ -69,13 +69,13 @@ function TodaysRandomQuote() {
                 </li>
                 <li className="blockquote-footer-li">
                   <a target="_blank;" href={quoteparkAuthorLink}>
-                    {`More quotes from ${authorName}`}
+                    More quotes from {authorName}
                   </a>
                   <span className="icon-ext-link"></span>
                 </li>
                 <li className="blockquote-footer-li">
                   <a target="_blank;" href={wikiquoteAuthorLink}>
-                    {`Find ${authorName} on Wikiquote`}
+                    Find {authorName} on Wikiquote
                   </a>
                   <span className="icon-ext-link"></span>
                 </li>
@@ -86,6 +86,6 @@ function TodaysRandomQuote() {
       </div>
     );
   }
-}
+};
 
 export default TodaysRandomQuote;

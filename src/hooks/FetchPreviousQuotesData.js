@@ -1,13 +1,12 @@
 import { useCallback, useRef } from "react";
 import queryString from "query-string";
-import { registerHistoryStackPushEvent } from "hooks/PreviousQuotesHistory";
 
 /**
  * Custom hook which houses parameters and functions for making
  * AJAX requests to the backend API, for fetching data for the
  * Previous Quotes listing components.
  *
- * Takes the `dispatch` function returned by useReducer() as it's
+ * Takes the `dispatch` function returned by useReducer() as an
  * argument, which is used to update the state with the response.
  *
  * @param {Function} dispatch
@@ -70,50 +69,53 @@ const useFetchPreviousQuotesData = (dispatch) => {
    *
    * @return {Promise}
    */
-  const fetchData = useCallback(() => {
-    const promise = new Promise((resolve, reject) => {
-      resolve(
-        fetch(`${apiUrl}/${apiEndpoint}?${queryStr.current}`, {
-          method: "GET",
-          headers: {
-            Authorization: `Bearer ${apiToken}`,
-            Accept: "application/json",
-          },
-        })
-          .then((response) => response.json())
-          .then(
-            (json) => {
-              // Register a history stack push event, to be picked up by our history
-              // hook when the state has been updated with this response.
-              // We do this here because we need the updated state in the history item
-              // which is pushed onto the stack.
-              registerHistoryStackPushEvent();
-
-              // Call dispatch Reducer action for setting quotes data in context state
-              dispatch({
-                type: "ajax/setQuotesData",
-                payload: {
-                  quotes: json.data,
-                  paginationMeta: json.meta,
-                },
-              });
+  const fetchData = useCallback(
+    (setPushRef) => {
+      const promise = new Promise((resolve, reject) => {
+        resolve(
+          fetch(`${apiUrl}/${apiEndpoint}?${queryStr.current}`, {
+            method: "GET",
+            headers: {
+              Authorization: `Bearer ${apiToken}`,
+              Accept: "application/json",
             },
-            // The React docs specify handling errors here instead of a catch block:
-            // https://reactjs.org/docs/faq-ajax.html
-            (error) => {
-              dispatch({
-                type: "ajax/setError",
-                payload: {
-                  ajaxError: error,
-                },
-              });
-            }
-          )
-      );
-    });
+          })
+            .then((response) => response.json())
+            .then(
+              (json) => {
+                // Register a history stack push event, to be picked up by our history
+                // hook when the state has been updated with this response.
+                // We do this here because we need the updated state in the history item
+                // which is pushed onto the stack.
+                setPushRef(true);
 
-    return promise;
-  }, [apiUrl, apiEndpoint, queryStr, apiToken, dispatch]);
+                // Call dispatch Reducer action for setting quotes data in context state
+                dispatch({
+                  type: "ajax/setQuotesData",
+                  payload: {
+                    quotes: json.data,
+                    paginationMeta: json.meta,
+                  },
+                });
+              },
+              // The React docs specify handling errors here instead of a catch block:
+              // https://reactjs.org/docs/faq-ajax.html
+              (error) => {
+                dispatch({
+                  type: "ajax/setError",
+                  payload: {
+                    ajaxError: error,
+                  },
+                });
+              }
+            )
+        );
+      });
+
+      return promise;
+    },
+    [apiUrl, apiEndpoint, queryStr, apiToken, dispatch]
+  );
 
   return { getFilterParams, setFilterParams, getQueryString, fetchData };
 };

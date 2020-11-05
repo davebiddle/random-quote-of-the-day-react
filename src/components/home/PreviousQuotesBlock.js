@@ -6,7 +6,7 @@ import AjaxLoadingSpinner from "components/ajax/AjaxLoadingSpinner";
 import AjaxError from "components/ajax/AjaxError";
 import useFetchQuotesData from "hooks/FetchQuotesData";
 
-function PreviousQuotesBlock() {
+const PreviousQuotesBlock = () => {
   const apiEndpoint = process.env.REACT_APP_API_ENDPOINT_PREVIOUS_QUOTES_BLOCK;
   const {
     error,
@@ -79,6 +79,6 @@ function PreviousQuotesBlock() {
       </div>
     );
   }
-}
+};
 
 export default PreviousQuotesBlock;

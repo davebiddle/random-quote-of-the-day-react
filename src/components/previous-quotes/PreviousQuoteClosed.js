@@ -1,9 +1,8 @@
-import React, { useContext } from "react";
+import React, { useContext, useCallback } from "react";
 import QuotesContext from "contexts/QuotesContext";
 import SvgIconPlus from "components/svg/SvgIconPlus";
 
-function PreviousQuoteClosed(props) {
-  const { quote } = props;
+const PreviousQuoteClosed = ({ quote }) => {
   const { isOpen = false, formattedDate = "" } = quote;
 
   const { dispatch } = useContext(QuotesContext);
@@ -16,18 +15,18 @@ function PreviousQuoteClosed(props) {
     >
       <div
         className="px-2"
-        onClick={() => {
+        onClick={useCallback(() => {
           dispatch({
             type: "quote/toggleOpenState",
             payload: { quote: quote },
           });
-        }}
+        }, [dispatch, quote])}
       >
         <SvgIconPlus />
       </div>
       <div className="ml-16">{formattedDate}</div>
     </div>
   );
-}
+};
 
 export default PreviousQuoteClosed;
