@@ -1,20 +1,27 @@
 import React, { useContext } from "react";
 import QuotesContext from "contexts/QuotesContext";
-import fetchPreviousQuotesData from "helpers/fetchPreviousQuotesData";
 import ReactPaginate from "react-paginate";
 import { isMobile } from "react-device-detect";
 import { trackPromise } from "react-promise-tracker";
 
 function ListingPagination() {
-  const { dispatch, paginationMeta, filterQuery } = useContext(QuotesContext);
+  const {
+    dispatch,
+    paginationMeta,
+    getFilterParams,
+    setFilterParams,
+    fetchData,
+  } = useContext(QuotesContext);
   const { last_page: pageCount, current_page: currentPage } = paginationMeta;
   const pageRangeToDisplay = isMobile ? 3 : 6;
 
   const handlePaginationLinkClick = (data) => {
     const { selected: page } = data;
-    const params = { ...filterQuery, page: page + 1 };
+    const params = { ...getFilterParams(), page: page + 1 };
 
-    trackPromise(fetchPreviousQuotesData(params, dispatch));
+    setFilterParams(params);
+
+    trackPromise(fetchData(dispatch));
   };
 
   return (

@@ -46,7 +46,7 @@ const PreviouseQuotesHistory = {
    * @param {Function} dispatch
    * @param {*} state
    */
-  usePreviousQuotesHistory: function (dispatch, state) {
+  usePreviousQuotesHistory: function (dispatch, state, getQueryString) {
     const history = useHistory();
     const [locationKeys, setLocationKeys] = useState([]);
     const { ajaxInProgress } = usePromiseTracker();
@@ -64,13 +64,11 @@ const PreviouseQuotesHistory = {
     // Push a location onto the history stack if a push event has
     // been registered and the associated AJAX request has completed.
     useEffect(() => {
-      const { queryString } = state;
-
       if (pushEventRegistered() && !ajaxInProgress) {
         const { location } = history;
         const path = createPath({
           pathname: location.pathname,
-          search: queryString,
+          search: getQueryString(),
         });
 
         history.push(path, state);
@@ -83,6 +81,7 @@ const PreviouseQuotesHistory = {
       pushEventRegistered,
       deregisterHistoryStackPushEvent,
       history,
+      getQueryString,
     ]);
 
     // Listen for browser history push/back/forward events

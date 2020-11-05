@@ -3,7 +3,7 @@ import { createContext } from "react";
 const QuotesContext = createContext({
   quotes: [],
   paginationMeta: {},
-  filterQuery: {},
+  filterParams: {},
   historyPushEvent: false,
 });
 
