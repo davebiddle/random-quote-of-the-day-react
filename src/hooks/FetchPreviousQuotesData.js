@@ -2,7 +2,18 @@ import { useCallback, useRef } from "react";
 import queryString from "query-string";
 import { registerHistoryStackPushEvent } from "hooks/PreviousQuotesHistory";
 
-const useFetchPreviousQuotesData = () => {
+/**
+ * Custom hook which houses parameters and functions for making
+ * AJAX requests to the backend API for fetching data, for the
+ * Previous Quotes listing components.
+ *
+ * Takes the `dispatch` function returned by useReducer() as it's
+ * argument, which is used to update the state with the response.
+ *
+ * @param {Function} dispatch
+ * @return {Object}
+ */
+const useFetchPreviousQuotesData = (dispatch) => {
   const defaultPerPage = process.env.REACT_APP_DEFAULT_PER_PAGE;
   const defaultOrder = process.env.REACT_APP_DEFAULT_ORDER;
   const apiUrl = process.env.REACT_APP_API_URL;
@@ -57,10 +68,9 @@ const useFetchPreviousQuotesData = () => {
    * Performs the request. Returns a Promise for use by the react-promise-tracker
    * package, for determining when the request has completed.
    *
-   * @param {Function} dispatch
    * @return {Promise}
    */
-  const fetchData = (dispatch) => {
+  const fetchData = () => {
     const promise = new Promise((resolve, reject) => {
       resolve(
         fetch(`${apiUrl}/${apiEndpoint}?${queryStr.current}`, {

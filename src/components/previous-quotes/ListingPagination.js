@@ -6,7 +6,6 @@ import { trackPromise } from "react-promise-tracker";
 
 function ListingPagination() {
   const {
-    dispatch,
     paginationMeta,
     getFilterParams,
     setFilterParams,
@@ -21,7 +20,7 @@ function ListingPagination() {
 
     setFilterParams(params);
 
-    trackPromise(fetchData(dispatch));
+    trackPromise(fetchData());
   };
 
   return (

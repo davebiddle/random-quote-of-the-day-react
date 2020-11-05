@@ -27,11 +27,11 @@ function PreviousQuotesListing() {
     setFilterParams,
     fetchData,
     getQueryString,
-  } = useFetchPreviousQuotesData();
+  } = useFetchPreviousQuotesData(dispatch);
 
   useEffect(() => {
-    trackPromise(fetchData(dispatch));
-  }, [dispatch]);
+    trackPromise(fetchData());
+  }, []);
 
   usePreviousQuotesHistory(dispatch, state, getQueryString);
 
@@ -44,7 +44,6 @@ function PreviousQuotesListing() {
       <QuotesContext.Provider
         value={{
           quotes,
-          dispatch,
           paginationMeta,
           getFilterParams,
           setFilterParams,

@@ -5,7 +5,6 @@ import SvgIconSelectDown from "components/svg/SvgIconSelectDown";
 
 function ListingHeader() {
   const {
-    dispatch,
     paginationMeta,
     getFilterParams,
     setFilterParams,
@@ -39,7 +38,7 @@ function ListingHeader() {
 
                 setFilterParams(params);
 
-                trackPromise(fetchData(dispatch));
+                trackPromise(fetchData());
               }}
               className="appearance-none w-full bg-white border-2 border-mako-300 hover:border-mako-400 rounded px-4 py-1 pr-8 focus:outline-none focus:shadow-outline"
             >
@@ -71,7 +70,7 @@ function ListingHeader() {
 
                 setFilterParams(params);
 
-                trackPromise(fetchData(dispatch));
+                trackPromise(fetchData());
               }}
               className="appearance-none w-full bg-white border-2 border-mako-300 hover:border-mako-400 rounded px-4 py-1 pr-8 focus:outline-none focus:shadow-outline"
             >
