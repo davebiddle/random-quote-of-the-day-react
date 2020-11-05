@@ -20,7 +20,7 @@ function PreviousQuotesBlock() {
 
   useEffect(() => {
     fetchData();
-  }, []);
+  }, [fetchData]);
 
   if (error) {
     return <AjaxError ajaxError={error} />;

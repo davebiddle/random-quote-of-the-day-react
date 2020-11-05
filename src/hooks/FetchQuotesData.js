@@ -1,12 +1,14 @@
-const useFetchQuotesData = (path, setisLoaded, setError, setState) => {
-  const API_URL = process.env.REACT_APP_API_URL;
-  const API_TOKEN = process.env.REACT_APP_API_TOKEN;
+import { useCallback } from "react";
 
-  const fetchData = () => {
-    fetch(`${API_URL}/${path}`, {
+const useFetchQuotesData = (path, setisLoaded, setError, setState) => {
+  const apiUrl = process.env.REACT_APP_API_URL;
+  const apiToken = process.env.REACT_APP_API_TOKEN;
+
+  const fetchData = useCallback(() => {
+    fetch(`${apiUrl}/${path}`, {
       method: "GET",
       headers: {
-        Authorization: `Bearer ${API_TOKEN}`,
+        Authorization: `Bearer ${apiToken}`,
         Accept: "application/json",
       },
     })
@@ -24,7 +26,7 @@ const useFetchQuotesData = (path, setisLoaded, setError, setState) => {
           setError(error);
         }
       );
-  };
+  }, [path, apiUrl, apiToken, setisLoaded, setState, setError]);
 
   return fetchData;
 };

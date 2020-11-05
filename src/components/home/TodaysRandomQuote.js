@@ -19,7 +19,7 @@ function TodaysRandomQuote() {
 
   useEffect(() => {
     fetchData();
-  }, []);
+  }, [fetchData]);
 
   const {
     dateFormatted = "",

@@ -70,7 +70,7 @@ const useFetchPreviousQuotesData = (dispatch) => {
    *
    * @return {Promise}
    */
-  const fetchData = () => {
+  const fetchData = useCallback(() => {
     const promise = new Promise((resolve, reject) => {
       resolve(
         fetch(`${apiUrl}/${apiEndpoint}?${queryStr.current}`, {
@@ -113,7 +113,7 @@ const useFetchPreviousQuotesData = (dispatch) => {
     });
 
     return promise;
-  };
+  }, [apiUrl, apiEndpoint, queryStr, apiToken, dispatch]);
 
   return { getFilterParams, setFilterParams, getQueryString, fetchData };
 };

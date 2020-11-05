@@ -31,7 +31,7 @@ function PreviousQuotesListing() {
 
   useEffect(() => {
     trackPromise(fetchData());
-  }, []);
+  }, [fetchData]);
 
   usePreviousQuotesHistory(dispatch, state, getQueryString);
 
