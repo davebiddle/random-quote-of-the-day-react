@@ -1,22 +1,23 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import icon_calendar_blue from "assets/img/icon-calendar-blue.svg";
 import icon_calendar_orange from "assets/img/icon-calendar-orange.svg";
-import fetchQuotesData from "helpers/fetchQuotesData";
 import AjaxLoadingSpinner from "components/ajax/AjaxLoadingSpinner";
 import AjaxError from "components/ajax/AjaxError";
+import useFetchQuotesData from "hooks/FetchQuotesData";
 
 const PreviousQuotesBlock = () => {
-  const [error, setError] = useState(null);
-  const [isLoaded, setIsLoaded] = useState(false);
-  const [previousQuotes, setPreviousQuotes] = useState([]);
   const apiEndpoint = process.env.REACT_APP_API_ENDPOINT_PREVIOUS_QUOTES_BLOCK;
+  const {
+    error,
+    isLoaded,
+    responseState: previousQuotes,
+    fetchData,
+  } = useFetchQuotesData(apiEndpoint, []);
 
   useEffect(() => {
-    fetchQuotesData(apiEndpoint, setIsLoaded, setError, (json) => {
-      setPreviousQuotes(json.data);
-    });
-  }, []);
+    fetchData();
+  }, [fetchData]);
 
   if (error) {
     return <AjaxError ajaxError={error} />;

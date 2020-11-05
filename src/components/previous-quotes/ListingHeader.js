@@ -1,16 +1,20 @@
 import React, { useContext, useCallback } from "react";
 import QuotesContext from "contexts/QuotesContext";
-import fetchPreviousQuotesData from "helpers/FetchPreviousQuotesData";
 import { trackPromise } from "react-promise-tracker";
 import SvgIconSelectDown from "components/svg/SvgIconSelectDown";
 
 function ListingHeader() {
-  const { dispatch, filterQuery, paginationMeta, setPushRef } = useContext(
-    QuotesContext
-  );
+  const {
+    paginationMeta,
+    getFilterParams,
+    setFilterParams,
+    fetchData,
+    flagPushRef,
+  } = useContext(QuotesContext);
   const { from, to, total } = paginationMeta;
-  const perPageValue = paginationMeta.per_page || filterQuery.per_page;
-  const orderValue = paginationMeta.order || filterQuery.order;
+  const filterParams = getFilterParams();
+  const perPageValue = paginationMeta.per_page || filterParams.per_page;
+  const orderValue = paginationMeta.order || filterParams.order;
 
   return (
     <header className="px-4 sm:px-8 md:px-10 py-2 md:h-16 lg:h-20 text-mako-600 text-sm italic sm:flex sm:justify-between sm:items-center lg:items-end lg:pl-0 lg:pt-0 lg:pb-4">
@@ -28,14 +32,16 @@ function ListingHeader() {
               onChange={useCallback(
                 (event) => {
                   const params = {
-                    ...filterQuery,
+                    ...filterParams,
                     per_page: event.target.value,
                   };
 
-                trackPromise(
-                  fetchPreviousQuotesData(params, dispatch, setPushRef)
-                );
-              }}
+                  setFilterParams(params);
+
+                  trackPromise(fetchData(flagPushRef));
+                },
+                [filterParams, setFilterParams, fetchData, flagPushRef]
+              )}
               className="appearance-none w-full bg-white border-2 border-mako-300 hover:border-mako-400 rounded px-4 py-1 pr-8 focus:outline-none focus:shadow-outline"
             >
               {[5, 10, 15, 20, 25, 30].map((perPage, index) => {
@@ -60,12 +66,14 @@ function ListingHeader() {
               value={orderValue}
               onChange={useCallback(
                 (event) => {
-                  const params = { ...filterQuery, order: event.target.value };
+                  const params = { ...filterParams, order: event.target.value };
 
-                trackPromise(
-                  fetchPreviousQuotesData(params, dispatch, setPushRef)
-                );
-              }}
+                  setFilterParams(params);
+
+                  trackPromise(fetchData(flagPushRef));
+                },
+                [filterParams, setFilterParams, fetchData, flagPushRef]
+              )}
               className="appearance-none w-full bg-white border-2 border-mako-300 hover:border-mako-400 rounded px-4 py-1 pr-8 focus:outline-none focus:shadow-outline"
             >
               <option value="desc">Date (Newest first)</option>
@@ -79,6 +87,6 @@ function ListingHeader() {
       </div>
     </header>
   );
-};
+}
 
 export default ListingHeader;

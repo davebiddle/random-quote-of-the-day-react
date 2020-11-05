@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState, useRef, useCallback } from "react";
 import { useHistory } from "react-router-dom";
 import { createPath } from "history";
 import { usePromiseTracker } from "react-promise-tracker";
@@ -9,9 +9,10 @@ import { usePromiseTracker } from "react-promise-tracker";
  *
  * @param {Function} dispatch
  * @param {*} state
+ * @param {Function} getQueryString
  * @return {Object}
  */
-const usePreviousQuotesHistory = (dispatch, state) => {
+const usePreviousQuotesHistory = (dispatch, state, getQueryString) => {
   const history = useHistory();
   const [locationKeys, setLocationKeys] = useState([]);
   const { ajaxInProgress } = usePromiseTracker();
@@ -27,31 +28,25 @@ const usePreviousQuotesHistory = (dispatch, state) => {
    */
   const pushRef = useRef(false);
 
-  const setPushRef = (val) => {
-    pushRef.current = val;
-  };
-
-  const getPushRef = () => {
-    return pushRef.current;
-  };
+  const flagPushRef = useCallback(() => {
+    pushRef.current = true;
+  }, []);
 
   // Push a location onto the history stack if a push event has
   // been registered and the associated AJAX request has completed.
   useEffect(() => {
-    const { queryString } = state;
-
     if (pushRef.current && !ajaxInProgress) {
       const { location } = history;
       const path = createPath({
         pathname: location.pathname,
-        search: queryString,
+        search: getQueryString(),
       });
 
       history.push(path, state);
 
       pushRef.current = false;
     }
-  }, [ajaxInProgress, state, pushRef, history]);
+  }, [ajaxInProgress, state, pushRef, history, getQueryString]);
 
   // Listen for browser history push/back/forward events
   // and manage accordingly
@@ -93,8 +88,8 @@ const usePreviousQuotesHistory = (dispatch, state) => {
     });
   }, [locationKeys, history, dispatch]);
 
-  // return our pushRef setter so that the ref can be set by components
-  return setPushRef;
+  // return our pushRef flagger so that the ref can be set by components
+  return flagPushRef;
 };
 
 export default usePreviousQuotesHistory;

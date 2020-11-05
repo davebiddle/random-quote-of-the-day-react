@@ -5,33 +5,35 @@ import ListingWide from "components/previous-quotes/ListingWide";
 import ListingPagination from "components/previous-quotes/ListingPagination";
 import QuotesContext from "contexts/QuotesContext";
 import QuotesReducer from "reducers/QuotesReducer";
-import fetchPreviousQuotesData from "helpers/FetchPreviousQuotesData";
+import useFetchPreviousQuotesData from "hooks/FetchPreviousQuotesData";
 import AjaxLoadingSpinner from "components/ajax/AjaxLoadingSpinner";
 import AjaxError from "components/ajax/AjaxError";
 import usePreviousQuotesHistory from "hooks/PreviousQuotesHistory";
-import { trackPromise } from "react-promise-tracker";
+// import { trackPromise } from "react-promise-tracker";
 import { usePromiseTracker } from "react-promise-tracker";
 
 const PreviousQuotesListing = () => {
-  const defaultPerPage = process.env.REACT_APP_DEFAULT_PER_PAGE;
-  const defaultOrder = process.env.REACT_APP_DEFAULT_ORDER;
   const initialState = {
     quotes: [],
     ajaxError: null,
     isLoaded: false,
     paginationMeta: [],
-    filterQuery: { page: 1, per_page: defaultPerPage, order: defaultOrder },
-    queryString: "",
   };
   const [state, dispatch] = useReducer(QuotesReducer, initialState);
-  const { quotes, ajaxError, isLoaded, paginationMeta, filterQuery } = state;
+  const { quotes, ajaxError, isLoaded, paginationMeta } = state;
   const { promiseInProgress: ajaxInProgress } = usePromiseTracker();
+  const {
+    getFilterParams,
+    setFilterParams,
+    fetchData,
+    getQueryString,
+  } = useFetchPreviousQuotesData(dispatch);
 
-  const setPushRef = usePreviousQuotesHistory(dispatch, state);
+  const flagPushRef = usePreviousQuotesHistory(dispatch, state, getQueryString);
 
   useEffect(() => {
-    trackPromise(fetchPreviousQuotesData(filterQuery, dispatch, setPushRef));
-  }, []);
+    fetchData(flagPushRef);
+  }, [fetchData, flagPushRef]);
 
   if (ajaxError) {
     return <AjaxError ajaxError={ajaxError} />;
@@ -42,10 +44,11 @@ const PreviousQuotesListing = () => {
       <QuotesContext.Provider
         value={{
           quotes,
-          dispatch,
           paginationMeta,
-          filterQuery,
-          setPushRef,
+          getFilterParams,
+          setFilterParams,
+          fetchData,
+          flagPushRef,
         }}
       >
         <div className="previous-quotes-listing bg-white lg:w-4/5 lg:relative lg:m-auto lg:-top-12 lg:shadow-blockquote lg:px-8">

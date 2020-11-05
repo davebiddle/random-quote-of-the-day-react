@@ -27,20 +27,13 @@ const QuotesReducer = (state, action) => {
     case "ajax/setLoading":
       return { ...state, isLoaded: false };
     case "ajax/setQuotesData":
-      const {
-        quotes: newQuotes,
-        paginationMeta,
-        filterQuery,
-        queryString,
-      } = payload;
+      const { quotes: newQuotes, paginationMeta } = payload;
 
       return {
         ...state,
         quotes: newQuotes,
         isLoaded: true,
         paginationMeta: paginationMeta,
-        filterQuery,
-        queryString,
       };
     case "ajax/setError":
       const { ajaxError } = payload;
