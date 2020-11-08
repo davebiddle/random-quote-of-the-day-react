@@ -9,7 +9,6 @@ function ListingHeader() {
     getFilterParams,
     setFilterParams,
     fetchData,
-    flagPushRef,
   } = useContext(QuotesContext);
   const { from, to, total } = paginationMeta;
   const filterParams = getFilterParams();
@@ -38,9 +37,9 @@ function ListingHeader() {
 
                   setFilterParams(params);
 
-                  trackPromise(fetchData(flagPushRef));
+                  trackPromise(fetchData());
                 },
-                [filterParams, setFilterParams, fetchData, flagPushRef]
+                [filterParams, setFilterParams, fetchData]
               )}
               className="appearance-none w-full bg-white border-2 border-mako-300 hover:border-mako-400 rounded px-4 py-1 pr-8 focus:outline-none focus:shadow-outline"
             >
@@ -70,9 +69,9 @@ function ListingHeader() {
 
                   setFilterParams(params);
 
-                  trackPromise(fetchData(flagPushRef));
+                  trackPromise(fetchData());
                 },
-                [filterParams, setFilterParams, fetchData, flagPushRef]
+                [filterParams, setFilterParams, fetchData]
               )}
               className="appearance-none w-full bg-white border-2 border-mako-300 hover:border-mako-400 rounded px-4 py-1 pr-8 focus:outline-none focus:shadow-outline"
             >
