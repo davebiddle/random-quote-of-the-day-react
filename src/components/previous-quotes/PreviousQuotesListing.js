@@ -9,7 +9,6 @@ import useFetchPreviousQuotesData from "hooks/FetchPreviousQuotesData";
 import AjaxLoadingSpinner from "components/ajax/AjaxLoadingSpinner";
 import AjaxError from "components/ajax/AjaxError";
 import usePreviousQuotesHistory from "hooks/PreviousQuotesHistory";
-// import { trackPromise } from "react-promise-tracker";
 import { usePromiseTracker } from "react-promise-tracker";
 
 const PreviousQuotesListing = () => {
@@ -27,13 +26,28 @@ const PreviousQuotesListing = () => {
     setFilterParams,
     fetchData,
     getQueryString,
-  } = useFetchPreviousQuotesData(dispatch);
+    setDependencies: setFetchDependencies,
+  } = useFetchPreviousQuotesData();
 
-  const flagPushRef = usePreviousQuotesHistory(dispatch, state, getQueryString);
+  const {
+    setHistoryPushFlag,
+    setDependencies: setHistoryDependencies,
+  } = usePreviousQuotesHistory();
+
+  setFetchDependencies({
+    dispatch,
+    setHistoryPushFlag,
+  });
+
+  setHistoryDependencies({
+    dispatch,
+    state,
+    getQueryString,
+  });
 
   useEffect(() => {
-    fetchData(flagPushRef);
-  }, [fetchData, flagPushRef]);
+    fetchData();
+  }, [fetchData]);
 
   if (ajaxError) {
     return <AjaxError ajaxError={ajaxError} />;
@@ -48,7 +62,6 @@ const PreviousQuotesListing = () => {
           getFilterParams,
           setFilterParams,
           fetchData,
-          flagPushRef,
         }}
       >
         <div className="previous-quotes-listing bg-white lg:w-4/5 lg:relative lg:m-auto lg:-top-12 lg:shadow-blockquote lg:px-8">

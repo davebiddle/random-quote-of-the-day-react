@@ -10,7 +10,6 @@ function ListingPagination() {
     getFilterParams,
     setFilterParams,
     fetchData,
-    flagPushRef,
   } = useContext(QuotesContext);
   const { last_page: pageCount, current_page: currentPage } = paginationMeta;
   const pageRangeToDisplay = isMobile ? 3 : 6;
@@ -22,9 +21,9 @@ function ListingPagination() {
 
       setFilterParams(params);
 
-      trackPromise(fetchData(flagPushRef));
+      trackPromise(fetchData());
     },
-    [getFilterParams, setFilterParams, fetchData, flagPushRef]
+    [getFilterParams, setFilterParams, fetchData]
   );
 
   return (

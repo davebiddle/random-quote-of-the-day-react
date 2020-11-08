@@ -1,18 +1,31 @@
 import { useCallback, useRef } from "react";
 import queryString from "query-string";
+import useDependencyContainer from "hooks/DependencyContainer";
 
 /**
  * Custom hook which houses parameters and functions for making
  * AJAX requests to the backend API, for fetching data for the
  * Previous Quotes listing components.
  *
- * Takes the `dispatch` function returned by useReducer() as an
- * argument, which is used to update the state with the response.
+ * The following dependencies are required by this hook,
+ * which should be set using either of the
+ * setDependency or setDependencies functions returned by
+ * this hook:
+ *  - dispatch: The QuotesReducer dispatch function
+ *  - setHistoryPushFlag: Function returned by the usePreviousQuotesHistory hook.
  *
  * @param {Function} dispatch
  * @return {Object}
  */
-const useFetchPreviousQuotesData = (dispatch) => {
+const useFetchPreviousQuotesData = () => {
+  const {
+    setDependency,
+    getDependencies,
+    setDependencies,
+  } = useDependencyContainer({
+    dispatch: null,
+    setHistoryPushFlag: null,
+  });
   const defaultPerPage = process.env.REACT_APP_DEFAULT_PER_PAGE;
   const defaultOrder = process.env.REACT_APP_DEFAULT_ORDER;
   const apiUrl = process.env.REACT_APP_API_URL;
@@ -69,55 +82,55 @@ const useFetchPreviousQuotesData = (dispatch) => {
    *
    * @return {Promise}
    */
-  const fetchData = useCallback(
-    (setPushRef) => {
-      const promise = new Promise((resolve, reject) => {
-        resolve(
-          fetch(`${apiUrl}/${apiEndpoint}?${queryStr.current}`, {
-            method: "GET",
-            headers: {
-              Authorization: `Bearer ${apiToken}`,
-              Accept: "application/json",
+  const fetchData = useCallback(() => {
+    const { dispatch, setHistoryPushFlag } = getDependencies();
+
+    return fetch(`${apiUrl}/${apiEndpoint}?${queryStr.current}`, {
+      method: "GET",
+      headers: {
+        Authorization: `Bearer ${apiToken}`,
+        Accept: "application/json",
+      },
+    })
+      .then((response) => response.json())
+      .then(
+        (json) => {
+          // Register a history stack push event, to be picked up by our history
+          // hook when the state has been updated with this response.
+          // We do this here because we need the updated state in the history item
+          // which is pushed onto the stack.
+          setHistoryPushFlag();
+
+          // Call dispatch Reducer action for setting quotes data in context state
+          dispatch({
+            type: "ajax/setQuotesData",
+            payload: {
+              quotes: json.data,
+              paginationMeta: json.meta,
             },
-          })
-            .then((response) => response.json())
-            .then(
-              (json) => {
-                // Register a history stack push event, to be picked up by our history
-                // hook when the state has been updated with this response.
-                // We do this here because we need the updated state in the history item
-                // which is pushed onto the stack.
-                setPushRef(true);
+          });
+        },
+        // The React docs specify handling errors here instead of a catch block:
+        // https://reactjs.org/docs/faq-ajax.html
+        (error) => {
+          dispatch({
+            type: "ajax/setError",
+            payload: {
+              ajaxError: error,
+            },
+          });
+        }
+      );
+  }, [apiUrl, apiEndpoint, queryStr, apiToken, getDependencies]);
 
-                // Call dispatch Reducer action for setting quotes data in context state
-                dispatch({
-                  type: "ajax/setQuotesData",
-                  payload: {
-                    quotes: json.data,
-                    paginationMeta: json.meta,
-                  },
-                });
-              },
-              // The React docs specify handling errors here instead of a catch block:
-              // https://reactjs.org/docs/faq-ajax.html
-              (error) => {
-                dispatch({
-                  type: "ajax/setError",
-                  payload: {
-                    ajaxError: error,
-                  },
-                });
-              }
-            )
-        );
-      });
-
-      return promise;
-    },
-    [apiUrl, apiEndpoint, queryStr, apiToken, dispatch]
-  );
-
-  return { getFilterParams, setFilterParams, getQueryString, fetchData };
+  return {
+    getFilterParams,
+    setFilterParams,
+    getQueryString,
+    fetchData,
+    setDependency,
+    setDependencies,
+  };
 };
 
 export default useFetchPreviousQuotesData;
